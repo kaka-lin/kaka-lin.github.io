@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        Gitlab CI/CD - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>Gitlab CI/CD - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Gitlab CI/CD" />
+<meta property="og:description" content="GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/gitlab_ci_cd/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="Gitlab CI/CD">
+<meta itemprop="description" content="GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="977">
+
+
+
+<meta itemprop="keywords" content="DevOps,CI/CD Tools," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gitlab CI/CD"/>
+<meta name="twitter:description" content="GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">50</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">55</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/gitlab_ci_cd/"
+    >Gitlab CI/CD</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/gitlab_ci_cd/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/devops/"> DevOps </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/devops/"> DevOps </a>
+    <a class="article-tag-link" href="/tags/ci/cd-tools/"> CI/CD Tools </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/gitlab_ci_cd/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="gitlab-cicd">GitLab CI/CD</h1>
+<ul>
+<li><a href="#gitlab-cicd">GitLab CI/CD</a>
+<ul>
+<li><a href="#how-gitlab-cicd-works">How GitLab CI/CD works</a></li>
+<li><a href="#getting-started-with-gitlab-cicd">Getting started with GitLab CI/CD</a>
+<ul>
+<li><a href="#1-build-a-project">1. Build a Project</a></li>
+<li><a href="#2-configuring-gitlab-runners">2. Configuring GitLab Runners</a>
+<ul>
+<li><a href="#2-1-use-shared-runners">2-1. Use Shared Runners</a></li>
+<li><a href="#2-2-set-up-a-specific-runners">2-2. Set up a Specific Runners</a>
+<ul>
+<li><a href="#exmaple-with-docker">Exmaple with Docker</a></li>
+</ul>
+</li>
+<li><a href="#2-3-introduction-to-shared-specific-and-group-runners-optional">2-3. Introduction to Shared, Specific and Group Runners [Optional]</a></li>
+</ul>
+</li>
+<li><a href="#3-creating-a-gitlab-ciyml-file">3. Creating a <code>.gitlab-ci.yml</code> file</a></li>
+<li><a href="#4-results">4. Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://docs.gitlab.com/ee/ci/README.html">GitLab CI/CD</a> is a powerful tool built into GitLab that allows you to apply all the continuous methods to your software with no third-party application or integration needed.</p>
+<ul>
+<li>Continuous Integration (CI): 持續整合</li>
+<li>Continuous Delivery (CD): 持續交付</li>
+<li>Continuous Deployment (CD): 持續發佈</li>
+</ul>
+<h2 id="how-gitlab-cicd-works">How GitLab CI/CD works</h2>
+<p>GitLab offers a continuous integration service. For each commit or push to trigger your CI pipeline, you must:</p>
+<ul>
+<li>Add a <a href="https://docs.gitlab.com/ee/ci/quick_start/README.html#creating-a-gitlab-ciyml-file">.gitlab-ci.yml</a> file to your repository&rsquo;s root directory.</li>
+<li>Ensure your project is configured to use a <a href="https://docs.gitlab.com/runner/">Runner</a>.</li>
+</ul>
+<p>The <code>.gitlab-ci.yml</code> file tells the <code>GitLab Runner</code> what to do. For example:</p>
+<ul>
+<li>build stage</li>
+<li>test stage</li>
+<li>deploy stage</li>
+</ul>
+<p><img src="./images/gitlab_cicd/workflow.png" alt="GitLab CI/CD workflow"></p>
+<h2 id="getting-started-with-gitlab-cicd">Getting started with GitLab CI/CD</h2>
+<p>Requirement:</p>
+<ul>
+<li>A working GitLab instance of version 8.0+ or are using <a href="https://about.gitlab.com/">GitLab.com</a></li>
+</ul>
+<h3 id="1-build-a-project">1. Build a Project</h3>
+<p>Create a project in GitLab. See the <a href="https://gitlab.com/vn503024/gitlab-cicd-test">Example</a>.</p>
+<h3 id="2-configuring-gitlab-runnershttpsdocsgitlabcomeecirunnersreadmehtml">2. <a href="https://docs.gitlab.com/ee/ci/runners/README.html">Configuring GitLab Runners</a></h3>
+<p>In GitLab CI/CD, <code>Runners</code> run the jobs that you defined in <code>.gitlab-ci.yml</code>.</p>
+<p>A Runner can be a virtual machine, a VPS, a bare-metal machine, a docker container or even a cluster of containera.</p>
+<pre><code>GitLab and the Runners communicate through an API, so the only requirement is that the Runner's machine has network access to the GitLab server.
+</code></pre>
+<p>There are three types of Runners::</p>
+<ul>
+<li><a href="#shared-runners">Shared Runners</a></li>
+<li><a href="#specific-runners">Specific Runners</a></li>
+<li><a href="#group-runners">Group Runners</a></li>
+</ul>
+<pre><code>如果只是用來做一般測試，且沒有多餘的機器來當Runner，可以使用GitLab所提供的Shared Runner就好。
+
+但當工作流程需要一些特別的驗證，或是可能需要運行某些套件或library或模組時，建議使用Specific Runners.
+    
+如果使用Shared Runner，每次在測試前都需要花時間配置所需的套件。
+</code></pre>
+<h4 id="2-1-use-shared-runners">2-1. Use Shared Runners</h4>
+<p>If you use <a href="https://about.gitlab.com/">GitLab.com</a> you can use the <code>Shared Runners</code> provided by GitLab Inc.</p>
+<ul>
+<li>These are special virtual machines that run on GitLab&rsquo;s infrastructure and can be build any project.</li>
+</ul>
+<p>To enable the <code>Shared Runners</code> you have to go to your projects; <code>Setting -&gt; CI/CD</code> and click <code>Enable shared Runners</code>, as below:</p>
+<p><img src="images/gitlab_cicd/shared_runners.png" alt=""></p>
+<pre><code>Shared Runners are enable by default as of GitLab 8.2, but can be disabled with the Disable shared Runners button which is present under each project's Setting -&gt; CI/CD page.
+</code></pre>
+<p><a href="#shared-runners">Read more on Shared Runners</a></p>
+<h4 id="2-2-set-up-a-specific-runners">2-2. Set up a Specific Runners</h4>
+<p>If you want to set a <code>specific Runners</code>, you need to follow two steps:</p>
+<ol>
+<li>
+<p><a href="https://docs.gitlab.com/runner/install/">Install GitLab Runner</a></p>
+<p><code>GitLab Runner</code> can be installed and used on <code>GNU/Linux, macOS, FreeBSD and Windows</code>. There are three ways to install it, as below:</p>
+<ul>
+<li>Repository for rpm/deb packages</li>
+<li>Binaries for CNU/Linux, maxOS, Windows, FreeBSD</li>
+<li>Docker or Kubernetes</li>
+</ul>
+<pre><code>Ideally, the GitLab Runner should not be installed on the same machine as GitLab.
+</code></pre>
+</li>
+<li>
+<p><a href="https://docs.gitlab.com/ee/ci/runners/README.html">Configure it</a>.</p>
+</li>
+</ol>
+<h5 id="exmaple-with-docker">Exmaple with Docker</h5>
+<ol>
+<li>
+<p>Install <code>GitLab Runner Docker image</code>.</p>
+<pre><code class="language-bash"># docker pull
+$ docker pull gitlab/gitlab-runner:latest
+
+# docker run on macOS
+$ docker run -d --name gitlab-runner --restart always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /Users/Shared/gitlab-runner/config:/etc/gitlab-runner \
+    gitlab/gitlab-runner:latest
+</code></pre>
+</li>
+<li>
+<p><a href="https://docs.gitlab.com/runner/register/">Registering Runners</a></p>
+<p>Registering a Runner is the process that binds the Runner with a GitLab instance.</p>
+<pre><code class="language-bash">$ docker run --rm -t -i -v /Users/Shared/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
+</code></pre>
+<ul>
+<li>
+<p>You need to your repo&rsquo;s URL and token, like:</p>
+<p><img src="./images/gitlab_cicd/url_token.png" alt=""></p>
+</li>
+</ul>
+<p>If registering runner succeeded, you will see the status like:</p>
+<p><img src="./images/gitlab_cicd/specific_runners.png" alt=""></p>
+<ul>
+<li>
+<p>Note 1:</p>
+<p>You need to tick the <code>Run untagged jobs</code> checkbox for fix the issue of <code>&quot;Job is stuck in the pending state even a runner has been enabled for the project&quot;</code>.</p>
+<p><img src="./images/gitlab_cicd/run_untaged_jobs.png" alt=""></p>
+</li>
+<li>
+<p>Note 2:</p>
+<p>Disable shared Runners</p>
+<p><img src="./images/gitlab_cicd/disable_shared_runners.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="2-3-introduction-to-shared-specific-and-group-runners-optional">2-3. Introduction to Shared, Specific and Group Runners [Optional]</h4>
+<p>A Runner can be specific to a certain project or server any project in GitLab CI/CD.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p><code>Shared Runners</code>:</p>
+<p>Shared Runners are useful for <code>jobs that have similar requirements, between multiple projects</code>.</p>
+<ul>
+<li>
+<p>Rather than having multiple Runners idling for many projects, you can have a single or a small number of Runners that handle multiple projects. This makes it easier to maintain and update them.</p>
+</li>
+<li>
+<p>Shared Runners process jobs using a <a href="https://docs.gitlab.com/ee/ci/runners/README.html#how-shared-runners-pick-jobs">fair usage queue</a>. In contrast to specific Runners that use a <a href="https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)">FIFO</a> queue, this prevents cases where projects create hundreds of jobs which can lead to eating all available shared Runners resources.</p>
+</li>
+</ul>
+<pre><code>A Runner that serves all projects is called a Shared Runner.
+</code></pre>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p><code>Specific Runners</code>:</p>
+<p>Specific Runners are useful for <code>jobs that have special requirements</code> or for <code>projects with a specific demand</code>.</p>
+<ul>
+<li>
+<p>If a job has certain requirements, you can set up the specific Runner with this in mind, while not having to do this for all Runners.</p>
+<pre><code>For example, if you want to deploy a certain project, you can set up a specific Runner to have the right credentials for this.
+</code></pre>
+<ul>
+<li>The <a href="https://docs.gitlab.com/ee/ci/runners/README.html#using-tags">usage of tags</a> may be useful in this case.</li>
+</ul>
+</li>
+<li>
+<p>Specific Runners process jobs using a <a href="https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)">FIFO</a> queue.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p><code>Group Runners</code>:</p>
+<p>Group Runners are useful when <code>you have multiple projects under one group and would like all projects to have access to a set of Runners</code>.</p>
+<ul>
+<li>Group Runners process jobs using a <a href="https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)">FIFO</a> queue.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-creating-a-gitlab-ciyml-file">3. Creating a <code>.gitlab-ci.yml</code> file</h3>
+<p>Creating a file named <code>.gitlab-ci.yml</code> in the root directory of your repository, like:</p>
+<pre><code class="language-yaml">before_script:
+    - apt-get install python
+
+run-test:
+    script:
+        - python --version
+</code></pre>
+<h3 id="4-results">4. Results</h3>
+<ul>
+<li>
+<p><code>Pipelines</code></p>
+<p><img src="./images/gitlab_cicd/pipelines.png" alt=""></p>
+</li>
+<li>
+<p><code>Pipelines -&gt; Jobs</code></p>
+<p><img src="./images/gitlab_cicd/jobs.png" alt=""></p>
+</li>
+<li>
+<p><code>Log of that job</code></p>
+<ul>
+<li>
+<ol>
+<li>
+<p>Shared Runners</p>
+<p><img src="./images/gitlab_cicd/log_of_job_shared_runners.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>
+<p>Specific Runners</p>
+<p><img src="./images/gitlab_cicd/log_of_job_specific_runners.png" alt=""></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/gitlab_ci_cd/" title="Gitlab CI/CD" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/mac/" title="Mac"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/db_basics/"
+                    title="Db Basics"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

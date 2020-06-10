@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        Db Basics - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>Db Basics - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Db Basics" />
+<meta property="og:description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/db_basics/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="Db Basics">
+<meta itemprop="description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1927">
+
+
+
+<meta itemprop="keywords" content="Database," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Db Basics"/>
+<meta name="twitter:description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">50</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">55</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/db_basics/"
+    >Db Basics</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/db_basics/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/database/"> Database </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/database/"> Database </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/db_basics/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="database-basics">Database Basics</h1>
+<ul>
+<li><a href="#database-basics">Database Basics</a>
+<ul>
+<li><a href="#what-is-a-database">What is a Database</a>
+<ul>
+<li><a href="#the-basic-functions-for-manipulating-a-database-crud">The basic functions for manipulating a database: CRUD</a></li>
+</ul>
+</li>
+<li><a href="#database-management-system-dbms">Database Management System (DBMS)</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84%E9%A1%9E%E5%9E%8B">資料庫的類型</a>
+<ul>
+<li><a href="#%E9%97%9C%E8%81%AF%E5%BC%8F%E8%B3%87%E6%96%99%E5%BA%AB">關聯式資料庫</a></li>
+<li><a href="#%E9%9D%9E%E9%97%9C%E8%81%AF%E5%BC%8F%E8%B3%87%E6%96%99%E5%BA%ABnosql">非關聯式資料庫(NoSQL)</a>
+<ul>
+<li><a href="#sql%E8%88%87nosql%E5%B7%AE%E7%95%B0">SQL與NoSQL差異</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#database-transaction">Database Transaction</a></li>
+<li><a href="#sql">SQL</a>
+<ul>
+<li><a href="#sql%E8%AA%9E%E6%B3%95">SQL語法</a>
+<ul>
+<li><a href="#sql---%E5%9B%9B%E7%A8%AE%E8%AA%9E%E8%A8%80">SQL - 四種語言</a></li>
+</ul>
+</li>
+<li><a href="#sql-datatype">SQL Datatype</a></li>
+</ul>
+</li>
+<li><a href="#object-relational-mapping-orm">Object Relational Mapping (ORM)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="what-is-a-database">What is a Database</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93">資料庫(Database)</a>就是儲存資料的地方，使用者可以對資料庫中的資料執行新增、讀取、更新、刪除等操作。</p>
+<p>正式定義：</p>
+<pre><code>資料庫是一群相關資料的集合題
+</code></pre>
+<h3 id="the-basic-functions-for-manipulating-a-database-crud">The basic functions for manipulating a database: CRUD</h3>
+<ul>
+<li>C: Create</li>
+<li>R: Read</li>
+<li>U: Update</li>
+<li>D: Delete</li>
+</ul>
+<p><img src="./images/crud.png" alt=""></p>
+<h2 id="database-management-system-dbms">Database Management System (DBMS)</h2>
+<p>資料庫是儲存資料的地方，但是如果資料只是儲存到電腦的檔案中，其效用並不大，因此我們需要一套能夠讓我們很方便的管理這些資料庫檔案的軟體，就是所謂的<code>資料庫管理系統(Database Management System, DBMS)</code></p>
+<pre><code>Database System = Database + DBMS
+</code></pre>
+<h2 id="資料庫的類型">資料庫的類型</h2>
+<p>資料庫管理系統可以依據所支援的<code>資料庫模型</code>來作分類</p>
+<ul>
+<li>
+<p>階層式(Hierarchical)資料庫</p>
+<pre><code>是一種由上而下(Top-down)的結構，資料之間是一種樹狀的關係，所以又稱為樹狀結構(Tree)。
+</code></pre>
+</li>
+<li>
+<p>網路式(Network)資料庫</p>
+<pre><code>結構和階層式類似，差別是提供多對多(M:N)的關係，就像一張網子一樣，每一個子節點可以有多個父節點相連，可以消除階層式的資料重覆問題。
+</code></pre>
+</li>
+<li>
+<p>關聯式(Relational)</p>
+<pre><code>關聯式資料庫是以2維的矩陣來儲存資料(把資料儲存在表格的欄、列之中)，而儲存在欄、列裡的資料必會有所`關聯`，所以這種儲存資料的方式才會稱為關聯式資料庫，而儲存資料的表格稱為資料表。
+</code></pre>
+<ul>
+<li>優點：可以從一個資料表中的欄位透過資料表的關聯，而找到另一個資料表中的資料</li>
+</ul>
+<p><img src="./images/rdb-0.png" alt=""></p>
+<p><img src="./images/rdb-1.png" alt=""></p>
+<ul>
+<li>Image reference: <a href="http://cc.cust.edu.tw/~ccchen/4_2.html">陳建成老師 - 資料庫系統</a></li>
+</ul>
+</li>
+</ul>
+<p>而現今主流的資料庫類型為：</p>
+<ol>
+<li><a href="https://zh.wikipedia.org/zh-tw/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93">關聯式資料庫(Relational Database Management System, RDBMS)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/NoSQL">NoSQL(Not Only SQL)資料庫</a></li>
+</ol>
+<h3 id="關聯式資料庫">關聯式資料庫</h3>
+<ul>
+<li>SQLite</li>
+<li>MySQL
+<ul>
+<li>MariaDB (MySQL的代替品)</li>
+</ul>
+</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Server</li>
+<li>Oracle DB</li>
+<li>IBM DB2</li>
+</ul>
+<h3 id="非關聯式資料庫nosql">非關聯式資料庫(NoSQL)</h3>
+<ul>
+<li>MongoDB</li>
+<li>Redis</li>
+<li>Firebase Realtime Database</li>
+</ul>
+<h4 id="sql與nosql差異">SQL與NoSQL差異</h4>
+<ul>
+<li>SQL: 表格</li>
+<li>NoSQL: JSON</li>
+</ul>
+<h2 id="database-transaction">Database Transaction</h2>
+<p>資料庫事務，包含一組資料庫操作的邏輯單元工作，在事務中包含的資料庫操作是不可分割的整體，這些操作要麼一起做，要麼一起回滾(Roll Back)到執行前的狀態。</p>
+<p>事務的<code>ACID</code>特性:</p>
+<ul>
+<li>
+<p>atomicity(原子性)：<code>事務不可分割，不可約簡</code></p>
+<pre><code>一個事務中的所有操作，或者全部完成，或者全部不完成，不會結束在中間某個環節。事務在執行過程中發生錯誤，會被回滾(Rollback)到事物開始前的狀態，就像這個事務從來沒有執行過一樣。
+</code></pre>
+</li>
+<li>
+<p>consistency(一致性)</p>
+<pre><code>在事務開始之前和事務結束以後，資料庫的完整性沒有被破壞。也就是若這次事務成功，整個資料庫都必須是事務結束後的狀態
+</code></pre>
+</li>
+<li>
+<p>isolation(隔離性)</p>
+<pre><code>資料庫允許多個並發事務同時對其數據進行讀寫和修改的能力，隔離性可以防止多個事務並發執行時由所交叉執行而導致數據的不一致。
+</code></pre>
+<p>事務隔離分為不同等級:</p>
+<ul>
+<li>Read uncommitted</li>
+<li>Read committed</li>
+<li>Repeatable read</li>
+<li>Serializable</li>
+</ul>
+</li>
+<li>
+<p>durability(持續性)</p>
+<pre><code>事務處理結束後，對數據的修改就是永久的，即使系統故障也不會丟失。
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="sql">SQL</h2>
+<ul>
+<li>
+<p>SQL: 標準化程式語言(Structured Query Language)</p>
+<pre><code>是一種資料庫查詢和程式設計語言，用於存取資料以及查詢、更新和管理關聯式資料庫系統
+</code></pre>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial</a></p>
+</li>
+</ul>
+<h3 id="sql語法">SQL語法</h3>
+<p>SQL主要是以關鍵字(keyword)和表格名稱(table)和欄位名稱(column)當作一段完整的語句。</p>
+<p>SQL語法使用分號<code>;</code>當作結尾，英文不分大小寫，單字間使用空白間隔。</p>
+<ul>
+<li>單行註解： <code>--</code></li>
+<li>多行註解： <code>/**/</code></li>
+</ul>
+<h4 id="sql---四種語言">SQL - 四種語言</h4>
+<ol>
+<li>
+<p>DDL(Data Definition Language)：資料定義語言</p>
+<p>能建立或刪除資料庫和表格等用來儲存的單位</p>
+<ul>
+<li>CREATE</li>
+<li>ALTER: 修改資料表結構，新增or刪除欄位</li>
+<li>DROP</li>
+</ul>
+</li>
+<li>
+<p>DML(Data Manipulation Language)：資料操作語言</p>
+<p>用於操縱表格裡資料</p>
+<ul>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+</ul>
+</li>
+<li>
+<p>DQL(Data Query Language)：資料查詢語言</p>
+<p>負責進行資料查詢，不會對資料本身進行修改的語句</p>
+<ul>
+<li>SELECT</li>
+</ul>
+</li>
+<li>
+<p>DCL(Data Control Language)：資料控制語言</p>
+<p>用來控制資料表格、檢視表之存取權限，提供資料庫的安全性</p>
+<ul>
+<li>COMMIT: 完成交易作業</li>
+<li>ROLLBACK: 交易作業異常，將已變動的資料回復到交易開始的狀態</li>
+<li>GRANT: 賦予使用者權限</li>
+<li>REVOKE: 取消使用者的權限</li>
+</ul>
+</li>
+</ol>
+<h3 id="sql-datatype">SQL Datatype</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/zh-tw/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15">微軟-資料類型 (Transact-SQL)</a></li>
+</ul>
+<hr>
+<h2 id="object-relational-mapping-orm">Object Relational Mapping (ORM)</h2>
+<p>Object Relational Mapping (ORM): 物件關聯對映</p>
+<pre><code>將關聯式資料庫映射至物件導向的資料抽象化技術，
+讓程式開發人員可以用操作物件的方式對資料庫進行操作，
+而不是直接使用SQL語法對資料庫進行操作。
+</code></pre>
+<ul>
+<li>
+<p>優點：</p>
+<ul>
+<li>通用性：可以不用管底層的資料庫是使用哪種，僅須使用同一套語法攥寫即可，靈活性與擴展性佳。</li>
+<li>安全性：可以防止SQL injection (SQL注入) 攻擊
+<ul>
+<li>就是駭客在傳輸到網站Server的資料裡直接寫SQL，當我們網站某段SQL直接讀取駭客傳來的資料並執行時，如果傳來的是正常的資料就會沒事，如果傳來的是SQL語句，且包含惡意（如：DELETE）就會讓網站資料被移除。</li>
+</ul>
+</li>
+<li>簡化性：使得我們資料庫結構化，如ORM可以將MySQL轉換成Python工程師可以讀懂的Class，可讀性高。</li>
+</ul>
+</li>
+<li>
+<p>缺點：</p>
+<ul>
+<li>效能：自動化進行關聯式資料庫的Mapping一定需要消耗一定的效能。</li>
+<li>複雜的查詢上ORM仍然力不從心，如：多表聯查、where條件複雜的查詢時。</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/db_basics/" title="Db Basics" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/db_basics/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/gitlab_ci_cd/" title="Gitlab CI/CD"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/common_packages/"
+                    title="Common Packages"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

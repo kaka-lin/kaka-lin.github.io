@@ -5,18 +5,215 @@
     <link>https://kaka-lin.github.io/tags/</link>
     <description>Recent content in Tags on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>https://kaka-lin.github.io/about/</link>
-      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      <title>001 Two Sum</title>
+      <link>https://kaka-lin.github.io/2020/06/001_two_sum/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kaka-lin.github.io/about/</guid>
-      <description>Hi, I&amp;rsquo;m kaka
-This is my about page. 👋</description>
+      <guid>https://kaka-lin.github.io/2020/06/001_two_sum/</guid>
+      <description>1. Two Sum Discription Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].  Solution 1: One-pass Hash Table  Runtime: 36ms (95.</description>
+    </item>
+    
+    <item>
+      <title>002 Add Two Numbers</title>
+      <link>https://kaka-lin.github.io/2020/06/002_add_two_numbers/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/002_add_two_numbers/</guid>
+      <description>002. Add Two Numbers Discription You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example: Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp;gt; 0 -&amp;gt; 8 Explanation: 342 + 465 = 807.</description>
+    </item>
+    
+    <item>
+      <title>007 Reverse Integer</title>
+      <link>https://kaka-lin.github.io/2020/06/007_reverse_integer/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/007_reverse_integer/</guid>
+      <description>7. Reverse Integer Discription Given a 32-bit signed integer, reverse digits of an integer.
+Assume that your function returns 0 when the reversed integer overflows.
+Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  Solution 1: String  Runtime: 40ms (81.25%) Memory Usage: 13.4 MB (12.43%)  class Solution: def reverse(self, x: int) -&amp;gt; int: if x == 0: return 0 str_x = str(x) ans = &#39;&#39; if x &amp;gt; 0: for i in range(len(str_x)-1, -1, -1): ans += str_x[i] else: str_x = str_x[1:] ans += &#39;-&#39; ans += str_x[::-1] # 32bit: [-214748364, 2147483647] ans = int(ans) return 0 if ans &amp;lt; -2147483648 or ans &amp;gt; 2147483647 else ans  Solution 2: Pop and Push Repeatedlly &amp;ldquo;pop&amp;rdquo; the last digit of x and &amp;ldquo;push&amp;rdquo; it to the back of the rev.</description>
+    </item>
+    
+    <item>
+      <title>009 Palindrome Number</title>
+      <link>https://kaka-lin.github.io/2020/06/009_palindrome_number/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/009_palindrome_number/</guid>
+      <description>9. Palindrome Number Discription Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+Coud you solve it without converting the integer to a string?
+Example: Input: 121 Output: true Input: -121 Output: false Explanation: 121- != -121 Input: 10 Output: false  Solution 1: Pop and Push Repeatedlly &amp;ldquo;pop&amp;rdquo; the last digit of x and &amp;ldquo;push&amp;rdquo; it to the back of the rev.</description>
+    </item>
+    
+    <item>
+      <title>01 Google Trends And Python</title>
+      <link>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</guid>
+      <description>Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google</description>
+    </item>
+    
+    <item>
+      <title>01 Python Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/01_python_basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/01_python_basics/</guid>
+      <description>Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C++ Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python</description>
+    </item>
+    
+    <item>
+      <title>013 Roman To Integer</title>
+      <link>https://kaka-lin.github.io/2020/06/013_roman_to_integer/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/013_roman_to_integer/</guid>
+      <description>13. Roman to Integer Discription Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+I 1 V 5 X 10 L 50 C 100 D 500 M 1000 IV 4 IX 9 XL 40 XC 90 CD 400 CM 900  Example: Input: &amp;quot;III&amp;quot; Output: 3 Input: &amp;quot;MCMXCIV&amp;quot; Output: 1994 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.</description>
+    </item>
+    
+    <item>
+      <title>019 Remove Nth Node From End Of List</title>
+      <link>https://kaka-lin.github.io/2020/06/019_remove_nth_node_from_end_of_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/019_remove_nth_node_from_end_of_list/</guid>
+      <description>19. Remove Nth Node From End of List Discription Given a linked list, remove the n-th node from the end of list and return its head.
+Example: Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2. After removing the second node from the end, the linked list becomes 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.  Solution:   Using dummy head to treat special case (like the node we want to delete is the head in the linked list).</description>
+    </item>
+    
+    <item>
+      <title>02 Flow Control</title>
+      <link>https://kaka-lin.github.io/2020/06/02_flow_control/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/02_flow_control/</guid>
+      <description>Flow Control Python if ... else The general syntax for Python&amp;rsquo;s if statement is this: if condition1: # statement1 for True condition1 elif condition2 : # statement2 for True condition2 elif condition3 : # statement3 for True condition3 else: # statements for each condition False score = int(input(&amp;quot;請輸入成績&amp;q</description>
+    </item>
+    
+    <item>
+      <title>02 Google Trends To Google Data Studio</title>
+      <link>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</guid>
+      <description>Google Trends to Google Data Studio Get the result form Google Trends Using gspread transform the data of Google Trends to Google Sheets Import the file of Google Sheets into Google Data Studio Get the result from Goolge Trends import pandas as pd from pytrends.request import TrendReq # Create an instance(實例) of TrendReq pytrend = TrendReq() # Build a</description>
+    </item>
+    
+    <item>
+      <title>021 Merge Two Sorted List</title>
+      <link>https://kaka-lin.github.io/2020/06/021_merge_two_sorted_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/021_merge_two_sorted_list/</guid>
+      <description>21. Merge Two Sorted Lists Discription Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+Example: Input: 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 Output: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 Input: 5, 1-&amp;gt;2-&amp;gt;4 Output: 1-&amp;gt;2-&amp;gt;4-&amp;gt;5  Solution: Recursion  Runtime: 40ms (93.23%) Memory Usage: 13.1MB (83.04%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.</description>
+    </item>
+    
+    <item>
+      <title>024 Swap Nodes In Pairs</title>
+      <link>https://kaka-lin.github.io/2020/06/024_swap_nodes_in_pairs/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/024_swap_nodes_in_pairs/</guid>
+      <description>24. Swap Nodes in Pairs Discription Given a linked list, swap every two adjacent nodes and return its head.
+You may not modify the values in the list&amp;rsquo;s nodes, only nodes itself may be changed.
+Example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3.  Solution: Iteratively  Runtime: 24 ms (90.17%) Memory Usage: 12.8 MB (100%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.</description>
+    </item>
+    
+    <item>
+      <title>027 Remove Element</title>
+      <link>https://kaka-lin.github.io/2020/06/027_remove_element/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/027_remove_element/</guid>
+      <description>27. Remove Element Discription Given an array nums and a value val, remove all instances of that value in-place and return the new length.
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+The order of elements can be changed. It doesn&amp;rsquo;t matter what you leave beyond the new length.
+Example 1: Given nums = [3,2,2,3], val = 3, Your function should return length = 2, with the first two elements of nums being 2.</description>
+    </item>
+    
+    <item>
+      <title>028 Implement StrStr()</title>
+      <link>https://kaka-lin.github.io/2020/06/028_implement_strstr/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/028_implement_strstr/</guid>
+      <description>28. Implement strStr() Discription Implement strStr().
+Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+Example: Input: haystack = &amp;quot;hello&amp;quot;, needle = &amp;quot;ll&amp;quot; Output: 2 Input: haystack = &amp;quot;aaaaa&amp;quot;, needle = &amp;quot;bba&amp;quot; Output: -1  Clarification: What should we return when needle is an empty string? This is a great question to ask during an interview.
+For the purpose of this problem, we will return 0 when needle is an empty string.</description>
+    </item>
+    
+    <item>
+      <title>03 List</title>
+      <link>https://kaka-lin.github.io/2020/06/03_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/03_list/</guid>
+      <description>List 串列 List 用來儲存一連串有順序的資料，如： countries = [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] print(countries) [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] 取得 List 裡有幾個元素: len() length = len(countries) length 3 取得List 裡的元素 list_name[index] countries[0] &#39;Taiwan&#39; 取得最後一個元素 list[-1] print(countries[-1]) America list.index(x[,</description>
+    </item>
+    
+    <item>
+      <title>035 Search Insert Position</title>
+      <link>https://kaka-lin.github.io/2020/06/035_search_insert_position/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/035_search_insert_position/</guid>
+      <description>35. Search Insert Position Discription Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.
+Example: Input: [1,3,5,6], 5 Output: 2 Input: [1,3,5,6], 7 Output: 4  Solution: Array  Runtime: 32 ms (93.73%) Memory Usage: 13.4 MB (98.27%)  class Solution: def searchInsert(self, nums: List[int], target: int) -&amp;gt; int: for i in range(len(nums)): if target == nums[i] or target &amp;lt; nums[i]: return i return len(nums)  Time complexity  O(n)  Space complexity Solution: Binary Search  Runtime: 28 ms (98.</description>
+    </item>
+    
+    <item>
+      <title>04 Dictionary</title>
+      <link>https://kaka-lin.github.io/2020/06/04_dictionary/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/04_dictionary/</guid>
+      <description>Dictionary 字典 在字典裡，皆由key(鍵)和value(值)組成 dict = {key1 : value1, key2 : value2 } kaka = {&#39;firstname&#39;:&#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} print(kaka) {&#39;firstname&#39;: &#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} 取得 Dictionary 裡有幾個元素: len() print(len(kaka)) 3 取得 Dictionay 裡的資料</description>
+    </item>
+    
+    <item>
+      <title>05 Function</title>
+      <link>https://kaka-lin.github.io/2020/06/05_function/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/05_function/</guid>
+      <description>Function 函式 def 函式名稱(參數): 程式碼 def printf(text): print(&amp;quot;[Out]: {}&amp;quot;.format(text)) printf(&#39;Hello world!&#39;) [Out]: Hello world! 閏年 根據維基百科，分辨平閏年的方法為： 公元年份除以4不可整除，為平年。 公元年份除以4可整除</description>
+    </item>
+    
+    <item>
+      <title>053 Maximum Subarray</title>
+      <link>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</guid>
+      <description>53. Maximum Subarray Discription Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Example: Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6.  Solution 1: Divide and Conquer Ref: divide and conquer - maximum subarray
+ Runtime: 124 ms (7.29%) Memory Usage: 13.6 MB (65.85%)  class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: if len(nums) == 1: return nums[0] k = len(nums) // 2 left_sum = self.</description>
+    </item>
+    
+    <item>
+      <title>070 Climbing Stairs</title>
+      <link>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</guid>
+      <description>70. Climbing Stairs Discription You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Note: Given n will be a positive integer.
+Example 1: Input: 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2.</description>
     </item>
     
   </channel>

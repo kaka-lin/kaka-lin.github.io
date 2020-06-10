@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        01 Google Trends And Python - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>01 Google Trends And Python - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="01 Google Trends And Python" />
+<meta property="og:description" content="Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="01 Google Trends And Python">
+<meta itemprop="description" content="Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1054">
+
+
+
+<meta itemprop="keywords" content="Data Science,Google Trends," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="01 Google Trends And Python"/>
+<meta name="twitter:description" content="Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">50</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">55</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/01_google_trends_and_python/"
+    >01 Google Trends And Python</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/data-science/"> Data Science </a>
+  <a class="article-category-link" href="/categories/google-trends/"> Google Trends </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/data-science/"> Data Science </a>
+    <a class="article-tag-link" href="/tags/google-trends/"> Google Trends </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/01_google_trends_and_python/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="get-and-analysis-the-result-of-google-trends-with-python">Get and Analysis the result of Google Trends with Python</h1>
+<p><a href="https://trends.google.com/trends/trendingsearches/daily?geo=US">Google Trends (Google搜尋趨勢)</a>
+是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些<code>關鍵字</code>是熱門的。
+但大規模分析 <code>Google Trends</code> 是很麻煩不切實際的，且有時候連打開網頁都懶，
+那麼我們如何才能有夠有效的使用<code>Google Trends</code>呢？</p>
+<ul>
+<li>
+<p><a href="https://github.com/GeneralMills/pytrends">pytrends</a>:</p>
+<p>Unofficial API for Google Trends</p>
+<pre><code>Allows simple interface for automating downloading of reports from Google Trends. 
+Only good until Google changes their backend again :-P. When that happens feel free to contribute!
+</code></pre>
+<p>這是一個非官方支援的API，允許從<code>Google Trends</code>下載資料（爬蟲）</p>
+</li>
+</ul>
+<h2 id="install-pytrends-package">Install <code>pytrends</code> package</h2>
+<pre><code class="language-python">!pip3 install pytrends
+</code></pre>
+<pre><code>Requirement already satisfied: pytrends in /usr/local/lib/python3.7/site-packages (4.7.3)
+Requirement already satisfied: lxml in /usr/local/lib/python3.7/site-packages (from pytrends) (4.5.1)
+Requirement already satisfied: pandas&gt;=0.25 in /usr/local/lib/python3.7/site-packages (from pytrends) (0.25.3)
+Requirement already satisfied: requests in /usr/local/lib/python3.7/site-packages (from pytrends) (2.22.0)
+Requirement already satisfied: pytz&gt;=2017.2 in /usr/local/lib/python3.7/site-packages (from pandas&gt;=0.25-&gt;pytrends) (2019.3)
+Requirement already satisfied: numpy&gt;=1.13.3 in /usr/local/lib/python3.7/site-packages (from pandas&gt;=0.25-&gt;pytrends) (1.17.4)
+Requirement already satisfied: python-dateutil&gt;=2.6.1 in /usr/local/lib/python3.7/site-packages (from pandas&gt;=0.25-&gt;pytrends) (2.8.1)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.7/site-packages (from requests-&gt;pytrends) (2019.9.11)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.7/site-packages (from requests-&gt;pytrends) (1.25.7)
+Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.7/site-packages (from requests-&gt;pytrends) (3.0.4)
+Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in /usr/local/lib/python3.7/site-packages (from requests-&gt;pytrends) (2.8)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/Cellar/protobuf/3.11.4/libexec/lib/python3.7/site-packages (from python-dateutil&gt;=2.6.1-&gt;pandas&gt;=0.25-&gt;pytrends) (1.14.0)
+</code></pre>
+<h2 id="connect-to-google">Connect to Google</h2>
+<ul>
+<li>
+<p><a href="https://pandas.pydata.org/">Pandas</a>:</p>
+<p>Python Data Analysis Library</p>
+</li>
+</ul>
+<pre><code class="language-python">import pandas as pd
+from pytrends.request import TrendReq
+
+pytrend = TrendReq()
+</code></pre>
+<h2 id="build-payload">Build Payload</h2>
+<p>設定我們想要搜尋的關鍵字、類別、時間區段、地區以及類型</p>
+<pre><code class="language-python">&quot;&quot;&quot;Create the payload for related queries, interest over time anf interest by region&quot;&quot;&quot;
+TrendReq.build_payload(self, kw_list, cat=0, 
+                       timeframe='today 5-y', geo='', gprop='')
+</code></pre>
+<ul>
+<li>Parameters:
+<ul>
+<li>kw_list:
+<ul>
+<li>keywords to get data for</li>
+<li>Up to five terms in a list (最多五個)</li>
+</ul>
+</li>
+<li>timeframe: Date to start from</li>
+<li>cat: Category to narrow resulta</li>
+<li>geo: Two letter country abbreviation</li>
+<li>gprop:  What Google property to filter to</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">kw_list=['tea', 'coffe', 'coke', 'milk', 'water']
+
+# timeframe=today 12-m': one year data
+# geo='US': specifying location with U.S.
+pytrend.build_payload(kw_list, timeframe='today 12-m', geo='TW')
+
+# gprop=yputube: only want to see Youtube search trends
+#pytrend.build_payload(kw_list, timeframe='today 12-m', geo='TW', gprop=youtube)
+
+# cat=71: category
+#pytrend.build_payload(kw_list, timeframe='today 12-m', geo='TW', gprop=youtube, cat=71)
+</code></pre>
+<h2 id="request-data-get-results">Request data (Get results)</h2>
+<ul>
+<li>Interest Over Time</li>
+<li>Historical Hourly Interest</li>
+<li>Interest by REgion</li>
+<li>Related Topics</li>
+<li>Related Queries</li>
+<li>Trending Searches</li>
+<li>Top Charts</li>
+<li>Suggestions</li>
+</ul>
+<h3 id="interest-over-time">Interest Over Time</h3>
+<pre><code class="language-python">&quot;&quot;&quot;Request data from Google's Interest Over Time section and return a dataframe&quot;&quot;&quot;
+TrendReq.interest_over_time(self)
+</code></pre>
+<ul>
+<li>Returns: pandas.Dataframe</li>
+</ul>
+<pre><code class="language-python">interest_over_time_df = pytrend.interest_over_time()
+interest_over_time_df.head()
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<h4 id="plot-the-result">Plot the result</h4>
+<ul>
+<li><a href="https://matplotlib.org/">Matplotlib</a></li>
+<li><a href="https://seaborn.pydata.org/">seaborn</a></li>
+</ul>
+<p>Matplotlib 顯示中文請參考：<a href="https://github.com/kaka-lin/Notes/tree/master/Data_Science/matplotlib/show_chinese">Matplotlib 顯示中文</a></p>
+<pre><code class="language-python">#!pip3 install matplotlib seaborn
+</code></pre>
+<pre><code class="language-python">import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set(color_codes=True)
+plt.style.use('fivethirtyeight')
+
+# 中文
+plt.rcParams['font.sans-serif'] = ['Noto Sans Mono CJK TC', 'sans-serif'] 
+plt.rcParams['axes.unicode_minus'] = False
+
+%matplotlib inline
+</code></pre>
+<h5 id="make-plots-of-dataframe-using-matplotlib">Make plots of <code>DataFrame</code> using <code>Matplotlib</code></h5>
+<ul>
+<li>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.line.html">plot lines</a>:</p>
+<pre><code class="language-python">DataFrame.plot.line(self, x=None, y=None, **kwargs)
+</code></pre>
+</li>
+</ul>
+<pre><code class="language-python">axes = interest_over_time_df.plot.line(
+    figsize=(15,7),
+    title='Interest Over Time')
+axes.set_xlabel('Date')
+axes.set_ylabel('Trends Index')
+axes.tick_params(axis='both', which='major', labelsize=13)
+</code></pre>
+<p><img src="01_google_trends_and_python_files/01_google_trends_and_python_14_0.png" alt="png"></p>
+<h3 id="google-keyword-suggestions">Google Keyword Suggestions</h3>
+<p>Return a list of additional suggested keywords that can be used to refine a trend search.</p>
+<pre><code class="language-python">&quot;&quot;&quot;Request data from Google's Keyword Suggestions dropdown and return a dictionary&quot;&quot;&quot;
+TrendReq.suggestions(self, keyword)
+</code></pre>
+<ul>
+<li>Parameters:
+<ul>
+<li><code>keyword</code>:
+<ul>
+<li>keyword to get suggestions for</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">keywords = pytrend.suggestions(keyword='beer')
+keywords_df = pd.DataFrame(keywords)
+keywords_df.drop(columns='mid') # This column makes no sense
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<h3 id="related-queries">Related Queries</h3>
+<p>當使用者搜尋某個主題時，他們也會搜尋相關的內容</p>
+<p>Return data for the related keywords to a provided keyword shown on Google Trends&rsquo; Related Queries section.</p>
+<pre><code class="language-python">&quot;&quot;&quot;Request data from Google's Related Queries section and reutrn a dictionary of dataframe
+
+If not top and/or rising related queries are found, 
+the value for the key &quot;top&quot; and/or &quot;rising&quot; will be None
+&quot;&quot;&quot;
+TrendReq.related_queries(self)
+</code></pre>
+<ul>
+<li>Returns: dictionary of pandas.DataFrames</li>
+</ul>
+<pre><code class="language-python">pytrend.build_payload(kw_list=['Coronavirus'])
+</code></pre>
+<pre><code class="language-python"># Related Queries, return a dictionary of dataframe
+related_queries = pytrend.related_queries()
+related_queries
+</code></pre>
+<pre><code>{'Coronavirus': {'top':                             query  value
+  0              taiwan coronavirus    100
+  1                          taiwan     94
+  2              coronavirus update     64
+  3               coronavirus cases     52
+  4                  coronavirus 中文     37
+  5   thank you coronavirus helpers     33
+  6                coronavirus news     31
+  7                          corona     28
+  8                  coronavirus us     27
+  9                 coronavirus map     26
+  10                          武漢 肺炎     26
+  11              china coronavirus     24
+  12               coronavirus tips     21
+  13              world coronavirus     20
+  14               coronavirus live     17
+  15                coronavirus usa     17
+  16                             疫情     15
+  17                new coronavirus     15
+  18          coronavirus in taiwan     14
+  19              wuhan coronavirus     14
+  20        coronavirus worldometer     13
+  21       taiwan coronavirus cases     13
+  22              italy coronavirus     13
+  23           coronavirus symptoms     13
+  24                   corona virus     13,
+  'rising':                             query   value
+  0              taiwan coronavirus  806850
+  1                          taiwan  760150
+  2              coronavirus update  520350
+  3               coronavirus cases  421850
+  4   thank you coronavirus helpers  264250
+  5                  coronavirus us  217300
+  6                 coronavirus map  210350
+  7                           武漢 肺炎  207400
+  8               china coronavirus  190500
+  9                coronavirus tips  167400
+  10              world coronavirus  161150
+  11                coronavirus usa  135500
+  12                             疫情  121000
+  13          coronavirus in taiwan  113550
+  14              wuhan coronavirus  111450
+  15        coronavirus worldometer  107600
+  16       taiwan coronavirus cases  105500
+  17              italy coronavirus  104450
+  18              coronavirus italy  100450
+  19        taiwan news coronavirus   96200
+  20                who coronavirus   95600
+  21                          covid   94100
+  22                    taiwan news   91750
+  23                            who   87750
+  24                 coronavirus uk   87600}}
+</code></pre>
+<pre><code class="language-python">COVID_19 = related_queries['Coronavirus']['top']
+COVID_19
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code class="language-python">axes = COVID_19.plot.barh(x='query', y='value', figsize=(10,15))
+</code></pre>
+<p><img src="01_google_trends_and_python_files/01_google_trends_and_python_21_0.png" alt="png"></p>
+<h2 id="the-search-trends-of-covid-19-in-2020">The Search Trends of COVID-19 in 2020</h2>
+<pre><code class="language-python">pytrend.build_payload(kw_list=['Coronavirus'], timeframe='2020-01-01 2020-06-04')
+covid_19_interest_over_time_df = pytrend.interest_over_time()
+covid_19_interest_over_time_df.head()
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code class="language-python">axes = covid_19_interest_over_time_df.plot.line(
+    figsize=(20,5),
+    title='The Search Trends of COVID-19 in 2020')
+axes.set_yticks([0, 25, 50, 75, 100])
+axes.set_xlabel('Date')
+axes.set_ylabel('Trends Index')
+axes.tick_params(axis='both', which='major', labelsize=13)
+</code></pre>
+<p><img src="01_google_trends_and_python_files/01_google_trends_and_python_24_0.png" alt="png"></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" title="01 Google Trends And Python" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/01_python_basics/" title="01 Python Basics"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/"
+                    title="009 Palindrome Number"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        236 Lowest Common Ancestor Of A Binary Tree - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="236. Lowest Common Ancestor of a Binary Tree Discription Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself)." />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>236 Lowest Common Ancestor Of A Binary Tree - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="236 Lowest Common Ancestor Of A Binary Tree" />
+<meta property="og:description" content="236. Lowest Common Ancestor of a Binary Tree Discription Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/236_lowest_common_ancestor_of_a_binary_tree/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="236 Lowest Common Ancestor Of A Binary Tree">
+<meta itemprop="description" content="236. Lowest Common Ancestor of a Binary Tree Discription Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="272">
+
+
+
+<meta itemprop="keywords" content="LeetCode,Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="236 Lowest Common Ancestor Of A Binary Tree"/>
+<meta name="twitter:description" content="236. Lowest Common Ancestor of a Binary Tree Discription Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself)."/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">50</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">55</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/236_lowest_common_ancestor_of_a_binary_tree/"
+    >236 Lowest Common Ancestor Of A Binary Tree</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/236_lowest_common_ancestor_of_a_binary_tree/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/leetcode/"> LeetCode </a>
+    <a class="article-tag-link" href="/tags/python/"> Python </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/236_lowest_common_ancestor_of_a_binary_tree/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="236-lowest-common-ancestor-of-a-binary-tree">236. Lowest Common Ancestor of a Binary Tree</h1>
+<h4 id="discription">Discription</h4>
+<p>Given a binary tree, find the <code>lowest common ancestor (LCA)</code> of two given nodes in the tree.</p>
+<p>According to the <a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor">definition of LCA on Wikipedia</a>: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”</p>
+<p>Given the following binary tree:  root = [3,5,1,6,2,0,8,null,null,7,4]</p>
+<p><img src="imgs/236.png" alt=""></p>
+<h4 id="example1">Example1:</h4>
+<pre><code>Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+Output: 3
+Explanation: The LCA of nodes 5 and 1 is 3.
+</code></pre>
+<h4 id="example2">Example2:</h4>
+<pre><code>Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+Output: 5
+Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
+</code></pre>
+<h4 id="note">Note:</h4>
+<ul>
+<li>All of the nodes&rsquo; values will be unique.</li>
+<li>p and q are different and both values will exist in the binary tree.</li>
+</ul>
+<h2 id="solution-recursive">Solution: Recursive</h2>
+<p>Youtube: <a href="https://www.youtube.com/watch?v=py3R23aAPCA">Lowest Common Ancestor Between 2 Binary Tree Nodes (A Recursive Approach)</a></p>
+<ul>
+<li>Runtime: 72 ms (98.28%)</li>
+<li>Memory Usage: 25.7 MB (42.25%)</li>
+</ul>
+<pre><code class="language-python"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -&gt; 'TreeNode':    
+        if root is None or root == p or root == q:
+            return root
+            
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        
+        if left is None:
+            return right
+        if right is None:
+            return left
+        
+        return root
+</code></pre>
+<h3 id="time-complexity">Time complexity</h3>
+<ul>
+<li>O(n)</li>
+</ul>
+<h3 id="space-complexity">Space complexity</h3>
+<ul>
+<li>O(h), worst case: h = n</li>
+</ul>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/236_lowest_common_ancestor_of_a_binary_tree/" title="236 Lowest Common Ancestor Of A Binary Tree" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/236_lowest_common_ancestor_of_a_binary_tree/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/240_search_a_2d_matrix_ii/" title="240 Search A 2d Matrix Ii"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/"
+                    title="234 Palindrome Linked List"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

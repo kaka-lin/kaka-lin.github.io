@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        01 Python Basics - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C&#43;&#43; Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>01 Python Basics - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="01 Python Basics" />
+<meta property="og:description" content="Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C&#43;&#43; Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/01_python_basics/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="01 Python Basics">
+<meta itemprop="description" content="Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C&#43;&#43; Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="926">
+
+
+
+<meta itemprop="keywords" content="Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="01 Python Basics"/>
+<meta name="twitter:description" content="Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C&#43;&#43; Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">50</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">55</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/01_python_basics/"
+    >01 Python Basics</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/01_python_basics/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/python/"> Python </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/python/"> Python </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/01_python_basics/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="python-basics">Python Basics</h1>
+<h2 id="interactive-shell">Interactive Shell</h2>
+<h3 id="compiled-language-vs-interpreted-language">Compiled language v.s. Interpreted language</h3>
+<ul>
+<li>
+<p>Compiled language (編譯語言)</p>
+<p>Through compiler convert source code into machine code and execute it.</p>
+<ul>
+<li>C/C++</li>
+<li>Go</li>
+<li>Rust</li>
+</ul>
+</li>
+<li>
+<p>Interpreted language (直譯語言)</p>
+<p>Execute the code step-by-step.</p>
+<ul>
+<li>Python</li>
+<li>JavaScript</li>
+<li>Ruby</li>
+<li>PHP</li>
+</ul>
+</li>
+</ul>
+<h3 id="python-interactive-shell">Python Interactive Shell</h3>
+<p>Python is a Interpreted language. It means it excutes the code line by line.</p>
+<p>Python provides a <code>Python Shell (Python Interactive Shell)</code>
+which is used to execute a single Python command and get the result.</p>
+<ol>
+<li>Open terminal</li>
+</ol>
+<pre><code class="language-bash"># or python3
+$ python
+</code></pre>
+<ol start="2">
+<li>Then you will see the figure below</li>
+</ol>
+<p><img src="./images/python_shell.png" alt=""></p>
+<ol start="3">
+<li>Now, you can type a single statement and get the result</li>
+</ol>
+<p><img src="./images/python_shell_2.png" alt=""></p>
+<h2 id="python-comments">Python Comments</h2>
+<p>Comments can be used to explain code, make the code more readable.</p>
+<ul>
+<li><code>#</code>: single line</li>
+<li><code>&quot;&quot;&quot; &quot;&quot;&quot;</code>: multiple lines</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-python"># This is a comment
+print('Hello world')
+
+&quot;&quot;&quot;
+This is a comment 
+written in more than just one line
+&quot;&quot;&quot;
+print('Hello world')
+</code></pre>
+<h2 id="python-expressions-math-operators">Python Expressions: Math Operators</h2>
+<p><img src="images/common_operators.png" alt=""></p>
+<pre><code class="language-python"># Addition: Integer
+2 + 3
+</code></pre>
+<pre><code>5
+</code></pre>
+<pre><code class="language-python"># Addition: Floating point &amp; Floating point -&gt; Floating point
+2.0 + 3.0
+</code></pre>
+<pre><code>5.0
+</code></pre>
+<pre><code class="language-python"># Addition: Floating point &amp; Integet -&gt; Floating point
+2.0 + 3
+</code></pre>
+<pre><code>5.0
+</code></pre>
+<pre><code class="language-python"># Multiplication
+3 * 2
+</code></pre>
+<pre><code>6
+</code></pre>
+<pre><code class="language-python"># Exponent
+2 ** 5
+</code></pre>
+<pre><code>32
+</code></pre>
+<h3 id="exercise">Exercise</h3>
+<pre><code>Suppose you have $100, which you can invets with a 10% return each year.
+After one year, it's 100 x 1.1 = 110 dollars, 
+and after two years it's 100 x 1.1 x 1.1 = 121.
+</code></pre>
+<p>Add code to calculate how much money you end up with after 7 years, and print the result.</p>
+<pre><code class="language-python"># Click below for a solution
+
+return_money = 100 * (1.1 ** 7)
+return_money
+</code></pre>
+<pre><code>194.87171000000012
+</code></pre>
+<h2 id="display-the-output">Display the Output</h2>
+<p>Builtin-in function <code>print()</code> serves as an output statement in Python.</p>
+<pre><code class="language-python"># type 1.
+print(&quot;Hello World!&quot;)
+
+# type 2.
+print(&quot;Hello&quot; + &quot; World1&quot;)
+
+# type 3.
+text = &quot;world!&quot;
+print(&quot;Hello&quot;, text)
+
+# type 4. 
+text = &quot;world!&quot;
+print(&quot;Hello {}&quot;.format(text))
+</code></pre>
+<pre><code>Hello World!
+Hello World1
+Hello world!
+Hello world!
+</code></pre>
+<h2 id="getting-the-users-input">Getting the User&rsquo;s Input</h2>
+<p>The <code>input()</code> function is part of the core library of standard Python distribution.</p>
+<p>It reads the key strokes as a string object which can be referred to by a variable having a suitable name.</p>
+<pre><code class="language-python">_input = input()
+
+print(&quot;input: {}, type: {}&quot;.format(_input, type(_input)))
+</code></pre>
+<pre><code>123
+input: 123, type: &lt;class 'str'&gt;
+</code></pre>
+<pre><code class="language-python">name = input(&quot;Enter your name: &quot;)
+print(&quot;Welcome, {}&quot;.format(name))
+</code></pre>
+<pre><code>Enter your name: kaka
+Welcome, kaka
+</code></pre>
+<h2 id="variables">Variables</h2>
+<p>Variables are containers for storing data values.
+In order to conveniently repeatedly refer to the store value, it is given a suitable name.</p>
+<ul>
+<li>Specific, case-sensitive name</li>
+<li>Call up value through variable name</li>
+</ul>
+<p>A value is bound to a name by the assignment operator <code>=</code></p>
+<h3 id="example">Example</h3>
+<p>Height 1.75m, Weight 68.7kg, Calculate BMI</p>
+<pre><code class="language-python">height = 1.75
+weight = 68.7
+
+bmi = weight / (height ** 2)
+print(&quot;BMI: {}&quot;.format(bmi))
+</code></pre>
+<h2 id="data-types">Data Types</h2>
+<p>Variables can store data of different types, and different types can do different things.</p>
+<p>A <code>data type</code> is a category for values, and every value belongs to exactly one data type.</p>
+<p>Python has the following standard or built-in data types:</p>
+<p><img src="./images/data_type.png" alt=""></p>
+<h3 id="numeric">Numeric</h3>
+<ul>
+<li>Integets (<code>int</code>): 1, 0, 1</li>
+<li>Float (<code>float</code>): -1.25, -0.5, 0.0, 1.25</li>
+<li>Complex (<code>complex</code>): 1j</li>
+</ul>
+<h3 id="boolean">Boolean</h3>
+<p>Data with one of two built-in values <code>True</code> or <code>False</code>.</p>
+<h3 id="sequence">Sequence</h3>
+<ul>
+<li>
+<p>Strings (<code>str</code>):</p>
+<p>String literals in python are surrounded by either single quotation marks, or double quotation marks.</p>
+<p>&lsquo;Hello&rsquo; is the same as &ldquo;Hello&rdquo;.</p>
+<p>Example:</p>
+<pre><code class="language-python">a = 'Hello Wrold!'
+</code></pre>
+</li>
+<li>
+<p><code>list</code>:</p>
+<p>List is a collention which is <code>ordered</code> and <code>changeable</code>.
+Allow duplicate members.</p>
+<p>Example:</p>
+<pre><code class="language-python">a = ['Hello', 'World', '!']
+</code></pre>
+</li>
+<li>
+<p><code>tuple</code>:
+Tuple is a collention which is <code>ordered</code> and <code>unchangeable</code>.
+Allow duplicate members.</p>
+<p>Example:</p>
+<pre><code class="language-python">a = ('Hello', 'World', '!')
+</code></pre>
+</li>
+</ul>
+<h3 id="dictionary">Dictionary</h3>
+<p>Dictionary is a collention which is <code>unordered</code>, <code>changeable</code> and <code>indexed</code>.
+No duplicate members.</p>
+<p>Example:</p>
+<pre><code class="language-python">a = {&quot;name&quot;: &quot;kaka&quot;, &quot;age&quot;: 28}
+</code></pre>
+<h2 id="storing-values-in-variables">Storing Values in Variables</h2>
+<h3 id="assignment">Assignment</h3>
+<p>在程式語言的世界裡，<code>=</code>代表的是指定(assignment)的意思</p>
+<p>例如：<code>x = 7</code> 就是把<code>7這個物件指定給x這個變數</code>，換句話說也就是把<code>x這個變數指向(綁定)7這個物件</code>，如下圖所示：</p>
+<pre><code class="language-python">x = 7
+x
+</code></pre>
+<pre><code>7
+</code></pre>
+<pre><code class="language-python">x = 7
+y = x
+y
+</code></pre>
+<pre><code>7
+</code></pre>
+<pre><code class="language-python">x = 8
+print(&quot;x =&quot;, x, &quot;y =&quot;, y)
+</code></pre>
+<pre><code>x = 8 y = 7
+</code></pre>
+<h3 id="pyhton-assignmes-bindding">Pyhton Assignmes: Bindding</h3>
+<pre><code class="language-python"># Fist, we see an example as below:
+x = [1, 2, 3]
+y = x
+x[1] = 100
+print(&quot;x: &quot;, x)
+print(&quot;y: &quot;, y)
+</code></pre>
+<pre><code>x:  [1, 100, 3]
+y:  [1, 100, 3]
+</code></pre>
+<h4 id="explain">Explain</h4>
+<p>Python的<code>=</code>實際上是 <code>binds an object reference to an object</code></p>
+<p><img src="images/object_references.png" alt="Object reference"></p>
+<pre><code class="language-python">x = [1, 2, 3]
+</code></pre>
+<pre><code class="language-bash">X ----&gt; [1 2 3]
+</code></pre>
+<hr>
+<pre><code class="language-python">y = x
+</code></pre>
+<pre><code class="language-bash">x ---&gt; [1 2 3]
+       ^
+       |
+y ------
+</code></pre>
+<hr>
+<pre><code class="language-python">x[1] = 100
+</code></pre>
+<pre><code class="language-bash">x ---&gt; [100 2 3]
+       ^
+       |
+y ------
+</code></pre>
+<h2 id="your-first-program">Your First Program</h2>
+<ul>
+<li>Referece: <a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
+</ul>
+<pre><code class="language-python"># This program says hello and asks for my name and age.
+print('Hello World!')
+print('What is your name?')
+print('------------------')
+name = input()
+print('It is good to meet you, ' + name)
+print('The length of your name is: ', len(name))
+print('What is your age?')
+age = input()
+print('------------------')
+print('You will be ' + str(int(age) + 1) + ' in a year') 
+</code></pre>
+<pre><code>Hello World!
+What is your name?
+------------------
+kaka
+It is good to meet you, kaka
+The length of your name is:  4
+What is your age?
+28
+------------------
+You will be 29 in a year
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/01_python_basics/" title="01 Python Basics" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/01_python_basics/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/013_roman_to_integer/" title="013 Roman To Integer"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/"
+                    title="01 Google Trends And Python"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

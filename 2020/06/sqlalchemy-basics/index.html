@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        Sqlalchemy Basics - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ &#39;1.3.16&#39; Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql&#43;mysqldb://root:abc123456@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>Sqlalchemy Basics - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Sqlalchemy Basics" />
+<meta property="og:description" content="SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ &#39;1.3.16&#39; Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql&#43;mysqldb://root:abc123456@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/sqlalchemy-basics/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="Sqlalchemy Basics">
+<meta itemprop="description" content="SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ &#39;1.3.16&#39; Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql&#43;mysqldb://root:abc123456@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2241">
+
+
+
+<meta itemprop="keywords" content="Database,SQLAlchemy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sqlalchemy Basics"/>
+<meta name="twitter:description" content="SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ &#39;1.3.16&#39; Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql&#43;mysqldb://root:abc123456@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">50</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">55</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/sqlalchemy-basics/"
+    >Sqlalchemy Basics</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/sqlalchemy-basics/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/database/"> Database </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/database/"> Database </a>
+    <a class="article-tag-link" href="/tags/sqlalchemy/"> SQLAlchemy </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/sqlalchemy-basics/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="sqlalchemy---basics">SQLAlchemy - basics</h1>
+<p><a href="https://www.tutorialspoint.com/sqlalchemy/index.htm">SQLAlchemy - Tutorial</a></p>
+<pre><code class="language-python">import sqlalchemy
+from sqlalchemy import create_engine, Table
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, ForeignKey, Integer, String, Numeric
+from sqlalchemy.orm import sessionmaker
+
+sqlalchemy.__version__
+</code></pre>
+<pre><code>'1.3.16'
+</code></pre>
+<h2 id="connect-database">Connect Database</h2>
+<pre><code class="language-python"># SQLite
+#connect_db = 'sqlite:///test.db'
+# MySQL
+connect_db = 'mysql+mysqldb://root:abc123456@35.201.196.222/kaka_test'
+
+''' create_engine
+
+此時只有建立SQLAlchemy Engine instance(實例)
+此時還沒真正真正連到資料庫
+只有第一個SQL指令被下達時，才會真正連到資料庫
+'''
+engine = create_engine(connect_db, echo=True, encoding=&quot;utf8&quot;)
+</code></pre>
+<pre><code class="language-python">!ls -al
+</code></pre>
+<pre><code>total 80
+drwxr-xr-x   5 kakalin  staff    160 May  8 17:19 [1m[36m.[m[m
+drwxr-xr-x  11 kakalin  staff    352 May  6 15:51 [1m[36m..[m[m
+drwxr-xr-x   3 kakalin  staff     96 May  8 13:56 [1m[36m.ipynb_checkpoints[m[m
+-rw-r--r--   1 kakalin  staff    264 May  8 14:10 README.md
+-rw-r--r--   1 kakalin  staff  33194 May  8 17:19 sqlalchemy-basics.ipynb
+</code></pre>
+<h2 id="create-table-declare-mapping">Create Table: Declare Mapping</h2>
+<p><a href="https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_declaring_mapping.htm">SQLAlchemy ORM - Declaring Mapping</a></p>
+<p>在使用ORM時，我們要先描述資料庫表格，然後定義我們要映射(mapping)到這些表格的類別(classes)</p>
+<h3 id="create-base-class">Create base class</h3>
+<ul>
+<li>我們使用<a href="https://docs.sqlalchemy.org/en/13/orm/extensions/declarative/api.html">declarative_base()</a>來建立一個基礎類別</li>
+</ul>
+<pre><code class="language-python">Base = declarative_base()
+</code></pre>
+<h3 id="defines-a-class-table">Defines a class (table)</h3>
+<p><a href="https://docs.sqlalchemy.org/en/13/core/type_basics.html">Column and Data Types</a></p>
+<pre><code class="language-python">class User(Base):
+    __tablename__ = 'user'
+
+    id = Column(Integer, primary_key=True)
+    firstname = Column(String(255))
+    lastname = Column(String(255))
+    age = Column(Integer)
+    height = Column(Numeric)
+    weight = Column(Numeric)
+    city = Column(String(255))
+
+    def __init__(self, id, firstname, lastname, age, height, weight, city):
+        self.id = id
+        self.firstname = firstname
+        self.lastname = lastname
+        self.age = age
+        self.height = height
+        self.weight = weight
+        self.city = city
+
+    def __repr__(self):
+        return &quot;&lt;User({}, name: {} {}, age: {}, H: {}, W: {}, city: {})&gt;&quot;.format(
+            self.id, self.firstname, self.lastname, 
+            self.age, int(self.height), int(self.weight),
+            self.city) 
+</code></pre>
+<h3 id="create-table">Create Table</h3>
+<pre><code>Each Table object is a member of a larger collection known as MetaData 
+and this object is available using the .metadata attribute of a declarative base class. 
+</code></pre>
+<p>The <code>MetaData.create_all()</code> method is, passing in our Engine as a source of database connectivity.</p>
+<p>For all tables that haven’t been created yet, it issues <code>CREATE TABLE</code> statements to the database.</p>
+<pre><code class="language-python">Base.metadata.create_all(engine)
+</code></pre>
+<pre><code>2020-05-08 17:20:20,005 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-05-08 17:20:20,011 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,051 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-05-08 17:20:20,052 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,189 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-05-08 17:20:20,190 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,281 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-05-08 17:20:20,288 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,354 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-05-08 17:20:20,357 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,397 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-05-08 17:20:20,398 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,437 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-05-08 17:20:20,438 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,578 INFO sqlalchemy.engine.base.Engine DESCRIBE `user`
+2020-05-08 17:20:20,578 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,616 INFO sqlalchemy.engine.base.Engine ROLLBACK
+2020-05-08 17:20:20,661 INFO sqlalchemy.engine.base.Engine 
+CREATE TABLE user (
+    id INTEGER NOT NULL AUTO_INCREMENT, 
+    firstname VARCHAR(255), 
+    lastname VARCHAR(255), 
+    age INTEGER, 
+    height NUMERIC, 
+    weight NUMERIC, 
+    city VARCHAR(255), 
+    PRIMARY KEY (id)
+)
+
+
+2020-05-08 17:20:20,662 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:20,724 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<pre><code class="language-python">!ls -al
+</code></pre>
+<pre><code>total 80
+drwxr-xr-x   5 kakalin  staff    160 May  8 17:19 [1m[36m.[m[m
+drwxr-xr-x  11 kakalin  staff    352 May  6 15:51 [1m[36m..[m[m
+drwxr-xr-x   3 kakalin  staff     96 May  8 13:56 [1m[36m.ipynb_checkpoints[m[m
+-rw-r--r--   1 kakalin  staff    264 May  8 14:10 README.md
+-rw-r--r--   1 kakalin  staff  33194 May  8 17:19 sqlalchemy-basics.ipynb
+</code></pre>
+<h2 id="sqlalchemy-orm---creating-session">SQLAlchemy ORM - Creating Session</h2>
+<pre><code>In order to interact with the database, we need to obtain its handle. 
+A session object is a handle to the database. 
+</code></pre>
+<ul>
+<li>
+<p>Session class is defined using <code>sessionmaker()</code>:</p>
+<p>a configurable session factory method which is bound to the engine object created earlier.</p>
+</li>
+</ul>
+<pre><code class="language-python">Session = sessionmaker(bind=engine)
+session = Session()
+</code></pre>
+<h2 id="crud-for-data">CRUD for Data</h2>
+<h3 id="sqlalchemy-orm---adding-objects-sql-insert-into">SQLAlchemy ORM - Adding Objects: SQL INSERT INTO</h3>
+<p>We have declared a Customer class that has been mapped to the customer&rsquo;s table.</p>
+<p>We have to declare an object of this class and persistently add it to the table by <code>add()</code> method of the session object.</p>
+<pre><code class="language-python">user_1 = User(1, 'kaka', 'Lin', 28, 175, 70, 'Taipei')
+user_2 = User(2, 'kiwi', 'Li', 30, 173, 70, 'Taipei')
+
+session.add_all([
+    user_1,
+    user_2
+])
+</code></pre>
+<p>Note that this <code>transaction</code> is pending until the same is flushed using <code>commit()</code> method.</p>
+<pre><code class="language-python">session.commit()
+</code></pre>
+<pre><code>2020-05-08 17:20:20,988 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-05-08 17:20:20,995 INFO sqlalchemy.engine.base.Engine INSERT INTO user (id, firstname, lastname, age, height, weight, city) VALUES (%s, %s, %s, %s, %s, %s, %s)
+2020-05-08 17:20:21,005 INFO sqlalchemy.engine.base.Engine ((1, 'kaka', 'Lin', 28, 175, 70, 'Taipei'), (2, 'kiwi', 'Li', 30, 173, 70, 'Taipei'))
+2020-05-08 17:20:21,098 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<h3 id="sqlalchemy-orm---using-query-sql-select">SQLAlchemy ORM - Using Query: SQL SELECT</h3>
+<p>All <code>SELECT statements</code> generated by SQLAlchemy ORM are constructed by <code>Query object</code>.</p>
+<pre><code class="language-python">&quot;&quot;&quot;Equivalent
+
+SELECT * FROM user
+&quot;&quot;&quot;
+resutl = session.query(User).all()
+resutl
+</code></pre>
+<pre><code>2020-05-08 17:20:21,217 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-05-08 17:20:21,220 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user
+2020-05-08 17:20:21,223 INFO sqlalchemy.engine.base.Engine ()
+
+
+
+
+
+[&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 70, city: Taipei)&gt;,
+ &lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;]
+</code></pre>
+<h3 id="sqlalchemy-orm---updating-objects-sql-update">SQLAlchemy ORM - Updating Objects: SQL UPDATE</h3>
+<pre><code class="language-python">x = session.query(User).get(1)
+x
+</code></pre>
+<pre><code>&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 70, city: Taipei)&gt;
+</code></pre>
+<pre><code class="language-python">x.weight = 68
+session.commit()
+</code></pre>
+<pre><code>2020-05-08 17:20:21,319 INFO sqlalchemy.engine.base.Engine UPDATE user SET weight=%s WHERE user.id = %s
+2020-05-08 17:20:21,323 INFO sqlalchemy.engine.base.Engine (68, 1)
+2020-05-08 17:20:21,386 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<pre><code class="language-python">session.query(User).all()
+</code></pre>
+<pre><code>2020-05-08 17:20:21,487 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-05-08 17:20:21,495 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user
+2020-05-08 17:20:21,497 INFO sqlalchemy.engine.base.Engine ()
+
+
+
+
+
+[&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;,
+ &lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;]
+</code></pre>
+<h3 id="sqlalchemy-orm---deleting-related-objects-sql-delete">SQLAlchemy ORM - Deleting Related Objects: SQL DELETE</h3>
+<pre><code class="language-python">user_3 = User(3, 'albert', 'Lin', 28, 180, 70, 'Taipei')
+session.add(user_3)
+session.commit()
+</code></pre>
+<pre><code>2020-05-08 17:20:21,561 INFO sqlalchemy.engine.base.Engine INSERT INTO user (id, firstname, lastname, age, height, weight, city) VALUES (%s, %s, %s, %s, %s, %s, %s)
+2020-05-08 17:20:21,568 INFO sqlalchemy.engine.base.Engine (3, 'albert', 'Lin', 28, 180, 70, 'Taipei')
+2020-05-08 17:20:21,624 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<pre><code class="language-python">session.query(User).all()
+</code></pre>
+<pre><code>2020-05-08 17:20:21,740 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-05-08 17:20:21,743 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user
+2020-05-08 17:20:21,748 INFO sqlalchemy.engine.base.Engine ()
+
+
+
+
+
+[&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;,
+ &lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;,
+ &lt;User(3, name: albert Lin, age: 28, H: 180, W: 70, city: Taipei)&gt;]
+</code></pre>
+<pre><code class="language-python">x = session.query(User).get(3)
+session.delete(x)
+session.commit()
+</code></pre>
+<pre><code>2020-05-08 17:20:21,819 INFO sqlalchemy.engine.base.Engine DELETE FROM user WHERE user.id = %s
+2020-05-08 17:20:21,822 INFO sqlalchemy.engine.base.Engine (3,)
+2020-05-08 17:20:21,866 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<pre><code class="language-python">session.query(User).all()
+</code></pre>
+<pre><code>2020-05-08 17:20:21,962 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-05-08 17:20:21,966 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user
+2020-05-08 17:20:21,970 INFO sqlalchemy.engine.base.Engine ()
+
+
+
+
+
+[&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;,
+ &lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;]
+</code></pre>
+<h2 id="sqlalchemy-orm---applying-filter-sql-where">SQLAlchemy ORM - Applying Filter: SQL WHERE</h2>
+<pre><code class="language-python">user_4 = User(4, 'Albert', 'Lin', 28, 160, 70, 'Taipei')
+user_5 = User(5, 'Andy', 'Wei', 24, 175, 72, 'Teipei')
+user_6 = User(6, 'kevin','Wang', 30, 174, 63, 'San Francisco')
+user_7 = User(7, 'kevin', 'Wei', 27, 178, 65, 'Taipei')
+user_8 = User(8, 'David','Kang', 26, 175, 65, 'Washington')
+user_9 = User(9, 'Matt','Wang', 26, 172, 72, 'Taipei')
+user_10 = User(10, 'kaka-ideal', 'Lin', 28, 178, 70, 'Janpan')
+
+session.add_all([
+    user_4,
+    user_5,
+    user_6,
+    user_7,
+    user_8,
+    user_9,
+    user_10,
+])
+session.commit()
+</code></pre>
+<pre><code>2020-05-08 17:20:22,049 INFO sqlalchemy.engine.base.Engine INSERT INTO user (id, firstname, lastname, age, height, weight, city) VALUES (%s, %s, %s, %s, %s, %s, %s)
+2020-05-08 17:20:22,050 INFO sqlalchemy.engine.base.Engine ((4, 'Albert', 'Lin', 28, 160, 70, 'Taipei'), (5, 'Andy', 'Wei', 24, 175, 72, 'Teipei'), (6, 'kevin', 'Wang', 30, 174, 63, 'San Francisco'), (7, 'kevin', 'Wei', 27, 178, 65, 'Taipei'), (8, 'David', 'Kang', 26, 175, 65, 'Washington'), (9, 'Matt', 'Wang', 26, 172, 72, 'Taipei'), (10, 'kaka-ideal', 'Lin', 28, 178, 70, 'Janpan'))
+2020-05-08 17:20:22,095 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<pre><code class="language-python">session.query(User).all()
+</code></pre>
+<pre><code>2020-05-08 17:20:22,182 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-05-08 17:20:22,187 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user
+2020-05-08 17:20:22,188 INFO sqlalchemy.engine.base.Engine ()
+
+
+
+
+
+[&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;,
+ &lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;,
+ &lt;User(4, name: Albert Lin, age: 28, H: 160, W: 70, city: Taipei)&gt;,
+ &lt;User(5, name: Andy Wei, age: 24, H: 175, W: 72, city: Teipei)&gt;,
+ &lt;User(6, name: kevin Wang, age: 30, H: 174, W: 63, city: San Francisco)&gt;,
+ &lt;User(7, name: kevin Wei, age: 27, H: 178, W: 65, city: Taipei)&gt;,
+ &lt;User(8, name: David Kang, age: 26, H: 175, W: 65, city: Washington)&gt;,
+ &lt;User(9, name: Matt Wang, age: 26, H: 172, W: 72, city: Taipei)&gt;,
+ &lt;User(10, name: kaka-ideal Lin, age: 28, H: 178, W: 70, city: Janpan)&gt;]
+</code></pre>
+<pre><code class="language-python">results = session.query(User).filter(User.age == 28)
+
+for row in results:
+    print(row)
+</code></pre>
+<pre><code>2020-05-08 17:20:22,299 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user 
+WHERE user.age = %s
+2020-05-08 17:20:22,316 INFO sqlalchemy.engine.base.Engine (28,)
+&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;
+&lt;User(4, name: Albert Lin, age: 28, H: 160, W: 70, city: Taipei)&gt;
+&lt;User(10, name: kaka-ideal Lin, age: 28, H: 178, W: 70, city: Janpan)&gt;
+</code></pre>
+<h2 id="sqlalchemy-orm---filter-operators">SQLAlchemy ORM - Filter Operators</h2>
+<p><a href="https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_filter_operators.htm">SQLAlchemy ORM - Filter Operators</a></p>
+<h3 id="and">AND</h3>
+<pre><code class="language-python">results = session.query(User).filter(User.age == 28, User.height &gt; 170)
+
+for row in results:
+    print(row)
+</code></pre>
+<pre><code>2020-05-08 17:20:22,411 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user 
+WHERE user.age = %s AND user.height &gt; %s
+2020-05-08 17:20:22,414 INFO sqlalchemy.engine.base.Engine (28, 170)
+&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;
+&lt;User(10, name: kaka-ideal Lin, age: 28, H: 178, W: 70, city: Janpan)&gt;
+</code></pre>
+<h3 id="or">OR</h3>
+<pre><code class="language-python">from sqlalchemy import or_
+
+results = session.query(User).filter(or_(User.age == 28, User.height &gt; 170))
+
+for row in results:
+    print(row)
+</code></pre>
+<pre><code>2020-05-08 17:20:22,485 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user 
+WHERE user.age = %s OR user.height &gt; %s
+2020-05-08 17:20:22,497 INFO sqlalchemy.engine.base.Engine (28, 170)
+&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;
+&lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;
+&lt;User(4, name: Albert Lin, age: 28, H: 160, W: 70, city: Taipei)&gt;
+&lt;User(5, name: Andy Wei, age: 24, H: 175, W: 72, city: Teipei)&gt;
+&lt;User(6, name: kevin Wang, age: 30, H: 174, W: 63, city: San Francisco)&gt;
+&lt;User(7, name: kevin Wei, age: 27, H: 178, W: 65, city: Taipei)&gt;
+&lt;User(8, name: David Kang, age: 26, H: 175, W: 65, city: Washington)&gt;
+&lt;User(9, name: Matt Wang, age: 26, H: 172, W: 72, city: Taipei)&gt;
+&lt;User(10, name: kaka-ideal Lin, age: 28, H: 178, W: 70, city: Janpan)&gt;
+</code></pre>
+<h3 id="in">IN</h3>
+<pre><code class="language-python">results = session.query(User).filter(User.age.in_([28, 26]))
+
+for row in results:
+    print(row)
+</code></pre>
+<pre><code>2020-05-08 17:20:22,578 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user 
+WHERE user.age IN (%s, %s)
+2020-05-08 17:20:22,579 INFO sqlalchemy.engine.base.Engine (28, 26)
+&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;
+&lt;User(4, name: Albert Lin, age: 28, H: 160, W: 70, city: Taipei)&gt;
+&lt;User(8, name: David Kang, age: 26, H: 175, W: 65, city: Washington)&gt;
+&lt;User(9, name: Matt Wang, age: 26, H: 172, W: 72, city: Taipei)&gt;
+&lt;User(10, name: kaka-ideal Lin, age: 28, H: 178, W: 70, city: Janpan)&gt;
+</code></pre>
+<h3 id="like">LIKE</h3>
+<pre><code class="language-python">results = session.query(User).filter(User.city.like('%pei'))
+
+for row in results:
+    print(row)
+</code></pre>
+<pre><code>2020-05-08 17:20:22,641 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.firstname AS user_firstname, user.lastname AS user_lastname, user.age AS user_age, user.height AS user_height, user.weight AS user_weight, user.city AS user_city 
+FROM user 
+WHERE user.city LIKE %s
+2020-05-08 17:20:22,644 INFO sqlalchemy.engine.base.Engine ('%pei',)
+&lt;User(1, name: kaka Lin, age: 28, H: 175, W: 68, city: Taipei)&gt;
+&lt;User(2, name: kiwi Li, age: 30, H: 173, W: 70, city: Taipei)&gt;
+&lt;User(4, name: Albert Lin, age: 28, H: 160, W: 70, city: Taipei)&gt;
+&lt;User(5, name: Andy Wei, age: 24, H: 175, W: 72, city: Teipei)&gt;
+&lt;User(7, name: kevin Wei, age: 27, H: 178, W: 65, city: Taipei)&gt;
+&lt;User(9, name: Matt Wang, age: 26, H: 172, W: 72, city: Taipei)&gt;
+</code></pre>
+<h2 id="sqlalchemy-orm---clossing-session">SQLAlchemy ORM - Clossing Session</h2>
+<p>Closes current session by clearing all items and ending any transaction in progress</p>
+<pre><code class="language-python">session.close()
+</code></pre>
+<pre><code>2020-05-08 17:20:22,729 INFO sqlalchemy.engine.base.Engine ROLLBACK
+</code></pre>
+<h2 id="drop-table">Drop Table</h2>
+<pre><code class="language-python">User.__table__.drop(engine)
+</code></pre>
+<pre><code>2020-05-08 17:20:22,794 INFO sqlalchemy.engine.base.Engine 
+DROP TABLE user
+2020-05-08 17:20:22,795 INFO sqlalchemy.engine.base.Engine ()
+2020-05-08 17:20:22,853 INFO sqlalchemy.engine.base.Engine COMMIT
+</code></pre>
+<h2 id="drop-database">Drop Database</h2>
+<p>If we want to drop DB in SQLite, just delete the file.</p>
+<pre><code class="language-python">!rm -rf test.db
+!ls -al
+</code></pre>
+<pre><code>total 80
+drwxr-xr-x   5 kakalin  staff    160 May  8 17:19 [1m[36m.[m[m
+drwxr-xr-x  11 kakalin  staff    352 May  6 15:51 [1m[36m..[m[m
+drwxr-xr-x   3 kakalin  staff     96 May  8 13:56 [1m[36m.ipynb_checkpoints[m[m
+-rw-r--r--   1 kakalin  staff    264 May  8 14:10 README.md
+-rw-r--r--   1 kakalin  staff  33194 May  8 17:19 sqlalchemy-basics.ipynb
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/sqlalchemy-basics/" title="Sqlalchemy Basics" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/sqlite-basics/" title="Sqlite Basics"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/mysql-basics/"
+                    title="Mysql Basics"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
