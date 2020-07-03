@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kaka-lin.github.io/2020/06/db_basics/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/mysql-basics/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/sqlite-basics/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/matplotlib_chinese_mac/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/matplotlib_chinese_ubuntu/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/2020/06/001_two_sum/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -31,20 +101,6 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/01_python_basics/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kaka-lin.github.io/2020/06/013_roman_to_integer/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -53,20 +109,6 @@
   
   <url>
     <loc>https://kaka-lin.github.io/2020/06/019_remove_nth_node_from_end_of_list/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/02_flow_control/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -101,28 +143,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/06/03_list/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kaka-lin.github.io/2020/06/035_search_insert_position/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/04_dictionary/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/05_function/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -409,6 +430,41 @@
   </url>
   
   <url>
+    <loc>https://kaka-lin.github.io/2020/06/01_python_basics/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/02_flow_control/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/03_list/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/04_dictionary/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/06/05_function/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/categories/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -451,13 +507,6 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/06/db_basics/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kaka-lin.github.io/tags/devops/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -472,7 +521,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</loc>
+    <loc>https://kaka-lin.github.io/tags/dsa/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -480,13 +529,6 @@
   
   <url>
     <loc>https://kaka-lin.github.io/tags/google-trends/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/categories/google-trends/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -535,35 +577,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/06/matplotlib_chinese_mac/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/matplotlib_chinese_ubuntu/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kaka-lin.github.io/tags/mysql/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/mysql-basics/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -598,21 +612,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kaka-lin.github.io/tags/sqlite/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/2020/06/sqlite-basics/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

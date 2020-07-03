@@ -11,7 +11,97 @@
     
     
     <item>
-      <title>001 Two Sum</title>
+      <title>[DB] Database Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/db_basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/db_basics/</guid>
+      <description>Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語</description>
+    </item>
+    
+    <item>
+      <title>[DB] Mysql Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/mysql-basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/mysql-basics/</guid>
+      <description>MySQL - Basics SQL Tutorial MySQL Documentation MySQL - Tutorial Quickstart for Cloud SQL for MySQL Load ipython-sql ipython-sql: 是jupyter notebook的extension，用來擴充jupyter對SQL的支援 其底層是使用</description>
+    </item>
+    
+    <item>
+      <title>[DB] Sqlalchemy Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</guid>
+      <description>SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql+mysqldb://root:&amp;lt;passwd&amp;gt;@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance(</description>
+    </item>
+    
+    <item>
+      <title>[DB] Sqlite Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/sqlite-basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/sqlite-basics/</guid>
+      <description>SQLite - Basics SQL - Tutorial SQL As Understood By SQLite(官網) SQLite - Tutorial Load ipython-sql ipython-sql: 是jupyter notebook的extension，用來擴充jupyter對SQL的支</description>
+    </item>
+    
+    <item>
+      <title>[DevOps] Gitlab CI/CD</title>
+      <link>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</guid>
+      <description>GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your</description>
+    </item>
+    
+    <item>
+      <title>[DS] Google Trends 01: Operate with Python</title>
+      <link>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</guid>
+      <description>Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google</description>
+    </item>
+    
+    <item>
+      <title>[DS] Google Trends 02: Convert to Google Data Studio</title>
+      <link>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</guid>
+      <description>Google Trends to Google Data Studio Get the result form Google Trends Using gspread transform the data of Google Trends to Google Sheets Import the file of Google Sheets into Google Data Studio Get the result from Goolge Trends import pandas as pd from pytrends.request import TrendReq # Create an instance(實例) of TrendReq pytrend = TrendReq() # Build a</description>
+    </item>
+    
+    <item>
+      <title>[DS] Matplotlib show Chinese: Mac</title>
+      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_mac/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_mac/</guid>
+      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體 - source-han-sans 思源黑體 本教學使用此字型 思源宋體 # 查看安裝了哪些字型 # windows請忽略這段 # unix系統可以使用下co</description>
+    </item>
+    
+    <item>
+      <title>[DS] Matplotlib show Chinese: Ubuntu</title>
+      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_ubuntu/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_ubuntu/</guid>
+      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體 - source-han-sans 思源黑體 本教學使用此字型 思源宋體 # 查看安裝了哪些字型 # windows請忽略這段 # unix系統可以使用下co</description>
+    </item>
+    
+    <item>
+      <title>[DS] Matplotlib show Chinese: Windows</title>
+      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</guid>
+      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 # 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 001 Two Sum</title>
       <link>https://kaka-lin.github.io/2020/06/001_two_sum/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -22,7 +112,7 @@ Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 
     </item>
     
     <item>
-      <title>002 Add Two Numbers</title>
+      <title>[LeetCode] 002 Add Two Numbers</title>
       <link>https://kaka-lin.github.io/2020/06/002_add_two_numbers/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -33,7 +123,7 @@ Example: Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output
     </item>
     
     <item>
-      <title>007 Reverse Integer</title>
+      <title>[LeetCode] 007 Reverse Integer</title>
       <link>https://kaka-lin.github.io/2020/06/007_reverse_integer/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -44,7 +134,7 @@ Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  
     </item>
     
     <item>
-      <title>009 Palindrome Number</title>
+      <title>[LeetCode] 009 Palindrome Number</title>
       <link>https://kaka-lin.github.io/2020/06/009_palindrome_number/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -55,25 +145,7 @@ Example: Input: 121 Output: true Input: -121 Output: false Explanation: 121- != 
     </item>
     
     <item>
-      <title>01 Google Trends And Python</title>
-      <link>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</guid>
-      <description>Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google</description>
-    </item>
-    
-    <item>
-      <title>01 Python Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/01_python_basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/01_python_basics/</guid>
-      <description>Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C++ Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python</description>
-    </item>
-    
-    <item>
-      <title>013 Roman To Integer</title>
+      <title>[LeetCode] 013 Roman To Integer</title>
       <link>https://kaka-lin.github.io/2020/06/013_roman_to_integer/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -83,7 +155,7 @@ I 1 V 5 X 10 L 50 C 100 D 500 M 1000 IV 4 IX 9 XL 40 XC 90 CD 400 CM 900  Exampl
     </item>
     
     <item>
-      <title>019 Remove Nth Node From End Of List</title>
+      <title>[LeetCode] 019 Remove Nth Node From End Of List</title>
       <link>https://kaka-lin.github.io/2020/06/019_remove_nth_node_from_end_of_list/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -93,25 +165,7 @@ Example: Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2
     </item>
     
     <item>
-      <title>02 Flow Control</title>
-      <link>https://kaka-lin.github.io/2020/06/02_flow_control/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/02_flow_control/</guid>
-      <description>Flow Control Python if ... else The general syntax for Python&amp;rsquo;s if statement is this: if condition1: # statement1 for True condition1 elif condition2 : # statement2 for True condition2 elif condition3 : # statement3 for True condition3 else: # statements for each condition False score = int(input(&amp;quot;請輸入成績&amp;q</description>
-    </item>
-    
-    <item>
-      <title>02 Google Trends To Google Data Studio</title>
-      <link>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</guid>
-      <description>Google Trends to Google Data Studio Get the result form Google Trends Using gspread transform the data of Google Trends to Google Sheets Import the file of Google Sheets into Google Data Studio Get the result from Goolge Trends import pandas as pd from pytrends.request import TrendReq # Create an instance(實例) of TrendReq pytrend = TrendReq() # Build a</description>
-    </item>
-    
-    <item>
-      <title>021 Merge Two Sorted List</title>
+      <title>[LeetCode] 021 Merge Two Sorted List</title>
       <link>https://kaka-lin.github.io/2020/06/021_merge_two_sorted_list/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -121,7 +175,7 @@ Example: Input: 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 Output: 1-&amp;gt;1
     </item>
     
     <item>
-      <title>024 Swap Nodes In Pairs</title>
+      <title>[LeetCode] 024 Swap Nodes In Pairs</title>
       <link>https://kaka-lin.github.io/2020/06/024_swap_nodes_in_pairs/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -132,7 +186,7 @@ Example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, you should return the list as 2-
     </item>
     
     <item>
-      <title>027 Remove Element</title>
+      <title>[LeetCode] 027 Remove Element</title>
       <link>https://kaka-lin.github.io/2020/06/027_remove_element/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -144,7 +198,7 @@ Example 1: Given nums = [3,2,2,3], val = 3, Your function should return length =
     </item>
     
     <item>
-      <title>028 Implement StrStr()</title>
+      <title>[LeetCode] 028 Implement StrStr()</title>
       <link>https://kaka-lin.github.io/2020/06/028_implement_strstr/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -153,67 +207,6 @@ Example 1: Given nums = [3,2,2,3], val = 3, Your function should return length =
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 Example: Input: haystack = &amp;quot;hello&amp;quot;, needle = &amp;quot;ll&amp;quot; Output: 2 Input: haystack = &amp;quot;aaaaa&amp;quot;, needle = &amp;quot;bba&amp;quot; Output: -1  Clarification: What should we return when needle is an empty string? This is a great question to ask during an interview.
 For the purpose of this problem, we will return 0 when needle is an empty string.</description>
-    </item>
-    
-    <item>
-      <title>03 List</title>
-      <link>https://kaka-lin.github.io/2020/06/03_list/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/03_list/</guid>
-      <description>List 串列 List 用來儲存一連串有順序的資料，如： countries = [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] print(countries) [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] 取得 List 裡有幾個元素: len() length = len(countries) length 3 取得List 裡的元素 list_name[index] countries[0] &#39;Taiwan&#39; 取得最後一個元素 list[-1] print(countries[-1]) America list.index(x[,</description>
-    </item>
-    
-    <item>
-      <title>035 Search Insert Position</title>
-      <link>https://kaka-lin.github.io/2020/06/035_search_insert_position/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/035_search_insert_position/</guid>
-      <description>35. Search Insert Position Discription Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-You may assume no duplicates in the array.
-Example: Input: [1,3,5,6], 5 Output: 2 Input: [1,3,5,6], 7 Output: 4  Solution: Array  Runtime: 32 ms (93.73%) Memory Usage: 13.4 MB (98.27%)  class Solution: def searchInsert(self, nums: List[int], target: int) -&amp;gt; int: for i in range(len(nums)): if target == nums[i] or target &amp;lt; nums[i]: return i return len(nums)  Time complexity  O(n)  Space complexity Solution: Binary Search  Runtime: 28 ms (98.</description>
-    </item>
-    
-    <item>
-      <title>04 Dictionary</title>
-      <link>https://kaka-lin.github.io/2020/06/04_dictionary/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/04_dictionary/</guid>
-      <description>Dictionary 字典 在字典裡，皆由key(鍵)和value(值)組成 dict = {key1 : value1, key2 : value2 } kaka = {&#39;firstname&#39;:&#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} print(kaka) {&#39;firstname&#39;: &#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} 取得 Dictionary 裡有幾個元素: len() print(len(kaka)) 3 取得 Dictionay 裡的資料</description>
-    </item>
-    
-    <item>
-      <title>05 Function</title>
-      <link>https://kaka-lin.github.io/2020/06/05_function/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/05_function/</guid>
-      <description>Function 函式 def 函式名稱(參數): 程式碼 def printf(text): print(&amp;quot;[Out]: {}&amp;quot;.format(text)) printf(&#39;Hello world!&#39;) [Out]: Hello world! 閏年 根據維基百科，分辨平閏年的方法為： 公元年份除以4不可整除，為平年。 公元年份除以4可整除</description>
-    </item>
-    
-    <item>
-      <title>053 Maximum Subarray</title>
-      <link>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</guid>
-      <description>53. Maximum Subarray Discription Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
-Example: Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6.  Solution 1: Divide and Conquer Ref: divide and conquer - maximum subarray
- Runtime: 124 ms (7.29%) Memory Usage: 13.6 MB (65.85%)  class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: if len(nums) == 1: return nums[0] k = len(nums) // 2 left_sum = self.</description>
-    </item>
-    
-    <item>
-      <title>070 Climbing Stairs</title>
-      <link>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</guid>
-      <description>70. Climbing Stairs Discription You are climbing a stair case. It takes n steps to reach to the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Note: Given n will be a positive integer.
-Example 1: Input: 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2.</description>
     </item>
     
   </channel>

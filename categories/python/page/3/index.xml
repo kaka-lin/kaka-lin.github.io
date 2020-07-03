@@ -11,7 +11,41 @@
     
     
     <item>
-      <title>236 Lowest Common Ancestor Of A Binary Tree</title>
+      <title>[LeetCode] 217 Contains Duplicate</title>
+      <link>https://kaka-lin.github.io/2020/06/217_contains_duplicate/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/217_contains_duplicate/</guid>
+      <description>217. Contains Duplicate Discription Given an array of integers, find if the array contains any duplicates.
+Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+Example: Input: [1,2,3,1] Output: true Input: [1,2,3,4] Output: false Input: [1,1,1,3,3,4,3,2,4,2] Output: true  Solution 1: Hash Table  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def containsDuplicate(self, nums: List[int]) -&amp;gt; bool: array = set() for num in nums: if num in array: return True array.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 226 Invert Binary Tree</title>
+      <link>https://kaka-lin.github.io/2020/06/226_invert_binary_tree/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/226_invert_binary_tree/</guid>
+      <description>226. Invert Binary Tree Discription Invert a binary tree.
+Example: Input:
+ 4 / \ 2 7 / \ / \ 1 3 6 9  Output:
+ 4 / \ 7 2 / \ / \ 9 6 3 1  Solution 1: Recursion  Runtime: 24 ms (87.55%) Memory Usage: 12.7 MB (100%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 234 Palindrome Linked List</title>
+      <link>https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/</guid>
+      <description>234. Palindrome Linked List Discription Given a singly linked list, determine if it is a palindrome.
+Example: Input: 1-&amp;gt;2 Output: false Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1 Output: true  Follow up: Could you do it in O(n) time and O(1) space?
+Solution:  Find the middle of the linked list. Reverse the second half of the linked list. Compare.   Runtime: 76 ms (84.86%) Memory Usage: 23.6 MB (92.34%)  # Definition for singly-linked list.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 236 Lowest Common Ancestor Of A Binary Tree</title>
       <link>https://kaka-lin.github.io/2020/06/236_lowest_common_ancestor_of_a_binary_tree/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -21,7 +55,7 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
     </item>
     
     <item>
-      <title>240 Search A 2d Matrix Ii</title>
+      <title>[LeetCode] 240 Search A 2d Matrix Ii</title>
       <link>https://kaka-lin.github.io/2020/06/240_search_a_2d_matrix_ii/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -32,7 +66,7 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
     </item>
     
     <item>
-      <title>242 Valid Anagram</title>
+      <title>[LeetCode] 242 Valid Anagram</title>
       <link>https://kaka-lin.github.io/2020/06/242_valid_anagram/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -42,7 +76,7 @@ Example: Input: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;
     </item>
     
     <item>
-      <title>297 Serialize And Deserialize Binar Tree</title>
+      <title>[LeetCode] 297 Serialize And Deserialize Binar Tree</title>
       <link>https://kaka-lin.github.io/2020/06/297_serialize_and_deserialize_binar_tree/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -52,7 +86,7 @@ Design an algorithm to serialize and deserialize a binary tree. There is no rest
     </item>
     
     <item>
-      <title>344 Reverse String</title>
+      <title>[LeetCode] 344 Reverse String</title>
       <link>https://kaka-lin.github.io/2020/06/344_reverse_string/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -64,7 +98,7 @@ Example 1: Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;q
     </item>
     
     <item>
-      <title>371 Sum Of Two Integers</title>
+      <title>[LeetCode] 371 Sum Of Two Integers</title>
       <link>https://kaka-lin.github.io/2020/06/371_sum_of_two_integers/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -73,7 +107,7 @@ Example 1: Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;q
     </item>
     
     <item>
-      <title>394 Decode String</title>
+      <title>[LeetCode] 394 Decode String</title>
       <link>https://kaka-lin.github.io/2020/06/394_decode_string/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -85,7 +119,7 @@ Furthermore, you may assume that the original data does not contain any digits a
     </item>
     
     <item>
-      <title>509 Fibonacci Number</title>
+      <title>[LeetCode] 509 Fibonacci Number</title>
       <link>https://kaka-lin.github.io/2020/06/509_fibonacci_number/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -94,7 +128,7 @@ Furthermore, you may assume that the original data does not contain any digits a
     </item>
     
     <item>
-      <title>542 01 Matrix</title>
+      <title>[LeetCode] 542 01 Matrix</title>
       <link>https://kaka-lin.github.io/2020/06/542_01_matrix/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -105,7 +139,7 @@ Example 1: Input: [[0,0,0], [0,1,0], [0,0,0]] Output: [[0,0,0], [0,1,0], [0,0,0]
     </item>
     
     <item>
-      <title>557 Reverse Words In A String Iii</title>
+      <title>[LeetCode] 557 Reverse Words In A String Iii</title>
       <link>https://kaka-lin.github.io/2020/06/557_reverse_words_in_a_string_iii/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -116,7 +150,7 @@ Solution 1:  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def reverseWo
     </item>
     
     <item>
-      <title>617 Merge Two Binary Trees</title>
+      <title>[LeetCode] 617 Merge Two Binary Trees</title>
       <link>https://kaka-lin.github.io/2020/06/617_merge_two_binary_trees/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -126,7 +160,7 @@ You need to merge them into a new binary tree. The merge rule is that if two nod
     </item>
     
     <item>
-      <title>700 Search In A Binary Search Tree</title>
+      <title>[LeetCode] 700 Search In A Binary Search Tree</title>
       <link>https://kaka-lin.github.io/2020/06/700_search_in_a_binary_search_tree/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -136,7 +170,7 @@ Example: Given the tree: 4 / \ 2 7 / \ 1 3 And the value to search: 2  You shoul
     </item>
     
     <item>
-      <title>733 Flood Fill</title>
+      <title>[LeetCode] 733 Flood Fill</title>
       <link>https://kaka-lin.github.io/2020/06/733_flood_fill/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -147,7 +181,7 @@ To perform a &amp;ldquo;flood fill&amp;rdquo;, consider the starting pixel, plus
     </item>
     
     <item>
-      <title>841 Keys And Rooms</title>
+      <title>[LeetCode] 841 Keys And Rooms</title>
       <link>https://kaka-lin.github.io/2020/06/841_keys_and_rooms/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -157,7 +191,7 @@ Formally, each room i has a list of keys rooms[i], and each key rooms[i][j] is a
     </item>
     
     <item>
-      <title>876 Middle Of The Linked List</title>
+      <title>[LeetCode] 876 Middle Of The Linked List</title>
       <link>https://kaka-lin.github.io/2020/06/876_middle_of_the_linked_list/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -168,7 +202,7 @@ Note:  The number of nodes in the given list will be between 1 and 100.  Example
     </item>
     
     <item>
-      <title>905 Sort Array By Parity</title>
+      <title>[LeetCode] 905 Sort Array By Parity</title>
       <link>https://kaka-lin.github.io/2020/06/905_sort_array_by_parity/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -179,43 +213,13 @@ Example: Input: [3,1,2,4] Output: [2,4,3,1] The outputs [4,2,3,1], [2,4,1,3], an
     </item>
     
     <item>
-      <title>912 Sort An Array</title>
+      <title>[LeetCode] 912 Sort An Array</title>
       <link>https://kaka-lin.github.io/2020/06/912_sort_an_array/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/2020/06/912_sort_an_array/</guid>
       <description>912. Sort an Array  Merge Sort  Discription Given an array of integers nums, sort the array in ascending order.
 Example: Input: nums = [5,2,3,1] Output: [1,2,3,5] Input: nums = [5,1,1,2,0,0] Output: [0,0,1,1,2,5]  Constraints  1 &amp;lt;= nums.length &amp;lt;= 50000 -50000 &amp;lt;= nums[i] &amp;lt;= 50000  Solution 1: Merge Sort (Top-down Approach (Recursion))  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def sortArray(self, nums: List[int]) -&amp;gt; List[int]: if len(nums) &amp;lt;= 1: return nums mid = len(nums) // 2 left = self.</description>
-    </item>
-    
-    <item>
-      <title>938 Range Sum Of Bs</title>
-      <link>https://kaka-lin.github.io/2020/06/938_range_sum_of_bs/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/938_range_sum_of_bs/</guid>
-      <description>938. Range Sum of BST Discription Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive).
-The binary search tree is guaranteed to have unique values.
-Example: Input: root = [10,5,15,3,7,null,18], L = 7, R = 15 Output: 32 Input: root = [10,5,15,3,7,13,18,1,null,6], L = 6, R = 10 Output: 23  Solution: Depth First Search  Runtime: 212 ms (93.</description>
-    </item>
-    
-    <item>
-      <title>Common Packages</title>
-      <link>https://kaka-lin.github.io/2020/06/common_packages/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/common_packages/</guid>
-      <description> title: &amp;ldquo;Common Packages&amp;rdquo; date: 2020-06-10 Install Common Packages After you installed python.
-$ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend # or $ pip install -r requirements.txt  </description>
-    </item>
-    
-    <item>
-      <title>Db Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/db_basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/db_basics/</guid>
-      <description>Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語</description>
     </item>
     
   </channel>

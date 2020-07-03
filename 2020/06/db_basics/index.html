@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Db Basics - Kaka&#39;s Note
+        [DB] Database Basics - Kaka&#39;s Note
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,20 +22,21 @@
     
     <meta name="description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語" />
     <meta name="generator" content="Hugo 0.72.0 with theme pure" />
-    <title>Db Basics - Kaka&#39;s Note</title>
+    <title>[DB] Database Basics - Kaka&#39;s Note</title>
     
     
-    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
     
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="Db Basics" />
+    <meta property="og:title" content="[DB] Database Basics" />
 <meta property="og:description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/2020/06/db_basics/" />
 <meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
-<meta itemprop="name" content="Db Basics">
+<meta itemprop="name" content="[DB] Database Basics">
 <meta itemprop="description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語">
 <meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
@@ -44,7 +45,7 @@
 
 
 <meta itemprop="keywords" content="Database," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Db Basics"/>
+<meta name="twitter:title" content="[DB] Database Basics"/>
 <meta name="twitter:description" content="Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語"/>
 
     <!--[if lte IE 9]>
@@ -55,6 +56,7 @@
         <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
       <![endif]-->
+
   </head>
 
   
@@ -65,7 +67,7 @@
       <div class="navbar-header">
         <div class="profile-block text-center">
           <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
-            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka.jpg" width="200" height="200">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka_virtual.jpg" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
@@ -149,7 +151,6 @@
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
@@ -178,12 +179,16 @@
                     class="tag-list-count">1</span></li>
             
             
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/dsa/" class="tag-list-link">dsa</a><span
+                    class="tag-list-count">51</span></li>
+            
+            
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
                     class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
-                    class="tag-list-count">50</span></li>
+                    class="tag-list-count">51</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
@@ -195,7 +200,7 @@
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
-                    class="tag-list-count">55</span></li>
+                    class="tag-list-count">10</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
@@ -217,7 +222,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" class="title">001 Two Sum</a>
+                        <a href="https://kaka-lin.github.io/2020/06/db_basics/" class="title">[DB] Database Basics</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
@@ -227,7 +232,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/06/002_add_two_numbers/" class="title">002 Add Two Numbers</a>
+                        <a href="https://kaka-lin.github.io/2020/06/mysql-basics/" class="title">[DB] Mysql Basics</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
@@ -237,7 +242,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/06/007_reverse_integer/" class="title">007 Reverse Integer</a>
+                        <a href="https://kaka-lin.github.io/2020/06/sqlalchemy-basics/" class="title">[DB] Sqlalchemy Basics</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
@@ -247,7 +252,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/06/009_palindrome_number/" class="title">009 Palindrome Number</a>
+                        <a href="https://kaka-lin.github.io/2020/06/sqlite-basics/" class="title">[DB] Sqlite Basics</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
@@ -257,7 +262,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/06/01_google_trends_and_python/" class="title">01 Google Trends And Python</a>
+                        <a href="https://kaka-lin.github.io/2020/06/gitlab_ci_cd/" class="title">[DevOps] Gitlab CI/CD</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
@@ -286,11 +291,10 @@
     
     <div class="article-header">
       <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/06/db_basics/"
-    >Db Basics</a
-  >
+  <a class="article-title"
+     href="/2020/06/db_basics/">
+     [DB] Database Basics
+  </a>
 </h1>
 
       <div class="article-meta">
@@ -362,7 +366,8 @@
 <li>U: Update</li>
 <li>D: Delete</li>
 </ul>
-<p><img src="./images/crud.png" alt=""></p>
+<p><img src="images/crud.png" alt="">
+<img src="/images/db/crud.png" alt=""></p>
 <h2 id="database-management-system-dbms">Database Management System (DBMS)</h2>
 <p>資料庫是儲存資料的地方，但是如果資料只是儲存到電腦的檔案中，其效用並不大，因此我們需要一套能夠讓我們很方便的管理這些資料庫檔案的軟體，就是所謂的<code>資料庫管理系統(Database Management System, DBMS)</code></p>
 <pre><code>Database System = Database + DBMS
@@ -387,8 +392,10 @@
 <ul>
 <li>優點：可以從一個資料表中的欄位透過資料表的關聯，而找到另一個資料表中的資料</li>
 </ul>
-<p><img src="./images/rdb-0.png" alt=""></p>
-<p><img src="./images/rdb-1.png" alt=""></p>
+<p><img src="./images/rdb-0.png" alt="">
+<img src="/images/db/rdb-0.png" alt=""></p>
+<p><img src="./images/rdb-1.png" alt="">
+<img src="/images/db/rdb-1.png" alt=""></p>
 <ul>
 <li>Image reference: <a href="http://cc.cust.edu.tw/~ccchen/4_2.html">陳建成老師 - 資料庫系統</a></li>
 </ul>
@@ -551,10 +558,10 @@
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://kaka-lin.github.io/2020/06/db_basics/" title="Db Basics" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/db_basics/</a>
+      <a href="https://kaka-lin.github.io/2020/06/db_basics/" title="[DB] Database Basics" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/db_basics/</a>
     </li>
     <li class="post-copyright-license">
-      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+      <strong>License：</strong><a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="external">CC BY 4.0</a>
     </li>
   </ul>
 </blockquote>
@@ -564,7 +571,7 @@
     <figure class="media">
       <div class="media-left">
         <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="https://kaka-lin.github.io/images/kaka.jpg" class="img-rounded w-full" alt="">
+          <img src="https://kaka-lin.github.io/images/kaka_virtual.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -574,6 +581,7 @@
     </figure>
   </div>
 </div>
+
     </div>
   </article>
 <section id="comments">
@@ -583,14 +591,9 @@
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://kaka-lin.github.io/2020/06/gitlab_ci_cd/" title="Gitlab CI/CD"><i
+                <a href="https://kaka-lin.github.io/2020/06/mysql-basics/" title="[DB] Mysql Basics"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://kaka-lin.github.io/2020/06/common_packages/"
-                    title="Common Packages"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">
@@ -608,12 +611,18 @@
     </div>
 </nav>
 
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
+    <li><a href="https://www.facebook.com/profile.php?id=100001656484042" target="_blank" title="facebook" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-facebook"></i></a></li>
     <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/%E5%AE%B6%E8%B1%AA-%E6%9E%97-014a02116/" target="_blank" title="linkedin" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-linkedin"></i></a></li>
 </ul>
   <div class="copyright">
+    Copyright
     &copy;2020  -
     2020
     <div class="publishby">
