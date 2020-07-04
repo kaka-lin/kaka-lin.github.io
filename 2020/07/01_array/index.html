@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        [DSA] NTU CSIE DSA, 01: Array - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>[DSA] NTU CSIE DSA, 01: Array - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="[DSA] NTU CSIE DSA, 01: Array" />
+<meta property="og:description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/07/01_array/" />
+<meta property="article:published_time" content="2020-07-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-04T00:00:00+00:00" />
+<meta itemprop="name" content="[DSA] NTU CSIE DSA, 01: Array">
+<meta itemprop="description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection">
+<meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1093">
+
+
+
+<meta itemprop="keywords" content="Data Structure,DSA," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[DSA] NTU CSIE DSA, 01: Array"/>
+<meta name="twitter:description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka_virtual.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure/" class="category-list-link">data-structure</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">5</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-structure/" class="tag-list-link">data-structure</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/dsa/" class="tag-list-link">dsa</a><span
+                    class="tag-list-count">52</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">51</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">10</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/01_array/" class="title">[DSA] NTU CSIE DSA, 01: Array</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/db_basics/" class="title">[DB] Database Basics</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/mysql-basics/" class="title">[DB] Mysql Basics</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/sqlalchemy-basics/" class="title">[DB] Sqlalchemy Basics</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/06/sqlite-basics/" class="title">[DB] Sqlite Basics</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a class="article-title"
+     href="/2020/07/01_array/">
+     [DSA] NTU CSIE DSA, 01: Array
+  </a>
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/07/01_array/" class="article-date">
+  <time datetime="2020-07-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-04</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/data-structure/"> Data Structure </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/data-structure/"> Data Structure </a>
+    <a class="article-tag-link" href="/tags/dsa/"> DSA </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/01_array/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="array">Array</h1>
+<ul>
+<li><a href="#array">Array</a>
+<ul>
+<li><a href="#what-is-array">What is Array?</a>
+<ul>
+<li><a href="#memory-is-generally-viewed-as-array">Memory is (Generally Viewed as) Array</a></li>
+<li><a href="#array-as-memory-block-in-cc">Array as Memory Block in C/C++</a></li>
+</ul>
+</li>
+<li><a href="#array-as-abstract-data-structure">Array as Abstract Data Structure</a></li>
+<li><a href="#c-stl-vector-a-growing-array">C++ STL Vector: a Growing Array</a></li>
+<li><a href="#two-dimensional-array">Two Dimensional Array</a>
+<ul>
+<li><a href="#one-block-implementation-of-2d-array">One Block Implementation of 2D Array</a></li>
+<li><a href="#array-of-array-implementation-of-2d-array">Array of Array Implementation of 2D Array</a></li>
+<li><a href="#comparison-of-two-implementations">Comparison of Two Implementations</a></li>
+<li><a href="#a-table-between-two-programs">A Table between Two Programs</a></li>
+</ul>
+</li>
+<li><a href="#ordered-array">Ordered Array</a>
+<ul>
+<li><a href="#definition-of-ordered-array">Definition of Ordered Array</a></li>
+<li><a href="#insert-of-ordered-array"><code>insert</code> of Ordered Array</a></li>
+<li><a href="#construct-of-ordered-array"><code>construct</code> of Ordered Array</a>
+<ul>
+<li><a href="#method-1-selection-sort">Method 1: <code>Selection sort</code></a></li>
+<li><a href="#method-2-insertion-sort">Method 2: <code>Insertion sort</code></a></li>
+</ul>
+</li>
+<li><a href="#update-and-remove-of-ordered-array"><code>update</code> and <code>remove</code> of Ordered Array</a></li>
+</ul>
+</li>
+<li><a href="#binary-search-with-ordered-array">Binary Search with Ordered Array</a>
+<ul>
+<li><a href="#application-book-search-within-digital-library">Application: Book Search within (Digital) Library</a>
+<ul>
+<li><a href="#method-1-sequential-search-algorithm">Method 1: <code>Sequential Search Algorithm</code></a></li>
+<li><a href="#method-2-sequential-search-algorithm-with-cut-ordered-array">Method 2: <code>Sequential Search Algorithm with Cut</code> (Ordered Array)</a></li>
+<li><a href="#method-3-binary-search-algorithm-ordered-array">Method 3: <code>Binary Search Algorithm</code> (Ordered Array)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-is-array">What is Array?</h2>
+<pre><code>可以想像成櫃子，櫃子上有某些連續的編號
+</code></pre>
+<p>&ndash;&gt; 有編號的櫃子</p>
+<h3 id="memory-is-generally-viewed-as-array">Memory is (Generally Viewed as) Array</h3>
+<p><code>記憶體就是一個很大的Array</code></p>
+<pre><code>address就是index
+</code></pre>
+<p><img src="images/array_01.png" alt="">
+<img src="/images/dsa/array_01.png" alt=""></p>
+<h3 id="array-as-memory-block-in-cc">Array as Memory Block in C/C++</h3>
+<p><code>反過來說Array也是記憶體</code></p>
+<p><img src="images/array_02.png" alt="">
+<img src="/images/dsa/array_02.png" alt=""></p>
+<ul>
+<li>Note: 一個 Data Structure 看的是如何<code>取用</code>與<code>維護</code></li>
+</ul>
+<h2 id="array-as-abstract-data-structure">Array as Abstract Data Structure</h2>
+<p><img src="images/array_03.png" alt="">
+<img src="/images/dsa/array_03.png" alt=""></p>
+<h2 id="c-stl-vector-a-growing-array">C++ STL Vector: a Growing Array</h2>
+<p>完整的array implementation</p>
+<p><img src="images/array_04.png" alt="">
+<img src="/images/dsa/array_04.png" alt=""></p>
+<h2 id="two-dimensional-array">Two Dimensional Array</h2>
+<p>最熟悉的 <code>Two Dimensional Array</code>: 圖片</p>
+<h3 id="one-block-implementation-of-2d-array">One Block Implementation of 2D Array</h3>
+<p>把2D展開成1D</p>
+<p><img src="images/array_05.png" alt="">
+<img src="/images/dsa/array_05.png" alt=""></p>
+<h3 id="array-of-array-implementation-of-2d-array">Array of Array Implementation of 2D Array</h3>
+<p><img src="images/array_06.png" alt="">
+<img src="/images/dsa/array_06.png" alt=""></p>
+<p>ex: 第一個raw與第二個raw分開放(每個raw有5個element)</p>
+<p><img src="images/array_07.png" alt="">
+<img src="/images/dsa/array_07.png" alt=""></p>
+<h3 id="comparison-of-two-implementations">Comparison of Two Implementations</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>one block</th>
+<th>array of array</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>space</td>
+<td>elements</td>
+<td>elments &amp; nRow pointers</td>
+</tr>
+<tr>
+<td>construct</td>
+<td>fixed</td>
+<td>prop. nRow</td>
+</tr>
+<tr>
+<td>get</td>
+<td>one deref</td>
+<td>two deref</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>tradeoff:
+<ul>
+<li>one block: faster &amp; succinct</li>
+<li>array of array: again easier for programmers</li>
+</ul>
+</li>
+</ul>
+<h3 id="a-table-between-two-programs">A Table between Two Programs</h3>
+<p>以下兩種方式，哪種比較快？</p>
+<p><img src="images/array_08.png" alt="">
+<img src="/images/dsa/array_08.png" alt=""></p>
+<ul>
+<li>
+<p>Ans: <code>rowsum()</code></p>
+<p>因為<code>快取機制</code>，rowsum() 是連續的記憶體，比較吃香</p>
+</li>
+</ul>
+<h2 id="ordered-array">Ordered Array</h2>
+<h3 id="definition-of-ordered-array">Definition of Ordered Array</h3>
+<p>An array of <code>consecutive</code> elements with <code>ordered</code> values.</p>
+<pre><code>arr[0] &lt;= arr[1] &lt;= arr[2] &lt;= ... &lt;= arr[end-1]
+</code></pre>
+<h3 id="insert-of-ordered-array"><code>insert</code> of Ordered Array</h3>
+<p>不能亂插，<code>需考慮值得大小</code></p>
+<ul>
+<li>
+<p>example:</p>
+<pre><code>[2, 6, 7, 13]
+         ^
+         |
+10 -------
+
+Resutl: [2, 6, 7, 10, 13]
+</code></pre>
+</li>
+<li>
+<p>Maintain <code>Ordered Array</code></p>
+<p>以前在維護<code>Array</code>時只需要他的<code>開頭(Head)</code>的位置(因為其他位置都可以從開頭算出來)，現在如果要維護<code>Consecutive Array</code>時需要知道array的<code>尾巴(Tail)</code>，這樣才能知道下次要放新東西時該往哪邊繼續放下去(資料的地方到哪)</p>
+</li>
+</ul>
+<p><img src="images/array_09.png" alt="">
+<img src="/images/dsa/array_09.png" alt=""></p>
+<p>田神: 希望同學有機會想想，修正上面的程式碼～</p>
+<h3 id="construct-of-ordered-array"><code>construct</code> of Ordered Array</h3>
+<p>Example: 1, 3, 7, 4, 6, 5, 2</p>
+<h4 id="method-1-selection-sort">Method 1: <code>Selection sort</code></h4>
+<p>其中一種方法是使用 <code>getMinIndex()</code>幫我們找出一個Array中最小的，每次叫出最小的，放到new array裡或是與原來的交換，依此類推就可以排出ordered array。
+此方法叫做<a href="https://zh.wikipedia.org/zh-tw/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">選擇排序法(selection sort)</a>。</p>
+<pre><code>getMinIndex multiple times (selection sort)
+</code></pre>
+<h4 id="method-2-insertion-sort">Method 2: <code>Insertion sort</code></h4>
+<p>假設array的<code>左邊是排好序</code>的array(一開始就是index 0)， <code>右邊是還沒排好</code>的的array(一開始就是index 1~end)，然後從右邊抽一個數字(右邊array的第一個位置)插到左邊，依此類推就可以排出ordered array。</p>
+<pre><code>insert multiple times (insertion sort)
+</code></pre>
+<h3 id="update-and-remove-of-ordered-array"><code>update</code> and <code>remove</code> of Ordered Array</h3>
+<p><img src="images/array_10.png" alt="">
+<img src="/images/dsa/array_10.png" alt=""></p>
+<h2 id="binary-search-with-ordered-array">Binary Search with Ordered Array</h2>
+<h3 id="application-book-search-within-digital-library">Application: Book Search within (Digital) Library</h3>
+<p>數位圖書館，每一本書前面有索引(book ID number)，在同一個架子上時書會按照ID大小排序(Ordered Array)</p>
+<h4 id="method-1-sequential-search-algorithm">Method 1: <code>Sequential Search Algorithm</code></h4>
+<p>已經知道在某個架子上了，那就從左邊找到右邊</p>
+<pre><code class="language-c">for i from 0 to tail
+    if (arr[i].ID == toFind.ID)
+        return FIND
+end for
+eturn NOTFIND
+</code></pre>
+<p>此方法並沒有用到<code>ordered array</code>的優點，就算架子上的書沒按照順序排也沒差。</p>
+<h4 id="method-2-sequential-search-algorithm-with-cut-ordered-array">Method 2: <code>Sequential Search Algorithm with Cut</code> (Ordered Array)</h4>
+<p>Possibly easier to declare not found</p>
+<pre><code class="language-c">toFind.ID = 5566
+
+for i from 0 to tail
+    if (arr[i].ID == toFind.ID)
+        return FIND
+    if (arr[i].ID &gt; toFind.ID) 
+        return NOTFIND
+end for
+eturn NOTFIND
+</code></pre>
+<h4 id="method-3-binary-search-algorithm-ordered-array">Method 3: <code>Binary Search Algorithm</code> (Ordered Array)</h4>
+<p><img src="images/array_11.png" alt="">
+<img src="/images/dsa/array_11.png" alt=""></p>
+<pre><code class="language-c">begin = 0
+end = tail
+while (begin != end) {
+    mid = (begin + end) / 2
+
+    if (arr[mid] &gt; toFind)
+        end = mid - 1
+    else if (arr[mid] &lt; toFind)
+        begin = mid + 1
+    else if arr[mid] = toFind
+        FIND
+}
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/07/01_array/" title="[DSA] NTU CSIE DSA, 01: Array" target="_blank" rel="external">https://kaka-lin.github.io/2020/07/01_array/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="external">CC BY 4.0</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka_virtual.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/db_basics/" title="[DB] Database Basics"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://www.facebook.com/profile.php?id=100001656484042" target="_blank" title="facebook" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-facebook"></i></a></li>
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/%E5%AE%B6%E8%B1%AA-%E6%9E%97-014a02116/" target="_blank" title="linkedin" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-linkedin"></i></a></li>
+</ul>
+  <div class="copyright">
+    Copyright
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

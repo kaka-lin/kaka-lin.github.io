@@ -5,10 +5,22 @@
     <link>https://kaka-lin.github.io/categories/</link>
     <description>Recent content in Categories on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[LeetCode] 028 Implement StrStr()</title>
+      <link>https://kaka-lin.github.io/2020/06/028_implement_strstr/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/028_implement_strstr/</guid>
+      <description>28. Implement strStr() Discription Implement strStr().
+Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+Example: Input: haystack = &amp;quot;hello&amp;quot;, needle = &amp;quot;ll&amp;quot; Output: 2 Input: haystack = &amp;quot;aaaaa&amp;quot;, needle = &amp;quot;bba&amp;quot; Output: -1  Clarification: What should we return when needle is an empty string? This is a great question to ask during an interview.
+For the purpose of this problem, we will return 0 when needle is an empty string.</description>
+    </item>
     
     <item>
       <title>[LeetCode] 035 Search Insert Position</title>
@@ -216,17 +228,6 @@ A happy number is a number defined by the following process: Starting with any p
 Example: Input: 1-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;6, val = 6 Output: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5  Solution: Using dummy node can convenience to treat the special case, like the val appear at head of list and immediately after it.
 For example:
 Input: 1 -&amp;gt; 1 -&amp;gt; 1 Output: []   Runtime: 72ms (90.70%) Memory Usage: 16.1MB (99.7%)  # Definition for singly-linked list.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 206 Reverse Linked List</title>
-      <link>https://kaka-lin.github.io/2020/06/206_reverse_linked_list/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/206_reverse_linked_list/</guid>
-      <description>206. Reverse Linked List Discription Reverse a singly linked list.
-Example: Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL  Solution: ref: https://www.youtube.com/watch?v=MRe3UsRadKw&amp;amp;t=4s
- Runtime: 32 ms (99.15%) Memory Usage: 18.7 MB (21.78%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def reverseList(self, head: ListNode) -&amp;gt; ListNode: if head is None or head.next is None: return head ptr = self.</description>
     </item>
     
   </channel>

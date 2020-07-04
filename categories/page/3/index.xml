@@ -5,10 +5,21 @@
     <link>https://kaka-lin.github.io/categories/</link>
     <description>Recent content in Categories on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[LeetCode] 206 Reverse Linked List</title>
+      <link>https://kaka-lin.github.io/2020/06/206_reverse_linked_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/206_reverse_linked_list/</guid>
+      <description>206. Reverse Linked List Discription Reverse a singly linked list.
+Example: Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL  Solution: ref: https://www.youtube.com/watch?v=MRe3UsRadKw&amp;amp;t=4s
+ Runtime: 32 ms (99.15%) Memory Usage: 18.7 MB (21.78%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def reverseList(self, head: ListNode) -&amp;gt; ListNode: if head is None or head.next is None: return head ptr = self.</description>
+    </item>
     
     <item>
       <title>[LeetCode] 217 Contains Duplicate</title>
@@ -210,16 +221,6 @@ Note:  The number of nodes in the given list will be between 1 and 100.  Example
       <description>905. Sort Array By Parity Discription Given an array A of non-negative integers, return an array consisting of all the even elements of A, followed by all the odd elements of A.
 You may return any answer array that satisfies this condition.
 Example: Input: [3,1,2,4] Output: [2,4,3,1] The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.  Note:  1 &amp;lt;= A.length &amp;lt;= 5000 0 &amp;lt;= A[i] &amp;lt;= 5000  Solution 1: Two Pass  Runtime: 76 ms (91.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 912 Sort An Array</title>
-      <link>https://kaka-lin.github.io/2020/06/912_sort_an_array/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/912_sort_an_array/</guid>
-      <description>912. Sort an Array  Merge Sort  Discription Given an array of integers nums, sort the array in ascending order.
-Example: Input: nums = [5,2,3,1] Output: [1,2,3,5] Input: nums = [5,1,1,2,0,0] Output: [0,0,1,1,2,5]  Constraints  1 &amp;lt;= nums.length &amp;lt;= 50000 -50000 &amp;lt;= nums[i] &amp;lt;= 50000  Solution 1: Merge Sort (Top-down Approach (Recursion))  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def sortArray(self, nums: List[int]) -&amp;gt; List[int]: if len(nums) &amp;lt;= 1: return nums mid = len(nums) // 2 left = self.</description>
     </item>
     
   </channel>

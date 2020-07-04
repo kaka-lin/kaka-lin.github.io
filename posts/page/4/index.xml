@@ -5,10 +5,20 @@
     <link>https://kaka-lin.github.io/posts/</link>
     <description>Recent content in Posts on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[LeetCode] 912 Sort An Array</title>
+      <link>https://kaka-lin.github.io/2020/06/912_sort_an_array/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/912_sort_an_array/</guid>
+      <description>912. Sort an Array  Merge Sort  Discription Given an array of integers nums, sort the array in ascending order.
+Example: Input: nums = [5,2,3,1] Output: [1,2,3,5] Input: nums = [5,1,1,2,0,0] Output: [0,0,1,1,2,5]  Constraints  1 &amp;lt;= nums.length &amp;lt;= 50000 -50000 &amp;lt;= nums[i] &amp;lt;= 50000  Solution 1: Merge Sort (Top-down Approach (Recursion))  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def sortArray(self, nums: List[int]) -&amp;gt; List[int]: if len(nums) &amp;lt;= 1: return nums mid = len(nums) // 2 left = self.</description>
+    </item>
     
     <item>
       <title>[LeetCode] 938 Range Sum Of Bs</title>
@@ -198,20 +208,8 @@ Table of Contents  CI/CD Tools  GitLab CI/CD    </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Climbing Stairs (Fibonacci sequence) Wiki: Fibonacci_number
-leetcode: Climbing Stairs
-Description You are climbing a stair case. It takes n steps to reach to the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Note: Given n will be a positive integer.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Dynamic Programming (DP) </description>
+      <description>Data Structures and Algorithms, NTU Hsuan-Tien Lin This is my study notes
+ Array  </description>
     </item>
     
   </channel>
