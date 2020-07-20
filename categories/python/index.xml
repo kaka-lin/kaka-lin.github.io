@@ -5,10 +5,82 @@
     <link>https://kaka-lin.github.io/categories/python/</link>
     <description>Recent content in Python on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</title>
+      <link>https://kaka-lin.github.io/2020/07/02_multiprocessing/</link>
+      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/02_multiprocessing/</guid>
+      <description>行程/處理程序(Process) 複習作業系統(Operating System)中的對於行程(Process)的解釋： 行程(Process)是</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 06 Advanced Function</title>
+      <link>https://kaka-lin.github.io/2020/07/06_advanced_function/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/06_advanced_function/</guid>
+      <description>Function as Arguments In Go, function is also a type. So we can pass function as another function&amp;rsquo;s parameters. 當我們將function當成參數使用時，必須在參數列表列出funtion本身的參數type與及其所需的</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch2: Process Management - 01 Python 多執行緒(Multi-Thread)</title>
+      <link>https://kaka-lin.github.io/2020/07/01_multithread/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/01_multithread/</guid>
+      <description>執行緒(Thread) 複習作業系統(Operating System)中的對於執行緒(thread)的解釋： 執行緒(thread)是OS能夠進</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 01 Go Basics</title>
+      <link>https://kaka-lin.github.io/2020/07/01_go_basics/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/01_go_basics/</guid>
+      <description>Packages (套件) 每個 Go Program 都是由套件(packages)組成的 程式運行的入口是: package main package main func main() {} Import import ( &amp;quot;fmt&amp;quot; &amp;quot;math&amp;quot; ) Exported names In Go, a name is exported if it begins with a capital letter. For example, Pi is an exported</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 02 Flow Control</title>
+      <link>https://kaka-lin.github.io/2020/07/02_flow_control-copy/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/02_flow_control-copy/</guid>
+      <description>For Go has only one looping construct, the foor loop for &amp;lt;init state&amp;gt;; &amp;lt;condition&amp;gt;; &amp;lt;post state&amp;gt; sum := 0 for i := 0; i &amp;lt; 10; i++ { sum += i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 03 Go Data Structure: `Structs`</title>
+      <link>https://kaka-lin.github.io/2020/07/03_structs/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/03_structs/</guid>
+      <description>Structs (Structures) A struct or structure is a collection of fields. 1. Defining a struct Using struct keyword to create a new structure type. type StructName struct { field1 fieldType1 field2 fieldType2 ... } Example: type Vertex struct { X int Y int } 2. Accessing Struct Fields (Members) Struct fields are accessed using a dot. v := Vertrx{1, 2} v.X = 4 fmt.Println(v.X) // 4 Pointers to Structs 1.</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 04 Go Data Structure: `Array` &amp; `Slice`</title>
+      <link>https://kaka-lin.github.io/2020/07/04_array_slice/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/04_array_slice/</guid>
+      <description>Array 1. Creating an Array The type [n]T is an array of n values of type T. The expression var a [10]int An array&amp;rsquo;s length is part of its type, so arrays cannot be resized. But Go provides a convenient way of working with array. 2. Array initialize a := [6]int{2, 3, 5, 7, 11, 13} // or a := []int{2, 3, 5, 7, 11, 13} Slices A slice is</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 05 Go Data Structure: `Maps`</title>
+      <link>https://kaka-lin.github.io/2020/07/05_maps/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/05_maps/</guid>
+      <description>Maps A map maps key to value. Golang provides map data structure which implements hashtable. 1. Creating a Maps The zero value of a map is nil. A nil map has no keys, nor can keys be added. Method 1: like array // nil map var m map[keyTpye]valueType Note: 如果使用此方法來create map，還需要</description>
+    </item>
     
     <item>
       <title>[DSA] NTU CSIE DSA, 01: Array</title>
@@ -118,92 +190,6 @@
       <description>1. Two Sum Discription Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].  Solution 1: One-pass Hash Table  Runtime: 36ms (95.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 002 Add Two Numbers</title>
-      <link>https://kaka-lin.github.io/2020/06/002_add_two_numbers/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/002_add_two_numbers/</guid>
-      <description>002. Add Two Numbers Discription You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Example: Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp;gt; 0 -&amp;gt; 8 Explanation: 342 + 465 = 807.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 007 Reverse Integer</title>
-      <link>https://kaka-lin.github.io/2020/06/007_reverse_integer/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/007_reverse_integer/</guid>
-      <description>7. Reverse Integer Discription Given a 32-bit signed integer, reverse digits of an integer.
-Assume that your function returns 0 when the reversed integer overflows.
-Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  Solution 1: String  Runtime: 40ms (81.25%) Memory Usage: 13.4 MB (12.43%)  class Solution: def reverse(self, x: int) -&amp;gt; int: if x == 0: return 0 str_x = str(x) ans = &#39;&#39; if x &amp;gt; 0: for i in range(len(str_x)-1, -1, -1): ans += str_x[i] else: str_x = str_x[1:] ans += &#39;-&#39; ans += str_x[::-1] # 32bit: [-214748364, 2147483647] ans = int(ans) return 0 if ans &amp;lt; -2147483648 or ans &amp;gt; 2147483647 else ans  Solution 2: Pop and Push Repeatedlly &amp;ldquo;pop&amp;rdquo; the last digit of x and &amp;ldquo;push&amp;rdquo; it to the back of the rev.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 009 Palindrome Number</title>
-      <link>https://kaka-lin.github.io/2020/06/009_palindrome_number/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/009_palindrome_number/</guid>
-      <description>9. Palindrome Number Discription Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
-Coud you solve it without converting the integer to a string?
-Example: Input: 121 Output: true Input: -121 Output: false Explanation: 121- != -121 Input: 10 Output: false  Solution 1: Pop and Push Repeatedlly &amp;ldquo;pop&amp;rdquo; the last digit of x and &amp;ldquo;push&amp;rdquo; it to the back of the rev.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 013 Roman To Integer</title>
-      <link>https://kaka-lin.github.io/2020/06/013_roman_to_integer/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/013_roman_to_integer/</guid>
-      <description>13. Roman to Integer Discription Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
-I 1 V 5 X 10 L 50 C 100 D 500 M 1000 IV 4 IX 9 XL 40 XC 90 CD 400 CM 900  Example: Input: &amp;quot;III&amp;quot; Output: 3 Input: &amp;quot;MCMXCIV&amp;quot; Output: 1994 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 019 Remove Nth Node From End Of List</title>
-      <link>https://kaka-lin.github.io/2020/06/019_remove_nth_node_from_end_of_list/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/019_remove_nth_node_from_end_of_list/</guid>
-      <description>19. Remove Nth Node From End of List Discription Given a linked list, remove the n-th node from the end of list and return its head.
-Example: Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2. After removing the second node from the end, the linked list becomes 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.  Solution:   Using dummy head to treat special case (like the node we want to delete is the head in the linked list).</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 021 Merge Two Sorted List</title>
-      <link>https://kaka-lin.github.io/2020/06/021_merge_two_sorted_list/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/021_merge_two_sorted_list/</guid>
-      <description>21. Merge Two Sorted Lists Discription Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
-Example: Input: 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 Output: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 Input: 5, 1-&amp;gt;2-&amp;gt;4 Output: 1-&amp;gt;2-&amp;gt;4-&amp;gt;5  Solution: Recursion  Runtime: 40ms (93.23%) Memory Usage: 13.1MB (83.04%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 024 Swap Nodes In Pairs</title>
-      <link>https://kaka-lin.github.io/2020/06/024_swap_nodes_in_pairs/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/024_swap_nodes_in_pairs/</guid>
-      <description>24. Swap Nodes in Pairs Discription Given a linked list, swap every two adjacent nodes and return its head.
-You may not modify the values in the list&amp;rsquo;s nodes, only nodes itself may be changed.
-Example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3.  Solution: Iteratively  Runtime: 24 ms (90.17%) Memory Usage: 12.8 MB (100%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 027 Remove Element</title>
-      <link>https://kaka-lin.github.io/2020/06/027_remove_element/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/027_remove_element/</guid>
-      <description>27. Remove Element Discription Given an array nums and a value val, remove all instances of that value in-place and return the new length.
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
-The order of elements can be changed. It doesn&amp;rsquo;t matter what you leave beyond the new length.
-Example 1: Given nums = [3,2,2,3], val = 3, Your function should return length = 2, with the first two elements of nums being 2.</description>
     </item>
     
   </channel>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        [Go] Ch1: Go Basics - 02 Flow Control - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="For Go has only one looping construct, the foor loop for &amp;lt;init state&amp;gt;; &amp;lt;condition&amp;gt;; &amp;lt;post state&amp;gt; sum := 0 for i := 0; i &amp;lt; 10; i&#43;&#43; { sum &#43;= i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>[Go] Ch1: Go Basics - 02 Flow Control - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="[Go] Ch1: Go Basics - 02 Flow Control" />
+<meta property="og:description" content="For Go has only one looping construct, the foor loop for &lt;init state&gt;; &lt;condition&gt;; &lt;post state&gt; sum := 0 for i := 0; i &lt; 10; i&#43;&#43; { sum &#43;= i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/07/02_flow_control-copy/" />
+<meta property="article:published_time" content="2020-07-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-11T00:00:00+00:00" />
+<meta itemprop="name" content="[Go] Ch1: Go Basics - 02 Flow Control">
+<meta itemprop="description" content="For Go has only one looping construct, the foor loop for &lt;init state&gt;; &lt;condition&gt;; &lt;post state&gt; sum := 0 for i := 0; i &lt; 10; i&#43;&#43; { sum &#43;= i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上">
+<meta itemprop="datePublished" content="2020-07-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="663">
+
+
+
+<meta itemprop="keywords" content="Go," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Go] Ch1: Go Basics - 02 Flow Control"/>
+<meta name="twitter:description" content="For Go has only one looping construct, the foor loop for &lt;init state&gt;; &lt;condition&gt;; &lt;post state&gt; sum := 0 for i := 0; i &lt; 10; i&#43;&#43; { sum &#43;= i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka_virtual.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure/" class="category-list-link">data-structure</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">11</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-structure/" class="tag-list-link">data-structure</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/dsa/" class="tag-list-link">dsa</a><span
+                    class="tag-list-count">52</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/go/" class="tag-list-link">go</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">51</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/os/" class="tag-list-link">os</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">16</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/02_multiprocessing/" class="title">[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/06_advanced_function/" class="title">[Go] Ch1: Go Basics - 06 Advanced Function</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/01_multithread/" class="title">[Python] Ch2: Process Management - 01 Python 多執行緒(Multi-Thread)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/01_go_basics/" class="title">[Go] Ch1: Go Basics - 01 Go Basics</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/02_flow_control-copy/" class="title">[Go] Ch1: Go Basics - 02 Flow Control</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-11</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a class="article-title"
+     href="/2020/07/02_flow_control-copy/">
+     [Go] Ch1: Go Basics - 02 Flow Control
+  </a>
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/07/02_flow_control-copy/" class="article-date">
+  <time datetime="2020-07-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-11</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/go/"> Go </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/go/"> Go </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/02_flow_control-copy/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="for">For</h2>
+<p>Go has <code>only one looping construct</code>, the <code>foor</code> loop</p>
+<pre><code class="language-go">for &lt;init state&gt;; &lt;condition&gt;; &lt;post state&gt;
+</code></pre>
+<pre><code class="language-go">sum := 0
+for i := 0; i &lt; 10; i++ {
+    sum += i
+} 
+</code></pre>
+<ul>
+<li>Go的for看起來跟C或Java中的依樣，但是沒有 <code>()</code>，但<code>{}</code>是必要的，如上所示。</li>
+</ul>
+<h4 id="note">Note</h4>
+<p><code>For的 init 和 post statements可以為空。</code></p>
+<pre><code class="language-go">sum  :=1 
+for ; sum &lt; 1000; {
+    sum += sum
+} // 1024
+</code></pre>
+<h2 id="while">While</h2>
+<p><code>Go沒有While</code>, 因為可以省略分號(<code>;</code>)，C的while在Go中就是for</p>
+<pre><code class="language-go">sum := 1
+for sum &lt; 1000 {
+    sum += sum // 1024
+}
+</code></pre>
+<h4 id="infinite-loop">Infinite loop</h4>
+<pre><code class="language-go">for {
+    // do something
+}
+</code></pre>
+<h2 id="if">If</h2>
+<p>Go&rsquo;s <code>if</code> statements are like its <code>for</code> loops; the expression need not be surrounded by parentheses <code> ( )</code> but the braces <code>{ }</code> are required.</p>
+<pre><code class="language-go">if &lt;condition&gt; {
+    // do something
+}
+</code></pre>
+<h3 id="if-with-a-short-statement">If with a short statement</h3>
+<p>跟<code>for</code>一樣，<code>if</code>可以在條件之前執行一個簡單的語句，這個語句的作用範圍僅在<code>if</code>的範圍內</p>
+<pre><code class="language-go">func pow(x, n, lim float64) float64 {
+    if v := math.Pow(x, n); v &lt; lim {
+        return v
+    }
+    return lim
+}
+</code></pre>
+<h3 id="if-and-else">If and else</h3>
+<pre><code class="language-go">func pow(x, n, lim float64) float64 {
+    if v := math.Pow(x, n); v &lt; lim {
+        return v
+    } else {
+        fmt.Printf(&quot;%g &gt;= %g\n&quot;, v, lim)
+    }
+    return lim
+}
+</code></pre>
+<h2 id="exercise-loop-and-functions">Exercise: Loop and Functions</h2>
+<h4 id="用牛頓法實現開根號函式">用牛頓法實現開根號函式</h4>
+<ul>
+<li>
+<p>牛頓法:</p>
+<p>選擇一個初始點，然後帶入下面公式重覆計算，來求<code>Sqrt(x)</code>的近似值</p>
+<p>$z = z - ((z^2 - x) / 2z)$</p>
+</li>
+</ul>
+<p>此練習我們宣告一個浮點數<code>1.0</code>當作我們的初始值，並且重覆計算10次，觀察結果是否與<code>math.Sqrt()</code>相近</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;math&quot;
+)
+
+func Sqrt(x float64) float64 {
+	// define init value
+	z := 1.0
+	cal_times := 10
+
+	for cal_times &gt; 0 {
+		z -= (z*z - x) / (2 * x)
+		cal_times -= 1
+	}
+	return z
+}
+
+func main() {
+	fmt.Println(Sqrt(4))
+	fmt.Println(math.Sqrt(4))
+}
+</code></pre>
+<h2 id="switch">Switch</h2>
+<p>Go&rsquo;s <code>switch</code> is like the one in C, C++, Java, Javascript, and PHP.</p>
+<ul>
+<li>Go的<code>switch</code>會自動提供<code>break</code>在每個case的結尾，所以不用自己寫</li>
+<li>Go的<code>swich case不必為常數，且值也不必為整數</code></li>
+</ul>
+<pre><code class="language-go">switch os := runtime.GOOS; os {
+    case &quot;drawin&quot;:
+        fmt.Println(&quot;OS X.&quot;)
+    case &quot;linux&quot;:
+        fmt.Println(&quot;Linux.&quot;)
+    default:
+        fmt.Printf(&quot;%s.\n&quot;, os)
+}
+</code></pre>
+<h2 id="defer">Defer</h2>
+<p>A <code>defer</code> statement defers the execution of a function until the surrounding function returns.</p>
+<pre><code>The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
+</code></pre>
+<pre><code class="language-go">func main() {
+    defer fmt.Println(&quot;world&quot;)
+
+    fmt.Println(&quot;hello&quot;)
+}
+</code></pre>
+<p>[Output]:</p>
+<pre><code>hello
+world
+</code></pre>
+<h3 id="sracking-defers">Sracking defers</h3>
+<p>Deferred function calls are pushed onto a <code>stack</code>.</p>
+<pre><code>When a function returns, its deferred calls are executed in last-in-first-out order.
+</code></pre>
+<pre><code class="language-go">func main() {
+    fmt.Println(&quot;counting&quot;)
+
+    for i := 0; i &lt; 10; i++ {
+        defer fmt.Println(i)
+    }
+
+    fmt.Println(&quot;done&quot;)
+}
+</code></pre>
+<p>[Output]:</p>
+<pre><code>counting
+done
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/07/02_flow_control-copy/" title="[Go] Ch1: Go Basics - 02 Flow Control" target="_blank" rel="external">https://kaka-lin.github.io/2020/07/02_flow_control-copy/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="external">CC BY 4.0</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka_virtual.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/07/03_structs/" title="[Go] Ch1: Go Basics - 03 Go Data Structure: `Structs`"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/07/01_go_basics/"
+                    title="[Go] Ch1: Go Basics - 01 Go Basics"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://www.facebook.com/profile.php?id=100001656484042" target="_blank" title="facebook" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-facebook"></i></a></li>
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/%E5%AE%B6%E8%B1%AA-%E6%9E%97-014a02116/" target="_blank" title="linkedin" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-linkedin"></i></a></li>
+</ul>
+  <div class="copyright">
+    Copyright
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
