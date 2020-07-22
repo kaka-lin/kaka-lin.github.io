@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        [LeetCode] 007 Reverse Integer - Kaka&#39;s Note
+        [LeetCode] 007 Reverse Integer - Kaka&#39;s Blog
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,7 +24,7 @@
 Assume that your function returns 0 when the reversed integer overflows.
 Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  Solution 1: String  Runtime: 40ms (81.25%) Memory Usage: 13.4 MB (12.43%)  class Solution: def reverse(self, x: int) -&amp;gt; int: if x == 0: return 0 str_x = str(x) ans = &#39;&#39; if x &amp;gt; 0: for i in range(len(str_x)-1, -1, -1): ans &#43;= str_x[i] else: str_x = str_x[1:] ans &#43;= &#39;-&#39; ans &#43;= str_x[::-1] # 32bit: [-214748364, 2147483647] ans = int(ans) return 0 if ans &amp;lt; -2147483648 or ans &amp;gt; 2147483647 else ans  Solution 2: Pop and Push Repeatedlly &amp;ldquo;pop&amp;rdquo; the last digit of x and &amp;ldquo;push&amp;rdquo; it to the back of the rev." />
     <meta name="generator" content="Hugo 0.72.0 with theme pure" />
-    <title>[LeetCode] 007 Reverse Integer - Kaka&#39;s Note</title>
+    <title>[LeetCode] 007 Reverse Integer - Kaka&#39;s Blog</title>
     
     
     <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
@@ -459,6 +459,9 @@ and &ldquo;push&rdquo; it to the back of the rev.</p>
     </div>
   </article>
 <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 </section>
 
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
@@ -569,6 +572,18 @@ and &ldquo;push&rdquo; it to the back of the rev.</p>
     });
 </script>
 
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https:\/\/kaka-lin.github.io\/2020\/06\/007_reverse_integer\/';
+        this.page.identifier = 'kaka-blog';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//' + 'kaka-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
 
   </body>
 </html>

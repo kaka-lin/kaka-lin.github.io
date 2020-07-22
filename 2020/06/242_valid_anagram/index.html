@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        [LeetCode] 242 Valid Anagram - Kaka&#39;s Note
+        [LeetCode] 242 Valid Anagram - Kaka&#39;s Blog
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,7 +23,7 @@
     <meta name="description" content="242. Valid Anagram Discription Given two strings s and t , write a function to determine if t is an anagram of s.
 Example: Input: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot; Output: true Input: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot; Output: false  Solution: Hash Table  Runtime: 48 ms (84.31%) Memory Usage: 13.5 MB  class Solution: def isAnagram(self, s: str, t: str) -&amp;gt; bool: if len(s) != len(t): return False length = len(s) table = {} for i in range(length): if s[i] in table: table[s[i]] &#43;= 1 else: table[s[i]] = 1 if t[i] in table: table[t[i]] -= 1 else: table[t[i]] = -1 for key, val in table." />
     <meta name="generator" content="Hugo 0.72.0 with theme pure" />
-    <title>[LeetCode] 242 Valid Anagram - Kaka&#39;s Note</title>
+    <title>[LeetCode] 242 Valid Anagram - Kaka&#39;s Blog</title>
     
     
     <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
@@ -422,6 +422,9 @@ Output: false
     </div>
   </article>
 <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 </section>
 
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
@@ -532,6 +535,18 @@ Output: false
     });
 </script>
 
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https:\/\/kaka-lin.github.io\/2020\/06\/242_valid_anagram\/';
+        this.page.identifier = 'kaka-blog';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//' + 'kaka-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
 
   </body>
 </html>
