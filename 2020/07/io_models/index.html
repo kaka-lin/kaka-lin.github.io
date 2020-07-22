@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        [OS] I/O Models: 同步、非同步、阻塞、非阻塞y - Kaka&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="在開發I/O相關程式時常常會遇到以下這四種名詞: 同步(Synchronous) 非同步(Asynchronous) 阻塞(Blocking) 非阻" />
+    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <title>[OS] I/O Models: 同步、非同步、阻塞、非阻塞y - Kaka&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="[OS] I/O Models: 同步、非同步、阻塞、非阻塞y" />
+<meta property="og:description" content="在開發I/O相關程式時常常會遇到以下這四種名詞: 同步(Synchronous) 非同步(Asynchronous) 阻塞(Blocking) 非阻" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/07/io_models/" />
+<meta property="article:published_time" content="2020-07-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-22T00:00:00+00:00" />
+<meta itemprop="name" content="[OS] I/O Models: 同步、非同步、阻塞、非阻塞y">
+<meta itemprop="description" content="在開發I/O相關程式時常常會遇到以下這四種名詞: 同步(Synchronous) 非同步(Asynchronous) 阻塞(Blocking) 非阻">
+<meta itemprop="datePublished" content="2020-07-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2621">
+
+
+
+<meta itemprop="keywords" content="OS,I/O Models," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[OS] I/O Models: 同步、非同步、阻塞、非阻塞y"/>
+<meta name="twitter:description" content="在開發I/O相關程式時常常會遇到以下這四種名詞: 同步(Synchronous) 非同步(Asynchronous) 阻塞(Blocking) 非阻"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka_virtual.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure/" class="category-list-link">data-structure</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">11</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-structure/" class="tag-list-link">data-structure</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/dsa/" class="tag-list-link">dsa</a><span
+                    class="tag-list-count">52</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/go/" class="tag-list-link">go</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/i/o-models/" class="tag-list-link">i/o-models</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">51</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/os/" class="tag-list-link">os</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">16</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/io_models/" class="title">[OS] I/O Models: 同步、非同步、阻塞、非阻塞y</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/02_multiprocessing/" class="title">[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/06_advanced_function/" class="title">[Go] Ch1: Go Basics - 06 Advanced Function</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/01_multithread/" class="title">[Python] Ch2: Process Management - 01 Python 多執行緒(Multi-Thread)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/01_go_basics/" class="title">[Go] Ch1: Go Basics - 01 Go Basics</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-11</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a class="article-title"
+     href="/2020/07/io_models/">
+     [OS] I/O Models: 同步、非同步、阻塞、非阻塞y
+  </a>
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/07/io_models/" class="article-date">
+  <time datetime="2020-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-22</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/os/"> OS </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/os/"> OS </a>
+    <a class="article-tag-link" href="/tags/i/o-models/"> I/O Models </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/io_models/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>在開發I/O相關程式時常常會遇到以下這四種名詞:</p>
+<ul>
+<li>同步(Synchronous)</li>
+<li>非同步(Asynchronous)</li>
+<li>阻塞(Blocking)</li>
+<li>非阻塞(Non-blocling)</li>
+</ul>
+<p>由於常常會將其搞混，於是參考了經典著作<a href="https://en.wikipedia.org/wiki/UNIX_Network_Programming">UNIX Network Programming</a>與網路上相關文章，整理成以下筆記，以方便自己日後複習。</p>
+<h2 id="名詞解釋">名詞解釋</h2>
+<h3 id="阻塞blocking與非阻塞non-blocking">阻塞(Blocking)與非阻塞(Non-blocking)</h3>
+<p>阻塞與非阻塞關注的是<code>同一個執行緒發出請求(呼叫)時</code>在<code>等待結果時的狀態</code>。</p>
+<ul>
+<li>
+<p>阻塞: 調用方當發出請求後，在獲得結果之前，<code>調用方會懸(Hang)住不動</code>，無法回應，直到獲得結果。</p>
+</li>
+<li>
+<p>非阻塞: 調用方當發出請求後，<code>調用方不會因為等待結果，而懸住不動(Hang住)</code>。但後續通常<code>透過輪詢(Polling)機制取得結果</code>。</p>
+</li>
+</ul>
+<h3 id="同步synchronous與非同步asynchronous">同步(Synchronous)與非同步(Asynchronous)</h3>
+<p>同步與非同步關注的是<code>執行緒之間的通訊模式</code>。例如:使用者執行緒與Kernel之間的通訊模式。</p>
+<ul>
+<li>
+<p>同步: 使用者執行緒發出 I/O 請求後，<code>要等待結果返回</code>。</p>
+<p>其中等待結果返回，有兩種方法:</p>
+<ol>
+<li><code>等待 Kernel 回覆</code>: <code>Blocking I/O</code></li>
+<li>主動去問，<code>輪詢(Pooling)</code>: <code>Non-blocking I/O</code></li>
+</ol>
+<pre><code>執行緒發出請求後，需要等待或是主動詢問結果 -&gt; 同步
+</code></pre>
+</li>
+<li>
+<p>非同步: 或稱<code>異步</code>。使用者執行緒發出 I/O 請求後，<code>不需要等待直接返回，所以沒有返回結果</code>。當Kernel I/O有結果後，<code>會通知使用者執行緒</code>或者呼叫<code>callback函數</code>。</p>
+<pre><code>執行緒發出請求後，就不用管了，另一個執行緒自己會處理，等待處理好之後會通知使用者執行緒 -&gt; 非同步
+</code></pre>
+</li>
+</ul>
+<h3 id="範例">範例</h3>
+<p>當你要訂某家很夯的餐廳時，</p>
+<ul>
+<li>
+<p>阻塞:</p>
+<pre><code>在服務生沒跟你說結果時，你會暫停所有動作(懸住不動)，直到服務生你說有沒有訂位成功。
+</code></pre>
+</li>
+<li>
+<p>非阻塞:</p>
+<pre><code>不管服務生有沒有跟你說，你自己先去做其他事情了，但你會可能半小時check一下結果。
+</code></pre>
+</li>
+<li>
+<p>同步:</p>
+<pre><code>服務生跟你說，稍等一下，&quot;我查一下&quot;，等查好了告訴你結果(返回結果)
+</code></pre>
+</li>
+<li>
+<p>非同步:</p>
+<pre><code>服務生跟你說，&quot;我查好再打電話給你&quot;，然後就掛電話了(直接返回，但沒有結果)。然後查好之後，他就主動打電話通知你(這邊服務生是透過&quot;回電&quot;這種callback方式來處理)。
+</code></pre>
+</li>
+</ul>
+<h2 id="io-models">I/O Models</h2>
+<p>下圖是 I/O Models的四個象限，我們用Linux上的相關API來介紹。</p>
+<p><img src="images/io_models.png" alt="">
+<img src="/images/os/io_models/io_models.png" alt="">
+圖出處: <a href="https://rickhw.github.io/2019/02/27/ComputerScience/IO-Models/">Study Notes - I/O Models</a></p>
+<p>從上圖我們可以得出四種 I/O model:</p>
+<ol>
+<li><code>Blocking I/O (BIO)</code>: Synchronous / Blocking</li>
+<li><code>Non-Blocking I/O (NIO)</code>: Synchronous / Non-Blocking</li>
+<li><code>I/O Multiplexing</code>: Asynchronous / Blocking</li>
+<li><code>Asynchronous I/O (AIO)</code>: Asynchronous / Non-Blocking</li>
+</ol>
+<p>對於一個 Network I/O 而言，基本上會涉及到兩個系統層面的對象：</p>
+<ol>
+<li>呼叫此I/O的Process/Thread</li>
+<li>系統Kernel</li>
+</ol>
+<p>以<code>read()</code>為例：</p>
+<ol>
+<li>等待資料準備好(Waiting for the data to be ready.)</li>
+<li>把資料從Kernel copy到Process/thread中(Copying the data from the kernel to the process.)</li>
+</ol>
+<h3 id="1-blocking-io-bio">1. Blocking I/O (BIO)</h3>
+<pre><code>同步(Synchronous)/阻塞(Blocking)
+</code></pre>
+<p>如下圖所示，<code>Blocking I/O</code>在呼叫<code>read()</code>後，首先使用者執行緒自己被hang住，直到Kernel返回值之後才能繼續下一個動作。</p>
+<p><img src="images/blocking_io.png" alt="">
+<img src="/images/os/io_models/blocking_io.png" alt="">
+圖出處: <a href="https://www.ibm.com/developerworks/cn/linux/l-async/index.html">IBM: Async I/O</a></p>
+<h4 id="blocking-io-特性">Blocking I/O 特性:</h4>
+<ul>
+<li>應用程序不會詢問資料是否準備好了，直到返回結果給應用程式。</li>
+</ul>
+<h3 id="2-non-blocking-io-nio">2. Non-Blocking I/O (NIO)</h3>
+<pre><code>同步(Synchronous)/非阻塞(Non-Blocking)
+</code></pre>
+<p>如下圖所示，<code>Blocking I/O</code>在呼叫<code>read()</code>後，會立即返回<code>EAGIN</code> or <code>EWOULDBLOCK</code>，就不用卡在那邊等待。</p>
+<p>站在使用者執行緒角度來看，當發現回傳的值是error時就知道資料還沒準備好，當kernel準備好資料，且又再次收到使用者call <code>read()</code>時，kernel就可以把資料copy到user process中，然後回傳結果。</p>
+<p>所以其實<code>NIO</code>就是不斷的去問kernel說資料好了沒，基本上就是用一個loop一直去call read()，這其實就是<code>輪詢(polling)</code>。</p>
+<p><code>NIO</code>其實<code>效率很差，很浪費CPU Time</code>，但還算是蠻常見的。</p>
+<p><img src="images/non_blocking_io.png" alt="">
+<img src="/images/os/io_models/non_blocking_io.png" alt="">
+圖出處: <a href="https://www.ibm.com/developerworks/cn/linux/l-async/index.html">IBM: Async I/O</a></p>
+<h4 id="non-blocking-io-特性">Non-Blocking I/O 特性:</h4>
+<ul>
+<li>應用程序會不斷的詢問資料是否準備好了。</li>
+</ul>
+<h3 id="3-io-multiplexing-多工-or-多路複用">3. I/O Multiplexing (多工 or 多路複用)</h3>
+<pre><code>非同步(Asynchronous)/阻塞(Blocking)
+</code></pre>
+<p>所謂的<code>I/O Multiplexing</code>，其實就是<code>select/poll/epoll</code>，有些地方也稱這種I/O方式為<code>event drive I/O</code>。</p>
+<p>如下圖所示，以select為例，當程式呼叫了select時，整個process就會被block，同時kernel會去&quot;監視&quot;所有由select負責的<a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6">檔案描述符</a>(ex: socket)，一但有任一<code>檔案描述符</code>準備好了，select就會立刻return。此時在呼叫read將資料copy至application buffer中。</p>
+<p><img src="images/io_multiplexing.png" alt="">
+<img src="/images/os/io_models/io_multiplexing.png" alt="">
+圖出處: <a href="http://www.cs.toronto.edu/~krueger/csc209h/lectures/Week11-Select-4.pdf">I/O Multiplexing</a></p>
+<h4 id="io-multiplexing-vs-blocking-io">I/O Multiplexing vs Blocking I/O</h4>
+<p>看起來 I/O Multiplexing 好像和 Blocking I/O 沒有太大不同，但事實上還是有差:</p>
+<ol>
+<li>
+<p><code>I/O Multiplexing</code>使用了<code>兩次system call</code> (select/read)，而<code>Blocking I/O只需要一次system call</code> (read)。</p>
+</li>
+<li>
+<p><code>I/O Multiplexing可同時處理多個connection</code>，但<code>Blocking I/O一次只能處理一個</code>。</p>
+</li>
+</ol>
+<p>如果I/O Multiplexing要處理的數量沒有很多的話，效能不一定比Blocking I/O的Multi-Thread好，甚至有可能有比較高的<code>latency</code>。</p>
+<h4 id="io-multiplexing的優勢">I/O Multiplexing的優勢</h4>
+<pre><code>不是對單個連接處理會更快，而是可以在只使用單個process/thread的情況下，監視/處理更多的connection。
+</code></pre>
+<h3 id="4-asynchronous-io">4. Asynchronous I/O</h3>
+<pre><code>非同步(Asynchronous)/非阻塞(Non-Blocking)
+</code></pre>
+<p>如下圖所示:</p>
+<ol>
+<li>應用程式告訴Kernel做一個操作(Operation)，不等Kernel回覆，程序繼續執行(這樣就不會讓user process產生block)。</li>
+<li>Kernel完成整個操作(包含取得資料、複製到Buffer)之後，會向user process發送一個訊號，通知說這個讀取操作已完成，且這個訊號是由<code>aio_read</code>指定的(deliver signal specified in aio_read)。</li>
+</ol>
+<p><img src="images/asynchronous_io.png" alt="">
+<img src="/images/os/io_models/asynchronous_io.png" alt="">
+圖出處: <a href="https://www.ibm.com/developerworks/cn/linux/l-async/index.html">IBM: Async I/O</a></p>
+<h2 id="生活中的io-model">生活中的I/O Model</h2>
+<p>以剛剛的訂某家很夯的餐廳為例，當你打去訂位時，
+<code>Blocking代表你的狀態</code>，<code>Sync代表服務生的處理方式</code>。</p>
+<ul>
+<li>
+<p><code>Blocking I/O (BIO)</code>:</p>
+<ul>
+<li>Blocking: 你只能在電話那頭等待</li>
+<li>Synchronous: 服務生查完之後，跟你說有沒有訂位成功</li>
+</ul>
+</li>
+<li>
+<p><code>Non-Blocking I/O (NIO)</code>:</p>
+<ul>
+<li>Non-Blocking: 你可以繼續做其他事情，如跟朋友聊天</li>
+<li>Synchronous: 但服務生不會主動通知你，你要主動去問有沒有訂位成功</li>
+</ul>
+</li>
+<li>
+<p><code>I/O Multiplexing</code>:</p>
+<ul>
+<li>Blocking: 你不能做其他事情，只能等待</li>
+<li>Asynchronous: 服務生查完會主動打電話通知你</li>
+</ul>
+</li>
+<li>
+<p><code>Asynchronous I/O (AIO)</code>:</p>
+<ul>
+<li>Non-Blocking: 你打完電話就繼續做其他事情</li>
+<li>Asynchronous: 服務生查完會主動打電話通知你</li>
+</ul>
+</li>
+</ul>
+<h2 id="程式範例">程式範例</h2>
+<p>待更新～</p>
+<h1 id="reference">Reference</h1>
+<ol>
+<li>
+<p><a href="https://rickhw.github.io/2019/02/27/ComputerScience/IO-Models/">Study Notes - I/O Models</a></p>
+</li>
+<li>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-async/index.html">IBM: Async I/O</a></p>
+</li>
+</ol>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/07/io_models/" title="[OS] I/O Models: 同步、非同步、阻塞、非阻塞y" target="_blank" rel="external">https://kaka-lin.github.io/2020/07/io_models/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="external">CC BY 4.0</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka_virtual.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/07/02_multiprocessing/" title="[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://www.facebook.com/profile.php?id=100001656484042" target="_blank" title="facebook" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-facebook"></i></a></li>
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/%E5%AE%B6%E8%B1%AA-%E6%9E%97-014a02116/" target="_blank" title="linkedin" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-linkedin"></i></a></li>
+</ul>
+  <div class="copyright">
+    Copyright
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

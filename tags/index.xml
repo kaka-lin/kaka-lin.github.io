@@ -5,10 +5,19 @@
     <link>https://kaka-lin.github.io/tags/</link>
     <description>Recent content in Tags on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[OS] I/O Models: 同步、非同步、阻塞、非阻塞y</title>
+      <link>https://kaka-lin.github.io/2020/07/io_models/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/io_models/</guid>
+      <description>在開發I/O相關程式時常常會遇到以下這四種名詞: 同步(Synchronous) 非同步(Asynchronous) 阻塞(Blocking) 非阻</description>
+    </item>
     
     <item>
       <title>[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</title>
@@ -179,17 +188,6 @@
       
       <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</guid>
       <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 # 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 001 Two Sum</title>
-      <link>https://kaka-lin.github.io/2020/06/001_two_sum/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/001_two_sum/</guid>
-      <description>1. Two Sum Discription Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].  Solution 1: One-pass Hash Table  Runtime: 36ms (95.</description>
     </item>
     
   </channel>

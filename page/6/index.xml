@@ -5,10 +5,19 @@
     <link>https://kaka-lin.github.io/</link>
     <description>Recent content on Kaka&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Tower of Hanoi  Problem: move n disks from A to C Rules:  Move one disk at a time. Cannot place a large dosk onto a smaller disk.    Reference  ADA, NTU CSIE  </description>
+    </item>
     
     <item>
       <title></title>
@@ -34,6 +43,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Python Tutorial Table of Contents 00. Install Python Windows macOS Ubuntu 01. Python Basics 01. Python Basics 02. Flow Control 03. List 04. Dictionary 05. Function 02. Process Management 01. Multithread (多執行緒) 02. Multiprocessing (多程序)</description>
     </item>
     
@@ -47,12 +65,12 @@
   Python
   Go
   Data Structure and Algorithms (DSA)
+  Operate System (OS)
   Database
   DevOps
   Data Science
   Scripts   Convert ipynb to md
-# all `ipynb` files $ python convert_ipynb_to_md.py # the specific `ipynb` file python convert_ipynb_to_md.py --ipynb_file {specific ipynb file}    Adding Front Matter to Markdown file
-# all `md` files except `REAMDE.</description>
+# all `ipynb` files $ python convert_ipynb_to_md.py # the specific `ipynb` file python convert_ipynb_to_md.py --ipynb_file {specific ipynb file}    Adding Front Matter to Markdown file</description>
     </item>
     
   </channel>

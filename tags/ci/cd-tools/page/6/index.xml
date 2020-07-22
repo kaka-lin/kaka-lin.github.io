@@ -15,6 +15,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Tower of Hanoi  Problem: move n disks from A to C Rules:  Move one disk at a time. Cannot place a large dosk onto a smaller disk.    Reference  ADA, NTU CSIE  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Recursion </description>
     </item>
     
@@ -25,6 +34,15 @@
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Go Tutorial  01 Go Basics 02 Flow Control 03 Structs 04 Array &amp;amp; Slices 05 Maps 06 Advanced Function  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞</description>
     </item>
     
     <item>
@@ -46,12 +64,12 @@
   Python
   Go
   Data Structure and Algorithms (DSA)
+  Operate System (OS)
   Database
   DevOps
   Data Science
   Scripts   Convert ipynb to md
-# all `ipynb` files $ python convert_ipynb_to_md.py # the specific `ipynb` file python convert_ipynb_to_md.py --ipynb_file {specific ipynb file}    Adding Front Matter to Markdown file
-# all `md` files except `REAMDE.</description>
+# all `ipynb` files $ python convert_ipynb_to_md.py # the specific `ipynb` file python convert_ipynb_to_md.py --ipynb_file {specific ipynb file}    Adding Front Matter to Markdown file</description>
     </item>
     
   </channel>
