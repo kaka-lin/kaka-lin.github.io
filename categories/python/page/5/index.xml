@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>[Python] Ch0: Install Python: Mac</title>
+      <link>https://kaka-lin.github.io/2020/05/mac/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/05/mac/</guid>
+      <description>1. Install Package Manager   Homebrew
+It is the package manager for macOS. Following the install step on the website to install it.
+  2. Install Python3 2-1. Homebrew $ brew install python  2-2. Miniconda 1. Download installer $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh  2. Install # install miniconda in ~/opt $ mkdir -p ~/opt $ chmod +x Miniconda3-latest-MacOSX-x86_64.sh $ bash Miniconda3-latest-MacOSX-x86_64.sh  3. Activate conda 1. bash  Copy conda initialize in ~/.</description>
+    </item>
+    
+    <item>
       <title>[Python] Ch0: Install Python: Ubuntu</title>
       <link>https://kaka-lin.github.io/2020/05/ubuntu/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
@@ -202,21 +213,6 @@ $$A[i] + A[i+1] + \cdots + A[j]$$
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Quick Sort Quick sort is another classical divide-and-conquer algorithm for sorting. Intuition The quick sort algorithm can be implemented in three steps, namely dividing the problem, solving the subproblems and combing the results of subproblems. In detail, given a list of values to sort, the quick sort algorithm works in following steps: First, it selects a value from the list, which serves as a pivot value to divide the list</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Divide and Conquer Solve a problwm recursively
-Three steps   Divide
-Divide the problem into a number of subproblems that are smaller instances of the same problem.    Conquer
-Conquer the subproblems by solving them recursively.    Base case (Termination condition): Solve the subproblems if the subproblem sizes are small enough.
-  Recursive case: Recursively solve itself.
-    Combine
-Combine the solutions to the subproblems into the solution for the original problem.</description>
     </item>
     
   </channel>

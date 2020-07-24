@@ -5,10 +5,22 @@
     <link>https://kaka-lin.github.io/tags/</link>
     <description>Recent content in Tags on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[LeetCode] 394 Decode String</title>
+      <link>https://kaka-lin.github.io/2020/06/394_decode_string/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/394_decode_string/</guid>
+      <description>394. Decode String Discription Given an encoded string, return its decoded string.
+The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
+You may assume that the input string is always valid; No extra white spaces, square brackets are well-formed, etc.
+Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k.</description>
+    </item>
     
     <item>
       <title>[LeetCode] 509 Fibonacci Number</title>
@@ -198,17 +210,6 @@ I&amp;rsquo;m a software engineer at Inventec focusing primarily on the developm
       <guid>https://kaka-lin.github.io/2020/05/readme/</guid>
       <description>Python Environment Setup Tutorials Medium: Install Python on Windows
  Windows macOS Ubuntu  </description>
-    </item>
-    
-    <item>
-      <title>[Python] Ch0: Install Python: Mac</title>
-      <link>https://kaka-lin.github.io/2020/05/mac/</link>
-      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/05/mac/</guid>
-      <description>1. Install Package Manager   Homebrew
-It is the package manager for macOS. Following the install step on the website to install it.
-  2. Install Python3 2-1. Homebrew $ brew install python  2-2. Miniconda 1. Download installer $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh  2. Install # install miniconda in ~/opt $ mkdir -p ~/opt $ chmod +x Miniconda3-latest-MacOSX-x86_64.sh $ bash Miniconda3-latest-MacOSX-x86_64.sh  3. Activate conda 1. bash  Copy conda initialize in ~/.</description>
     </item>
     
   </channel>

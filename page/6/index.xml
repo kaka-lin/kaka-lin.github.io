@@ -5,10 +5,25 @@
     <link>https://kaka-lin.github.io/</link>
     <description>Recent content on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Divide and Conquer Solve a problwm recursively
+Three steps   Divide
+Divide the problem into a number of subproblems that are smaller instances of the same problem.    Conquer
+Conquer the subproblems by solving them recursively.    Base case (Termination condition): Solve the subproblems if the subproblem sizes are small enough.
+  Recursive case: Recursively solve itself.
+    Combine
+Combine the solutions to the subproblems into the solution for the original problem.</description>
+    </item>
     
     <item>
       <title></title>

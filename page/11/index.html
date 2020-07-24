@@ -25,16 +25,17 @@
     
     <link rel="alternate" type="application/rss+xml" href="https://kaka-lin.github.io/index.xml" title="Kaka's Blog" />
     
-    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.b6f20e134784037e61fde00d4388896cc4e42d15cabc7c10c03c853238eeb2fc.css">
     
     <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="Kaka&#39;s Blog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kaka-lin.github.io/" />
-<meta property="og:updated_time" content="2020-07-22T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-24T00:00:00+00:00" />
 <meta itemprop="name" content="Kaka&#39;s Blog">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kaka&#39;s Blog"/>
@@ -147,7 +148,7 @@
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">11</span></li>
         </ul>
     </div>
@@ -156,6 +157,10 @@
     <h3 class="widget-title"> Tags</h3>
     <div class="widget-body">
         <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/asynchronous-programming/" class="tag-list-link">asynchronous-programming</a><span
+                    class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
@@ -207,7 +212,7 @@
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/os/" class="tag-list-link">os</a><span
-                    class="tag-list-count">3</span></li>
+                    class="tag-list-count">4</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
@@ -230,6 +235,16 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/concurrency_parallelism/" class="title">[OS] Concurrency(並行) 與 Parallelism(平行)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-24</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -270,16 +285,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/01_go_basics/" class="title">[Go] Ch1: Go Basics - 01 Go Basics</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-07-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-11</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -295,6 +300,44 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a class="article-title"
+     href="/2020/06/912_sort_an_array/">
+     [LeetCode] 912 Sort An Array
+  </a>
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">
+        912. Sort an Array  Merge Sort  Discription Given an array of integers nums, sort the array in ascending order.
+Example: Input: nums = [5,2,3,1] Output: [1,2,3,5] Input: nums = [5,1,1,2,0,0] Output: [0,0,1,1,2,5]  Constraints  1 &lt;= nums.length &lt;= 50000 -50000 &lt;= nums[i] &lt;= 50000  Solution 1: Merge Sort (Top-down Approach (Recursion))  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def sortArray(self, nums: List[int]) -&gt; List[int]: if len(nums) &lt;= 1: return nums mid = len(nums) // 2 left = self.
+      </div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/912_sort_an_array/" class="">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/leetcode/"> LeetCode </a>
+    <a class="article-tag-link" href="/tags/dsa/"> DSA </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/06/912_sort_an_array/#comments" class="article-comment-link">Comments</a></span>
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
@@ -513,36 +556,6 @@ Example: Input: root = [10,5,15,3,7,null,18], L = 7, R = 15 Output: 32 Input: ro
 
         <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/06/05_function/#comments" class="article-comment-link">Comments</a></span>
       </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a class="article-title"
-     href="/2020/06/common_packages/">
-     Common Packages
-  </a>
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">
-         title: &ldquo;Common Packages&rdquo; date: 2020-06-10 Install Common Packages After you installed python.
-$ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend # or $ pip install -r requirements.txt  
-      </div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://kaka-lin.github.io/2020/06/common_packages/" class="">
-  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
-</a>
-</span>
-
-
-        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/06/common_packages/#comments" class="article-comment-link">Comments</a></span>
-      </p>
     </article></div>
   
 <nav class="bar bar-footer clearfix" data-stick-bottom>
@@ -560,7 +573,7 @@ $ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend 
       </li>
     </ul>
     <div class="total-article bar-right">
-      Page:11/15
+      Page:11/16
     </div>
   </div>
 </nav>
@@ -599,9 +612,11 @@ $ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend 
 <script>
     window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/python.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js" defer></script><script>
     hljs.configure({
         tabReplace: '    ', 
         classPrefix: ''     
@@ -642,6 +657,7 @@ $ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend 
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

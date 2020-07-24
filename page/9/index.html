@@ -25,16 +25,17 @@
     
     <link rel="alternate" type="application/rss+xml" href="https://kaka-lin.github.io/index.xml" title="Kaka's Blog" />
     
-    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.34aacd1806ea7fe71cc071397ac217ca31907d6df014445d88a46c251c9ee76d.css">
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.b6f20e134784037e61fde00d4388896cc4e42d15cabc7c10c03c853238eeb2fc.css">
     
     <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="Kaka&#39;s Blog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kaka-lin.github.io/" />
-<meta property="og:updated_time" content="2020-07-22T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-24T00:00:00+00:00" />
 <meta itemprop="name" content="Kaka&#39;s Blog">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kaka&#39;s Blog"/>
@@ -147,7 +148,7 @@
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">11</span></li>
         </ul>
     </div>
@@ -156,6 +157,10 @@
     <h3 class="widget-title"> Tags</h3>
     <div class="widget-body">
         <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/asynchronous-programming/" class="tag-list-link">asynchronous-programming</a><span
+                    class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
@@ -207,7 +212,7 @@
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/os/" class="tag-list-link">os</a><span
-                    class="tag-list-count">3</span></li>
+                    class="tag-list-count">4</span></li>
             
             
             <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
@@ -230,6 +235,16 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/concurrency_parallelism/" class="title">[OS] Concurrency(並行) 與 Parallelism(平行)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-24</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -270,16 +285,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/01_go_basics/" class="title">[Go] Ch1: Go Basics - 01 Go Basics</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-07-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-11</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -295,6 +300,44 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a class="article-title"
+     href="/2020/06/242_valid_anagram/">
+     [LeetCode] 242 Valid Anagram
+  </a>
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">
+        242. Valid Anagram Discription Given two strings s and t , write a function to determine if t is an anagram of s.
+Example: Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot; Output: true Input: s = &quot;rat&quot;, t = &quot;car&quot; Output: false  Solution: Hash Table  Runtime: 48 ms (84.31%) Memory Usage: 13.5 MB  class Solution: def isAnagram(self, s: str, t: str) -&gt; bool: if len(s) != len(t): return False length = len(s) table = {} for i in range(length): if s[i] in table: table[s[i]] += 1 else: table[s[i]] = 1 if t[i] in table: table[t[i]] -= 1 else: table[t[i]] = -1 for key, val in table.
+      </div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/242_valid_anagram/" class="">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/leetcode/"> LeetCode </a>
+    <a class="article-tag-link" href="/tags/dsa/"> DSA </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/06/242_valid_anagram/#comments" class="article-comment-link">Comments</a></span>
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
@@ -525,45 +568,6 @@ Example 1: Input: [[0,0,0], [0,1,0], [0,0,0]] Output: [[0,0,0], [0,1,0], [0,0,0]
 
         <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/06/542_01_matrix/#comments" class="article-comment-link">Comments</a></span>
       </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a class="article-title"
-     href="/2020/06/557_reverse_words_in_a_string_iii/">
-     [LeetCode] 557 Reverse Words In A String Iii
-  </a>
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">
-        557. Reverse Words in a String III Discription Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
-Example: Input: &quot;Let's take LeetCode contest&quot; Output: &quot;s'teL ekat edoCteeL tsetnoc&quot;  Note: In the string, each word is separated by single space and there will not be any extra space in the string.
-Solution 1:  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def reverseWords(self, s: str) -&gt; str: ans = &quot;&quot; for sub_s in s.
-      </div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://kaka-lin.github.io/2020/06/557_reverse_words_in_a_string_iii/" class="">
-  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/leetcode/"> LeetCode </a>
-    <a class="article-tag-link" href="/tags/dsa/"> DSA </a>
-  </span>
-
-        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/06/557_reverse_words_in_a_string_iii/#comments" class="article-comment-link">Comments</a></span>
-      </p>
     </article></div>
   
 <nav class="bar bar-footer clearfix" data-stick-bottom>
@@ -581,7 +585,7 @@ Solution 1:  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def reverseWo
       </li>
     </ul>
     <div class="total-article bar-right">
-      Page:9/15
+      Page:9/16
     </div>
   </div>
 </nav>
@@ -620,9 +624,11 @@ Solution 1:  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def reverseWo
 <script>
     window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/python.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js" defer></script><script>
     hljs.configure({
         tabReplace: '    ', 
         classPrefix: ''     
@@ -663,6 +669,7 @@ Solution 1:  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def reverseWo
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

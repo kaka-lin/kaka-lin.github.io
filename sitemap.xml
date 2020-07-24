@@ -3,49 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kaka-lin.github.io/2020/07/io_models/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
+    <loc>https://kaka-lin.github.io/2020/07/concurrency_parallelism/</loc>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/asynchronous-programming/</loc>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kaka-lin.github.io/categories/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kaka-lin.github.io/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kaka-lin.github.io/tags/os/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kaka-lin.github.io/categories/os/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kaka-lin.github.io/posts/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kaka-lin.github.io/tags/</loc>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2020/07/io_models/</loc>
     <lastmod>2020-07-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

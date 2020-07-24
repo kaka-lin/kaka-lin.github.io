@@ -5,10 +5,19 @@
     <link>https://kaka-lin.github.io/categories/</link>
     <description>Recent content in Categories on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[DS] Matplotlib show Chinese: Windows</title>
+      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</guid>
+      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 # 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo</description>
+    </item>
     
     <item>
       <title>[LeetCode] 001 Two Sum</title>
@@ -217,17 +226,6 @@ Example: Given binary tree [3,9,20,null,null,15,7],
       <guid>https://kaka-lin.github.io/2020/06/118_pascals_triangle/</guid>
       <description>118. Pascal&amp;rsquo;s Triangle Discription Given a non-negative integer numRows, generate the first numRows of Pascal&amp;rsquo;s triangle.
 In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it. Example: Input: 5 Output: [ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1] ]  Solution: Dynamic Programming  Runtime: 20 ms (98.97%) Memory Usage: 12.7 MB (100%)  class Solution: def generate(self, numRows: int) -&amp;gt; List[List[int]]: pascal_list = [] for row in range(numRows): pascal_list.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 119 Pascals Triangle Ii</title>
-      <link>https://kaka-lin.github.io/2020/06/119_pascals_triangle_ii/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/119_pascals_triangle_ii/</guid>
-      <description>119. Pascal&amp;rsquo;s Triangle II Discription Given a non-negative index k where k ≤ 33, return the $k^{th}$ index row of the Pascal&amp;rsquo;s triangle.
-Note that the row index starts from 0.
-In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it. Example: Input: 3 Output: [1,3,3,1]  Solution: Dynamic Programming  Runtime: 24 ms (96.54%) Memory Usage: 12.7 MB (100%)  class Solution: def getRow(self, rowIndex: int) -&amp;gt; List[int]: pascal_list = [1] for row in range(1, rowIndex + 1): # Previous row prev_pascal_list = pascal_list # Start th new row pascal_list = [1] for col in range(1, row): pascal_list.</description>
     </item>
     
   </channel>
