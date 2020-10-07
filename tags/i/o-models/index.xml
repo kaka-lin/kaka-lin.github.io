@@ -65,10 +65,10 @@
     
     <item>
       <title>[Go] Ch1: Go Basics - 02 Flow Control</title>
-      <link>https://kaka-lin.github.io/2020/07/02_flow_control-copy/</link>
+      <link>https://kaka-lin.github.io/2020/07/02_flow_control/</link>
       <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kaka-lin.github.io/2020/07/02_flow_control-copy/</guid>
+      <guid>https://kaka-lin.github.io/2020/07/02_flow_control/</guid>
       <description>For Go has only one looping construct, the foor loop for &amp;lt;init state&amp;gt;; &amp;lt;condition&amp;gt;; &amp;lt;post state&amp;gt; sum := 0 for i := 0; i &amp;lt; 10; i++ { sum += i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上</description>
     </item>
     

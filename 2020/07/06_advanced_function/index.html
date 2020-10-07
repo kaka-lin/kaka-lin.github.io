@@ -21,7 +21,7 @@
     
     
     <meta name="description" content="Function as Arguments In Go, function is also a type. So we can pass function as another function&amp;rsquo;s parameters. 當我們將function當成參數使用時，必須在參數列表列出funtion本身的參數type與及其所需的" />
-    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title>[Go] Ch1: Go Basics - 06 Advanced Function - Kaka&#39;s Blog</title>
     
     
@@ -39,13 +39,14 @@
 <meta property="article:modified_time" content="2020-07-18T00:00:00+00:00" />
 <meta itemprop="name" content="[Go] Ch1: Go Basics - 06 Advanced Function">
 <meta itemprop="description" content="Function as Arguments In Go, function is also a type. So we can pass function as another function&rsquo;s parameters. 當我們將function當成參數使用時，必須在參數列表列出funtion本身的參數type與及其所需的">
-<meta itemprop="datePublished" content="2020-07-18T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-07-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="509">
+<meta itemprop="datePublished" content="2020-07-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-07-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="552">
 
 
 
-<meta itemprop="keywords" content="Go," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Go," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Go] Ch1: Go Basics - 06 Advanced Function"/>
 <meta name="twitter:description" content="Function as Arguments In Go, function is also a type. So we can pass function as another function&rsquo;s parameters. 當我們將function當成參數使用時，必須在參數列表列出funtion本身的參數type與及其所需的"/>
 
@@ -452,6 +453,18 @@ func main() {
     def print_msg():
         print(string)
     return print_msg
+</code></pre>
+<h3 id="exercise-fibonacci-closure">Exercise: Fibonacci closure</h3>
+<pre><code class="language-go">// fibonacci is a function that returns
+// a function that return an int.
+func fibonacci() func() int {
+	a, b := 0, 1
+	return func() int {
+		v := a
+		a, b = b, a+b
+		return v
+	}
+}
 </code></pre>
 
     </div>

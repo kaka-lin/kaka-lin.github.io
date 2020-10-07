@@ -38,7 +38,7 @@ Example: Input: [2,2,1] Output: 1 Input: [4,1,2,1,2] Output: 4  Solution 1: Lsit
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/2020/06/144_binary_tree_preorder_traversal/</guid>
-      <description>144. Binary Tree Preorder Traversal Discription Given a binary tree, return the preorder traversal of its nodes&amp;rsquo; values.
+      <description>144. Binary Tree Preorder Traversal Discription Given a binary tree, return the preorder traversal of its nodes&#39; values.
 inorder:
 root tree -&amp;gt; left tree -&amp;gt; right tree  Example: Input: [1,null,2,3] 1 \ 2 / 3 Output: [1,2,3]  Solution 1: Recursive  Runtime: 32 ms (92.42%) Memory Usage: 13.2 MB (52.73%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.val = x # self.</description>
     </item>
@@ -49,7 +49,7 @@ root tree -&amp;gt; left tree -&amp;gt; right tree  Example: Input: [1,null,2,3]
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/2020/06/145_binary_tree_postorder_traversal/</guid>
-      <description>145. Binary Tree Postorder Traversal Discription Given a binary tree, return the postorder traversal of its nodes&amp;rsquo; values.
+      <description>145. Binary Tree Postorder Traversal Discription Given a binary tree, return the postorder traversal of its nodes&#39; values.
 inorder:
 left tree -&amp;gt; rigth tree -&amp;gt; root tree  Example: Input: [1,null,2,3] 1 \ 2 / 3 Output: [3,2,1]  Solution 1: Recursive  Runtime: 32 ms (91.82%) Memory Usage: 13 MB (95.36%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.val = x # self.</description>
     </item>

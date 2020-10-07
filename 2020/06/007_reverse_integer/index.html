@@ -23,7 +23,7 @@
     <meta name="description" content="7. Reverse Integer Discription Given a 32-bit signed integer, reverse digits of an integer.
 Assume that your function returns 0 when the reversed integer overflows.
 Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  Solution 1: String  Runtime: 40ms (81.25%) Memory Usage: 13.4 MB (12.43%)  class Solution: def reverse(self, x: int) -&amp;gt; int: if x == 0: return 0 str_x = str(x) ans = &#39;&#39; if x &amp;gt; 0: for i in range(len(str_x)-1, -1, -1): ans &#43;= str_x[i] else: str_x = str_x[1:] ans &#43;= &#39;-&#39; ans &#43;= str_x[::-1] # 32bit: [-214748364, 2147483647] ans = int(ans) return 0 if ans &amp;lt; -2147483648 or ans &amp;gt; 2147483647 else ans  Solution 2: Pop and Push Repeatedlly &amp;ldquo;pop&amp;rdquo; the last digit of x and &amp;ldquo;push&amp;rdquo; it to the back of the rev." />
-    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title>[LeetCode] 007 Reverse Integer - Kaka&#39;s Blog</title>
     
     
@@ -45,13 +45,14 @@ Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  
 <meta itemprop="description" content="7. Reverse Integer Discription Given a 32-bit signed integer, reverse digits of an integer.
 Assume that your function returns 0 when the reversed integer overflows.
 Example: Input: 123 Output: 321 Input: -123 Output: -321 Input: 120 Output: 21  Solution 1: String  Runtime: 40ms (81.25%) Memory Usage: 13.4 MB (12.43%)  class Solution: def reverse(self, x: int) -&gt; int: if x == 0: return 0 str_x = str(x) ans = &#39;&#39; if x &gt; 0: for i in range(len(str_x)-1, -1, -1): ans &#43;= str_x[i] else: str_x = str_x[1:] ans &#43;= &#39;-&#39; ans &#43;= str_x[::-1] # 32bit: [-214748364, 2147483647] ans = int(ans) return 0 if ans &lt; -2147483648 or ans &gt; 2147483647 else ans  Solution 2: Pop and Push Repeatedlly &ldquo;pop&rdquo; the last digit of x and &ldquo;push&rdquo; it to the back of the rev.">
-<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00+00:00" />
 <meta itemprop="wordCount" content="230">
 
 
 
-<meta itemprop="keywords" content="LeetCode,DSA," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="LeetCode,DSA," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[LeetCode] 007 Reverse Integer"/>
 <meta name="twitter:description" content="7. Reverse Integer Discription Given a 32-bit signed integer, reverse digits of an integer.
 Assume that your function returns 0 when the reversed integer overflows.

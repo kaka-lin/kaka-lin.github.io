@@ -22,7 +22,7 @@
     
     <meta name="description" content="242. Valid Anagram Discription Given two strings s and t , write a function to determine if t is an anagram of s.
 Example: Input: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot; Output: true Input: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot; Output: false  Solution: Hash Table  Runtime: 48 ms (84.31%) Memory Usage: 13.5 MB  class Solution: def isAnagram(self, s: str, t: str) -&amp;gt; bool: if len(s) != len(t): return False length = len(s) table = {} for i in range(length): if s[i] in table: table[s[i]] &#43;= 1 else: table[s[i]] = 1 if t[i] in table: table[t[i]] -= 1 else: table[t[i]] = -1 for key, val in table." />
-    <meta name="generator" content="Hugo 0.72.0 with theme pure" />
+    <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title>[LeetCode] 242 Valid Anagram - Kaka&#39;s Blog</title>
     
     
@@ -42,13 +42,14 @@ Example: Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot; Output: true In
 <meta itemprop="name" content="[LeetCode] 242 Valid Anagram">
 <meta itemprop="description" content="242. Valid Anagram Discription Given two strings s and t , write a function to determine if t is an anagram of s.
 Example: Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot; Output: true Input: s = &quot;rat&quot;, t = &quot;car&quot; Output: false  Solution: Hash Table  Runtime: 48 ms (84.31%) Memory Usage: 13.5 MB  class Solution: def isAnagram(self, s: str, t: str) -&gt; bool: if len(s) != len(t): return False length = len(s) table = {} for i in range(length): if s[i] in table: table[s[i]] &#43;= 1 else: table[s[i]] = 1 if t[i] in table: table[t[i]] -= 1 else: table[t[i]] = -1 for key, val in table.">
-<meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00+00:00" />
 <meta itemprop="wordCount" content="119">
 
 
 
-<meta itemprop="keywords" content="LeetCode,DSA," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="LeetCode,DSA," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[LeetCode] 242 Valid Anagram"/>
 <meta name="twitter:description" content="242. Valid Anagram Discription Given two strings s and t , write a function to determine if t is an anagram of s.
 Example: Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot; Output: true Input: s = &quot;rat&quot;, t = &quot;car&quot; Output: false  Solution: Hash Table  Runtime: 48 ms (84.31%) Memory Usage: 13.5 MB  class Solution: def isAnagram(self, s: str, t: str) -&gt; bool: if len(s) != len(t): return False length = len(s) table = {} for i in range(length): if s[i] in table: table[s[i]] &#43;= 1 else: table[s[i]] = 1 if t[i] in table: table[t[i]] -= 1 else: table[t[i]] = -1 for key, val in table."/>

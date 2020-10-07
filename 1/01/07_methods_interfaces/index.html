@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+         - Kaka&#39;s Blog
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods and Interfaces Methods (方法) Example Method on Non-struct type Pointer receivers Choosing a value or pointer receiver Interfaces (介面) Implement methods of an interface Interface values The empty interface Type assertions Type switches Example Methods (方法) Go does not classes." />
+    <meta name="generator" content="Hugo 0.75.1 with theme pure" />
+    <title> - Kaka&#39;s Blog</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.b6f20e134784037e61fde00d4388896cc4e42d15cabc7c10c03c853238eeb2fc.css">
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods and Interfaces Methods (方法) Example Method on Non-struct type Pointer receivers Choosing a value or pointer receiver Interfaces (介面) Implement methods of an interface Interface values The empty interface Type assertions Type switches Example Methods (方法) Go does not classes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/1/01/07_methods_interfaces/" />
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods and Interfaces Methods (方法) Example Method on Non-struct type Pointer receivers Choosing a value or pointer receiver Interfaces (介面) Implement methods of an interface Interface values The empty interface Type assertions Type switches Example Methods (方法) Go does not classes.">
+
+<meta itemprop="wordCount" content="863">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods and Interfaces Methods (方法) Example Method on Non-struct type Pointer receivers Choosing a value or pointer receiver Interfaces (介面) Implement methods of an interface Interface values The empty interface Type assertions Type switches Example Methods (方法) Go does not classes."/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka_virtual.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure/" class="category-list-link">data-structure</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">11</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/asynchronous-programming/" class="tag-list-link">asynchronous-programming</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-structure/" class="tag-list-link">data-structure</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/dsa/" class="tag-list-link">dsa</a><span
+                    class="tag-list-count">52</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/go/" class="tag-list-link">go</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/i/o-models/" class="tag-list-link">i/o-models</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
+                    class="tag-list-count">51</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/os/" class="tag-list-link">os</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">16</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/concurrency_parallelism/" class="title">[OS] Concurrency(並行) 與 Parallelism(平行)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/io_models/" class="title">[OS] I/O Models: 同步、非同步、阻塞、非阻塞</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/02_multiprocessing/" class="title">[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/06_advanced_function/" class="title">[Go] Ch1: Go Basics - 06 Advanced Function</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/07/01_multithread/" class="title">[Python] Ch2: Process Management - 01 Python 多執行緒(Multi-Thread)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a class="article-title"
+     href="/1/01/07_methods_interfaces/">
+     
+  </a>
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/07_methods_interfaces/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="methods-and-interfaces">Methods and Interfaces</h1>
+<p>Learn how to define <code>methods</code> on types, how to declare <code>interfaces</code>,
+and how to put everything together.</p>
+<ul>
+<li><a href="#methods-and-interfaces">Methods and Interfaces</a>
+<ul>
+<li><a href="#methods-%E6%96%B9%E6%B3%95">Methods (方法)</a>
+<ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#method-on-non-struct-type">Method on Non-struct type</a></li>
+<li><a href="#pointer-receivers">Pointer receivers</a></li>
+<li><a href="#choosing-a-value-or-pointer-receiver">Choosing a value or pointer receiver</a></li>
+</ul>
+</li>
+<li><a href="#interfaces-%E4%BB%8B%E9%9D%A2">Interfaces (介面)</a>
+<ul>
+<li><a href="#implement-methods-of-an-interface">Implement methods of an interface</a></li>
+<li><a href="#interface-values">Interface values</a></li>
+<li><a href="#the-empty-interface">The empty interface</a>
+<ul>
+<li><a href="#type-assertions">Type assertions</a></li>
+<li><a href="#type-switches">Type switches</a>
+<ul>
+<li><a href="#example-1">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="methods-方法">Methods (方法)</h2>
+<p><code>Go does not classes</code>. However, you can define <code>methods on types</code>.</p>
+<pre><code>A method is a function with a special receiver argument.
+</code></pre>
+<ul>
+<li>The <code>receiver</code> appears in its own argument list between the <code>func</code> keword and the method name.</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>The <code>Abs()</code> method has a <code>receiver</code> of type Vertex named v.</p>
+<pre><code class="language-go">type Vertex struct {
+    X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+</code></pre>
+<h3 id="method-on-non-struct-type">Method on Non-struct type</h3>
+<pre><code class="language-go">type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f &lt; 0 {
+        return float64(-f)
+    }
+    return float64(f)
+}
+</code></pre>
+<pre><code>Can only delcare a method with a receiver whose
+type is defined in the sampe packages as method.
+</code></pre>
+<h3 id="pointer-receivers">Pointer receivers</h3>
+<p>Can declare methods with <code>pointer receivers</code>.</p>
+<p>The receiver type has the literal syntax <code>*T</code>
+for some type T.</p>
+<pre><code>Methods with pointer receivers can modify the value to which the receiver points.
+
+Since methods often need to modify their receiver,
+pointer receivers are more common than value receivers.
+</code></pre>
+<pre><code class="language-go">func (v *Vertex) Scale(f float64) {
+    v.X = v.X * f
+    v.Y = v.Y * f
+}
+</code></pre>
+<h3 id="choosing-a-value-or-pointer-receiver">Choosing a value or pointer receiver</h3>
+<p>有兩種使用<code>pointer receiver</code>的優點:</p>
+<ol>
+<li>可以修改<code>receiver</code>指向的值</li>
+<li>因為pointer是參考到同一個位址，所以可以避面在每次method call都複製一次值。這樣比較有效率，尤其當<code>receiver</code>是一個很大的資料結構時。</li>
+</ol>
+<pre><code>通常在給定的Type上都有value或pointer receiver。
+但不能兩者混用。
+</code></pre>
+<h2 id="interfaces-介面">Interfaces (介面)</h2>
+<pre><code>A Interface type is defined as a set of method
+signatures.
+</code></pre>
+<p>介面(Interface)就是只有宣告方法，但沒有實作的型別，如下所示:</p>
+<pre><code class="language-go">type IVertex interface {
+    X() float64
+    Y() float64
+    SetX(float64)
+    SetY(float64)
+    Abs() float64
+}
+
+type Vertex struct {
+    x float64
+    y float64
+}
+</code></pre>
+<h3 id="implement-methods-of-an-interface">Implement methods of an interface</h3>
+<p><code>Interfaces are implemented implicitly</code></p>
+<pre><code>There is no explicit declaration of intent,
+no &quot;implements&quot; keyword.
+</code></pre>
+<ul>
+<li>Implicit interface <code>decouple</code> the <code>definition</code> of an interface from its <code>implementation</code>, which could then appear in any package without prearrangement(預先安排).</li>
+</ul>
+<pre><code class="language-go">// 實作方法
+func (v *Vertex) X() float64{
+    return v.x
+}
+
+func (v *Vertex) Y() float64{
+    return v.y
+}
+
+func (v *Vertex) SetX(x float64) {
+    v.x = x
+}
+
+func (v *Vertex) SeYX(y float64) {
+    v.y = y
+}
+
+func (v *Vertex) Abs() float64{
+    return math.Sqrt(v.x*v.x + v.y*v.y)
+}
+</code></pre>
+<pre><code class="language-go">func main() {
+    var p IPoint = &amp;Point{3, 4}
+    ...
+}
+</code></pre>
+<h3 id="interface-values">Interface values</h3>
+<p>An <code>interface values</code> consist of a tuple of <code>value</code> and <code>concrete type</code>.</p>
+<pre><code>(value, type)
+</code></pre>
+<p>在<code>fmt.Printf</code>裡，我們可以用<code>%v</code>印出<code>value</code>以及使用<code>T</code>印出<code>type</code></p>
+<pre><code class="language-go">fmt.Printf(&quot;(%v, %T)\n&quot;, p, p) // (&amp;{3 4}, *main.Point)
+</code></pre>
+<h3 id="the-empty-interface">The empty interface</h3>
+<p>The interface type that specifies zero methods is known as the <code>empty interface</code></p>
+<pre><code class="language-go">interface{}
+</code></pre>
+<ul>
+<li>
+<p>An empty interface may hold values of <code>any type</code>.</p>
+<p>Are used by code that <code>handles values of unknown type</code>.</p>
+<ul>
+<li>
+<p>Exmaple:</p>
+<p><a href="https://golang.org/pkg/fmt/#Print">fmt.Print</a> takes any number of arguments of type <code>interface{}</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">func describw(i interface{}) {
+    fmt.Printf(&quot;(%v, %T)\n&quot;, i, i)
+}
+</code></pre>
+<h4 id="type-assertions">Type assertions</h4>
+<p>A <code>type assertion</code> provide access to an interface value&rsquo;s <code>underlying</code> concrete value`.</p>
+<p>有兩種形式:</p>
+<pre><code class="language-go">t := i.(T) // T is type that you want to access
+</code></pre>
+<ul>
+<li>
+<p>if <code>i</code> does not hold a <code>T</code>:</p>
+<p>The statement will trigger a <code>panic</code>.</p>
+</li>
+</ul>
+<pre><code class="language-go">t, ok := i.(T)
+</code></pre>
+<ul>
+<li>
+<p>if <code>i</code> holds a <code>T</code>:</p>
+<p>return <code>underlying value</code>, <code>true</code></p>
+</li>
+<li>
+<p>if <code>i</code> does not hold a <code>T</code>:</p>
+<p>return <code>zero</code>, <code>false (no panic)</code></p>
+</li>
+</ul>
+<h4 id="type-switches">Type switches</h4>
+<pre><code class="language-go">switch v := i.(type) {
+    case T:
+        // here v has type T
+    case S:
+        // here v has type S
+    default:
+        // no match; here v hase type the same type as i
+}
+</code></pre>
+<h5 id="example-1">Example</h5>
+<pre><code class="language-go">func do(i interface{}) {
+    switch v := i.(type) {
+        case int:
+            fmt.Printf(&quot;Twice %v is %v\n&quot;, v, v*2)
+        case string:
+            fmt.Println(&quot;%q is %v bytes long\n&quot;, v, len(v))
+        default:
+            fmt.Println(&quot;I don't know about type %T\n&quot;, v)
+    }
+}
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/1/01/07_methods_interfaces/" title="" target="_blank" rel="external">https://kaka-lin.github.io/1/01/07_methods_interfaces/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="external">CC BY 4.0</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka_virtual.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/1/01/08_concurrency/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/1/01/readme/"
+                    title=""><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://www.facebook.com/profile.php?id=100001656484042" target="_blank" title="facebook" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-facebook"></i></a></li>
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/%E5%AE%B6%E8%B1%AA-%E6%9E%97-014a02116/" target="_blank" title="linkedin" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-linkedin"></i></a></li>
+</ul>
+  <div class="copyright">
+    Copyright
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/python.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https:\/\/kaka-lin.github.io\/1\/01\/07_methods_interfaces\/';
+        this.page.identifier = 'kaka-blog';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//' + 'kaka-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+  </body>
+</html>
