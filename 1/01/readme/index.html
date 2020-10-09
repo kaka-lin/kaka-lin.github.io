@@ -20,18 +20,7 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library" />
+    <meta name="description" content="Combinators: map match is a valid method for handling Option. However, you may enventually find heavy usage tedious, especially with operations only valid with input. In this case, combinators can be used to manage control flow in a modular fashion(模組化方式). map() Is a Option&amp;rsquo;s built in method. A combinator for the simple mpping of Some -&amp;gt;" />
     <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title> - Kaka&#39;s Blog</title>
     
@@ -43,54 +32,21 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="" />
-<meta property="og:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library" />
+<meta property="og:description" content="Combinators: map match is a valid method for handling Option. However, you may enventually find heavy usage tedious, especially with operations only valid with input. In this case, combinators can be used to manage control flow in a modular fashion(模組化方式). map() Is a Option&rsquo;s built in method. A combinator for the simple mpping of Some -&gt;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/1/01/readme/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library">
+<meta itemprop="description" content="Combinators: map match is a valid method for handling Option. However, you may enventually find heavy usage tedious, especially with operations only valid with input. In this case, combinators can be used to manage control flow in a modular fashion(模組化方式). map() Is a Option&rsquo;s built in method. A combinator for the simple mpping of Some -&gt;">
 
-<meta itemprop="wordCount" content="124">
+<meta itemprop="wordCount" content="235">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library"/>
+<meta name="twitter:description" content="Combinators: map match is a valid method for handling Option. However, you may enventually find heavy usage tedious, especially with operations only valid with input. In this case, combinators can be used to manage control flow in a modular fashion(模組化方式). map() Is a Option&rsquo;s built in method. A combinator for the simple mpping of Some -&gt;"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -302,107 +258,49 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="rust-by-example">Rust by Example</h1>
-<p>This repo is the record that I exercise the <a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a>!</p>
-<p>Rust version: <code>1.31.0 or later</code></p>
-<h2 id="chapter">Chapter</h2>
-<p>Before you to read chapter 10, 11, and 12, you can read <a href="https://github.com/kaka-lin/rust-by-example/tree/master/module_system">module system</a> first.</p>
-<ol start="10">
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules">Modules</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/1-visibility">Visibility</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/2-struct_visibility">Struct visibility</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/3-use_declaration">The use declaration</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/4-super_and_self">super and self</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/5-file_hierarchy">File hierarchy</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/6-pub_use">pub use(re-exporting)</a></p>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates">Crates</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/1-library">Library</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/2-extern_crate">extern crate</a></p>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch12-cargo">Cargo</a></p>
-</li>
-<li></li>
-<li></li>
-<li></li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits">Traits</a></p>
-<ol>
-<li>
-<p>[Derive]</p>
-</li>
-<li>
-<p>[Operator Overloading]</p>
-</li>
-<li>
-<p>[Drop]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits/4-iterators">Iterators</a></p>
-</li>
-<li>
-<p>[Clone]</p>
-</li>
-</ol>
-</li>
-<li>
-<p>[macro_rules!]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling">Error hanling</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/1-panic">panic</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/2-option_and_unwrap">Option &amp; unwrap</a></p>
-<p>2-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/3-map_for_option">Combinators: map</a></p>
-<p>2-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/4-and_then_for_option">Combinators: and_then</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/5-result">Result ( including [<code>unit type, ()</code>] )</a></p>
-<p>3-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/6-map_for_result">map for result</a></p>
-<p>3-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/7-aliases_for_result">aliases for Result</a></p>
-<p>3-3. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/8-early_returns">Early returns</a></p>
-<p>3-4. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/9-introducing_question_mark">Introducing ?</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/10-multiple_error_types">Multiple error types</a></p>
-<p>4-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/11-pulling_results_out_of_options">Pulling Results out of Options</a></p>
-<p>4-2. [Defining an error type]</p>
-<p>4-3. [Boxing errors]</p>
-<p>4-4. [Other uses of ?]</p>
-<p>4-5. [Wrapping errors]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/16-iterating_over_results">Iterating over Results</a></p>
-</li>
-</ol>
-</li>
-</ol>
+      <h1 id="combinators-map">Combinators: <code>map</code></h1>
+<p><code>match</code> is a valid method for handling <code>Option</code>. However, you may enventually find heavy usage tedious, especially with operations only valid with input. In this case, <code>combinators</code> can be used to manage control flow in a modular fashion(模組化方式).</p>
+<h2 id="map"><code>map()</code></h2>
+<p>Is a <code>Option</code>&rsquo;s built in method.</p>
+<p>A combinator for the simple mpping of <code>Some -&gt; Some</code> and <code>None -&gt; None</code>.</p>
+<p>Multiple <code>map()</code> calls can be chained together for even more flexibility.</p>
+<pre><code class="language-rust">pub fn map&lt;U, F&gt;(self, f: F) -&gt; Option&lt;U&gt;
+</code></pre>
+<p>where F: <a href="#jump">FnOnce(T)</a> -&gt; U,</p>
+<p>Maps an <code>Option&lt;T&gt;</code> to <code>Option&lt;T&gt;</code> by applying a function o a contained value.</p>
+<h3 id="examples">Examples</h3>
+<p>Converts an <code>Option&lt;String&gt;</code> into an <code>Option&lt;usize&gt;</code></p>
+<pre><code class="language-rust">let some_string = Some(String::from(&quot;Hello, World!&quot;));
+// `Option`::map` takes self *by value*, comsuming `some_string`
+let some_len = some_string.map(|s| s.len);
+
+assert_eq!(maybe_some_len, Some(13));
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="fnonce"><code>FnOnce</code></h2>
+<p>It is an <code>anonymous function(closures)</code>, like python&rsquo;s <code>lambda</code>.</p>
+<p>The version of the call operator that takes a by-value receiver.</p>
+<pre><code class="language-rust">pub trait FnOnce&lt;Args&gt; {
+    type Output;
+    extern &quot;rust-call&quot; fn call_once(self, args: Args) -&gt; Self::Output;
+}
+</code></pre>
+<h3 id="examples-1">Examples</h3>
+<p>By-value <code>closures(anonymous function)</code> automatically implement this trait, which allows them to be invoked.</p>
+<pre><code class="language-rust">let x = 5
+let square_x = move || x * x;
+assert_eq!(square_x(), 25);
+</code></pre>
+<pre><code class="language-rust">let plus_one = |x: i32| x + 1;
+assert_eq!(2, plus_one(1));
+</code></pre>
+<p>python:</p>
+<pre><code class="language-python">square_x = lambda x: x * x
+assert square_x(5) == 25
+</code></pre>
+<pre><code class="language-python">plus_one = lambda x: x + 1
+assert plus_one(1) == 2
+</code></pre>
 
     </div>
     <div class="article-footer">
@@ -445,6 +343,11 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/1/01/readme/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
             <li class="next">
                 <a href="https://kaka-lin.github.io/1/01/readme/"
                     title=""><span>Newer&nbsp;&nbsp;</span><i
@@ -546,6 +449,24 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
         hasInnerContainers: true,
     });
 </script>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https:\/\/kaka-lin.github.io\/1\/01\/readme\/';
+        this.page.identifier = 'kaka-blog';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//' + 'kaka-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+  </body>
+</html>
+cript>
 
 <script>
     var disqus_config = function () {
