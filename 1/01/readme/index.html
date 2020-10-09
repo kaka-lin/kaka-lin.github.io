@@ -20,18 +20,10 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library" />
+    <meta name="description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
+Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
+  Packages
+It are a Cargo feature that let you build, test, and share crates." />
     <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title> - Kaka&#39;s Blog</title>
     
@@ -43,54 +35,30 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="" />
-<meta property="og:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library" />
+<meta property="og:description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
+Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
+  Packages
+It are a Cargo feature that let you build, test, and share crates." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/1/01/readme/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library">
+<meta itemprop="description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
+Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
+  Packages
+It are a Cargo feature that let you build, test, and share crates.">
 
-<meta itemprop="wordCount" content="124">
+<meta itemprop="wordCount" content="516">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library"/>
+<meta name="twitter:description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
+Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
+  Packages
+It are a Cargo feature that let you build, test, and share crates."/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -302,107 +270,119 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="rust-by-example">Rust by Example</h1>
-<p>This repo is the record that I exercise the <a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a>!</p>
-<p>Rust version: <code>1.31.0 or later</code></p>
-<h2 id="chapter">Chapter</h2>
-<p>Before you to read chapter 10, 11, and 12, you can read <a href="https://github.com/kaka-lin/rust-by-example/tree/master/module_system">module system</a> first.</p>
-<ol start="10">
+      <h1 id="module-system">Module System</h1>
+<p>A key question when writing program is <code>scope</code>: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?</p>
+<p>Rust has a number of features related to <code>scopes</code>. This is sometimes called <code>the module system</code>, but it encompasses more than just modules:</p>
+<ul>
 <li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules">Modules</a></p>
+<p><a href="#packages_and_crates">Packages</a></p>
+<p>It are a <code>Cargo feature</code> that let you build, test, and share crates.</p>
+</li>
+<li>
+<p><a href="#packages_and_crates">Crates</a></p>
+<p>It are a tree of modules that produce a library or executable.</p>
+</li>
+<li>
+<p><a href="#modules">Modules</a></p>
+<p><code>Modules</code> and the <code>use</code> keyword let you control the scope and privacy of paths.</p>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="packages-and-crates">Packages and Crates</h2>
+<ul>
+<li>A <code>crate</code> is a binary or library.</li>
+<li>The <code>crate root</code> is a source file that is used to know how to build a crate.</li>
+<li>A <code>package</code> has a <code>Cargo.toml</code> that describes how to build one or more crates. At most one crate in a package can be a library.</li>
+</ul>
+<h3 id="exapmle">Exapmle</h3>
+<p>So when we type <code>cargo new</code>, we&rsquo;re creating a package:</p>
+<pre><code class="language-bash">$ cargo new my-project
+     Created binary (application) `my-project` package
+$ ls my-project
+Cargo.toml
+src
+$ ls my-project/src
+main.rs
+</code></pre>
+<h3 id="conventions">Conventions</h3>
 <ol>
 <li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/1-visibility">Visibility</a></p>
+<p>If you have a <code>src</code> directory containing <code>main.rs</code> in the same directory as a package&rsquo;s <code>Cargo.toml</code></p>
+<p>=&gt; Cargo knows this package contains a <code>binary crate</code> with the same name as the package, and <code>src/main.rs</code> is its <code>crate root</code>.</p>
 </li>
 <li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/2-struct_visibility">Struct visibility</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/3-use_declaration">The use declaration</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/4-super_and_self">super and self</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/5-file_hierarchy">File hierarchy</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/6-pub_use">pub use(re-exporting)</a></p>
+<p>If the package directory contains <code>src/lib.rs</code></p>
+<p>=&gt; Cargo knows this package contains a <code>library crate</code> with the same name as the package, and <code>src/lib.rs</code> is its <code>crate root</code>.</p>
 </li>
 </ol>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates">Crates</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/1-library">Library</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/2-extern_crate">extern crate</a></p>
-</li>
+<pre><code>Note: The crate root files are passed by Cargo to rustc to actually build the library or binary.
+</code></pre>
+<ol start="3">
+<li>A package can contain <code>zero or one library crates</code> and as <code>many binary crates</code> as you’d like. There must be <code>at least one crate</code> (either a library or a binary) in a package.</li>
 </ol>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch12-cargo">Cargo</a></p>
-</li>
-<li></li>
-<li></li>
-<li></li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits">Traits</a></p>
-<ol>
-<li>
-<p>[Derive]</p>
-</li>
-<li>
-<p>[Operator Overloading]</p>
-</li>
-<li>
-<p>[Drop]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits/4-iterators">Iterators</a></p>
-</li>
-<li>
-<p>[Clone]</p>
-</li>
-</ol>
-</li>
-<li>
-<p>[macro_rules!]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling">Error hanling</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/1-panic">panic</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/2-option_and_unwrap">Option &amp; unwrap</a></p>
-<p>2-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/3-map_for_option">Combinators: map</a></p>
-<p>2-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/4-and_then_for_option">Combinators: and_then</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/5-result">Result ( including [<code>unit type, ()</code>] )</a></p>
-<p>3-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/6-map_for_result">map for result</a></p>
-<p>3-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/7-aliases_for_result">aliases for Result</a></p>
-<p>3-3. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/8-early_returns">Early returns</a></p>
-<p>3-4. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/9-introducing_question_mark">Introducing ?</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/10-multiple_error_types">Multiple error types</a></p>
-<p>4-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/11-pulling_results_out_of_options">Pulling Results out of Options</a></p>
-<p>4-2. [Defining an error type]</p>
-<p>4-3. [Boxing errors]</p>
-<p>4-4. [Other uses of ?]</p>
-<p>4-5. [Wrapping errors]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/16-iterating_over_results">Iterating over Results</a></p>
-</li>
-</ol>
-</li>
-</ol>
+<pre><code>Note: A package can have multiple binary crates by placing files in the src/bin directory: each file will be a separate binary crate.
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="modules">Modules</h2>
+<p>Modules let us organize code into groups.</p>
+<h3 id="example">Example</h3>
+<p>Filename: src/main.rs</p>
+<pre><code class="language-rust">mod sound {
+    pub mod instrument {
+        pub fn clarinet() {
+            println!(&quot;Hello sound::instrument::clarinet()&quot;);
+        }
+    }
+
+    mod voice {
+
+    }
+}
+
+fn main() {
+    // Absolute path
+    crate:🔉:instrument::clarinet();
+
+    // Relative path
+    sound::instrument::clarinet();
+}
+</code></pre>
+<p>Like we mentioned in the <a href="#packages_and_cratess">Packages and Crates</a> section that <code>src/main.rs</code> and <code>src/lib.rs</code> are called <code>crate roots</code>. So we have a module tree that looks like:</p>
+<pre><code>crate
+└── sound
+    ├── instrument
+    │   
+    └── voice
+</code></pre>
+<h3 id="modules-as-the-privacy-boundray">Modules as the Privacy Boundray</h3>
+<p>If you want to make an item like a function or struct private, you put it in a module. Here aer the privacy rules:</p>
+<ul>
+<li>All items are private bu default.</li>
+<li>You can use the <code>pub</code> keyword to make an item public.</li>
+<li>You aren&rsquo;t allowed to use private code defined in modules that are children oof current module.</li>
+<li>You are allowed to use any code defined in ancestor modules or current module.</li>
+</ul>
+<h4 id="example-1">Example</h4>
+<pre><code class="language-rust">mod sound {
+    mod instrument {
+        fn clarinet() {
+            println!(&quot;Hello sound::instrument::clarinet()&quot;);
+        }
+    }
+
+    pub mod instrument2 {
+        fn clarinet(){}
+    }
+}
+
+fn main() {
+    // error[E0603]: module `instrument` is private
+    crate:🔉:instrument::clarinet(); 
+    
+    // error[E0603]: function `clarinet` is private
+    crate:🔉:instrument2::clarinet();
+}
+</code></pre>
 
     </div>
     <div class="article-footer">
@@ -445,6 +425,11 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/1/01/readme/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
             <li class="next">
                 <a href="https://kaka-lin.github.io/1/01/readme/"
                     title=""><span>Newer&nbsp;&nbsp;</span><i
