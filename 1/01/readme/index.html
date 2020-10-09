@@ -20,18 +20,7 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library" />
+    <meta name="description" content="Error handling " />
     <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title> - Kaka&#39;s Blog</title>
     
@@ -43,54 +32,21 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="" />
-<meta property="og:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library" />
+<meta property="og:description" content="Error handling " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/1/01/readme/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library">
+<meta itemprop="description" content="Error handling ">
 
-<meta itemprop="wordCount" content="124">
+<meta itemprop="wordCount" content="2">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
-Rust version: 1.31.0 or later
-Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
- Modules
-  Visibility
-  Struct visibility
-  The use declaration
-  super and self
-  File hierarchy
-  pub use(re-exporting)
-    Crates
-  Library"/>
+<meta name="twitter:description" content="Error handling "/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -302,107 +258,7 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="rust-by-example">Rust by Example</h1>
-<p>This repo is the record that I exercise the <a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a>!</p>
-<p>Rust version: <code>1.31.0 or later</code></p>
-<h2 id="chapter">Chapter</h2>
-<p>Before you to read chapter 10, 11, and 12, you can read <a href="https://github.com/kaka-lin/rust-by-example/tree/master/module_system">module system</a> first.</p>
-<ol start="10">
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules">Modules</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/1-visibility">Visibility</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/2-struct_visibility">Struct visibility</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/3-use_declaration">The use declaration</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/4-super_and_self">super and self</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/5-file_hierarchy">File hierarchy</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/6-pub_use">pub use(re-exporting)</a></p>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates">Crates</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/1-library">Library</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/2-extern_crate">extern crate</a></p>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch12-cargo">Cargo</a></p>
-</li>
-<li></li>
-<li></li>
-<li></li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits">Traits</a></p>
-<ol>
-<li>
-<p>[Derive]</p>
-</li>
-<li>
-<p>[Operator Overloading]</p>
-</li>
-<li>
-<p>[Drop]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits/4-iterators">Iterators</a></p>
-</li>
-<li>
-<p>[Clone]</p>
-</li>
-</ol>
-</li>
-<li>
-<p>[macro_rules!]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling">Error hanling</a></p>
-<ol>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/1-panic">panic</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/2-option_and_unwrap">Option &amp; unwrap</a></p>
-<p>2-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/3-map_for_option">Combinators: map</a></p>
-<p>2-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/4-and_then_for_option">Combinators: and_then</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/5-result">Result ( including [<code>unit type, ()</code>] )</a></p>
-<p>3-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/6-map_for_result">map for result</a></p>
-<p>3-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/7-aliases_for_result">aliases for Result</a></p>
-<p>3-3. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/8-early_returns">Early returns</a></p>
-<p>3-4. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/9-introducing_question_mark">Introducing ?</a></p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/10-multiple_error_types">Multiple error types</a></p>
-<p>4-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/11-pulling_results_out_of_options">Pulling Results out of Options</a></p>
-<p>4-2. [Defining an error type]</p>
-<p>4-3. [Boxing errors]</p>
-<p>4-4. [Other uses of ?]</p>
-<p>4-5. [Wrapping errors]</p>
-</li>
-<li>
-<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/16-iterating_over_results">Iterating over Results</a></p>
-</li>
-</ol>
-</li>
-</ol>
+      <h1 id="error-handling">Error handling</h1>
 
     </div>
     <div class="article-footer">
@@ -445,6 +301,11 @@ Chapter Before you to read chapter 10, 11, and 12, you can read module system fi
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/1/01/readme/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
             <li class="next">
                 <a href="https://kaka-lin.github.io/1/01/readme/"
                     title=""><span>Newer&nbsp;&nbsp;</span><i
