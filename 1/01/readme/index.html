@@ -20,7 +20,18 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&amp;gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct" />
+    <meta name="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
+Rust version: 1.31.0 or later
+Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
+ Modules
+  Visibility
+  Struct visibility
+  The use declaration
+  super and self
+  File hierarchy
+  pub use(re-exporting)
+    Crates
+  Library" />
     <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title> - Kaka&#39;s Blog</title>
     
@@ -32,21 +43,54 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="" />
-<meta property="og:description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct" />
+<meta property="og:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
+Rust version: 1.31.0 or later
+Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
+ Modules
+  Visibility
+  Struct visibility
+  The use declaration
+  super and self
+  File hierarchy
+  pub use(re-exporting)
+    Crates
+  Library" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/1/01/readme/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct">
+<meta itemprop="description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
+Rust version: 1.31.0 or later
+Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
+ Modules
+  Visibility
+  Struct visibility
+  The use declaration
+  super and self
+  File hierarchy
+  pub use(re-exporting)
+    Crates
+  Library">
 
-<meta itemprop="wordCount" content="295">
+<meta itemprop="wordCount" content="124">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct"/>
+<meta name="twitter:description" content="Rust by Example This repo is the record that I exercise the Rust by Example!
+Rust version: 1.31.0 or later
+Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
+ Modules
+  Visibility
+  Struct visibility
+  The use declaration
+  super and self
+  File hierarchy
+  pub use(re-exporting)
+    Crates
+  Library"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -258,59 +302,107 @@
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="aliases-for-result">aliases for <code>Result</code></h1>
-<p>How about when we want ot reuse a specific <code>Result</code> type many times? -&gt; <a href="#jump">aliases</a>.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h2 id="aliasing">Aliasing</h2>
-<p>The <code>type</code> statement can be used to give a new name to an existing type.</p>
-<h2 id="exmaple">Exmaple</h2>
-<p>At a module level, creating <code>aliases</code> can be particularly helpful. Errors found in a specific module often have the same <code>Err</code> type, so a single alias can succinctly(簡潔的) define all associated <code>Results</code>. This is so useful that the <code>std</code> library even supplies one: <a href="#jump2">io:Result</a>!</p>
-<pre><code class="language-rust">use std::num::ParseIntError;
-
-// Define a generic alias for a `Result` with the error type `ParseIntError`.
-type AliasedResult&lt;T&gt; = Result&lt;T, ParseIntError&gt;;
-
-// Use the above alias to refer to our specific `Result` type.
-fn multiply(first_number_str: &amp;str, second_number_str: &amp;str) -&gt; AliasedResult&lt;i32&gt; {
-    first_number_str.parse::&lt;i32&gt;().and_then(|first_number| {
-        second_number_str.parse::&lt;i32&gt;().map(|second_number| first_number * second_number)
-    })
-}
-
-// Here, the alias again allows us to save some space.
-fn print(result: AliasedResult&lt;i32&gt;) {
-    match result {
-        Ok(n)  =&gt; println!(&quot;n is {}&quot;, n),
-        Err(e) =&gt; println!(&quot;Error: {}&quot;, e),
-    }
-}
-
-fn main() {
-    print(multiply(&quot;10&quot;, &quot;2&quot;));
-    print(multiply(&quot;t&quot;, &quot;2&quot;));
-}
-</code></pre>
-<hr>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h2 id="stdioresult">std::io::Result</h2>
-<p>A specialized <code>Result</code> type for I/O operations.</p>
-<p>This type is broadly used across <code>std::io</code> for any operation which may produce an error.</p>
-<p>This typedef is generally used to avoid writing out <code>io::Error</code> directly and is otherwise a direct mapping to <code>Result</code>.</p>
-<p>While usual Rust style is to import types directly, aliases of <code>Result</code> often are not, to make it easier to distinguish between them. <code>Resul</code>t is generally assumed to be <code>std::result::Result</code>, and so users of this alias will generally use <code>io::Result</code> instead of shadowing the prelude&rsquo;s import of <code>std::result::Result</code>.</p>
-<pre><code class="language-rust">type Result&lt;T&gt; = Result&lt;T, Error&gt;
-</code></pre>
-<p>where Error: <code>std::io::Error</code></p>
-<h3 id="example">Example</h3>
-<pre><code class="language-rust">use std::io;
-
-fn get_string() -&gt; io::Result&lt;String&gt; {
-    let mut buffer = String::new();
-
-    io::stdin().read_line(&amp;mut buffer)?;
-
-    Ok(buffer)
-}
-</code></pre>
+      <h1 id="rust-by-example">Rust by Example</h1>
+<p>This repo is the record that I exercise the <a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a>!</p>
+<p>Rust version: <code>1.31.0 or later</code></p>
+<h2 id="chapter">Chapter</h2>
+<p>Before you to read chapter 10, 11, and 12, you can read <a href="https://github.com/kaka-lin/rust-by-example/tree/master/module_system">module system</a> first.</p>
+<ol start="10">
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules">Modules</a></p>
+<ol>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/1-visibility">Visibility</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/2-struct_visibility">Struct visibility</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/3-use_declaration">The use declaration</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/4-super_and_self">super and self</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/5-file_hierarchy">File hierarchy</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch10-modules/6-pub_use">pub use(re-exporting)</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates">Crates</a></p>
+<ol>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/1-library">Library</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch11-crates/2-extern_crate">extern crate</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch12-cargo">Cargo</a></p>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits">Traits</a></p>
+<ol>
+<li>
+<p>[Derive]</p>
+</li>
+<li>
+<p>[Operator Overloading]</p>
+</li>
+<li>
+<p>[Drop]</p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch16-traits/4-iterators">Iterators</a></p>
+</li>
+<li>
+<p>[Clone]</p>
+</li>
+</ol>
+</li>
+<li>
+<p>[macro_rules!]</p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling">Error hanling</a></p>
+<ol>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/1-panic">panic</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/2-option_and_unwrap">Option &amp; unwrap</a></p>
+<p>2-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/3-map_for_option">Combinators: map</a></p>
+<p>2-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/4-and_then_for_option">Combinators: and_then</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/5-result">Result ( including [<code>unit type, ()</code>] )</a></p>
+<p>3-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/6-map_for_result">map for result</a></p>
+<p>3-2. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/7-aliases_for_result">aliases for Result</a></p>
+<p>3-3. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/8-early_returns">Early returns</a></p>
+<p>3-4. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/9-introducing_question_mark">Introducing ?</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/10-multiple_error_types">Multiple error types</a></p>
+<p>4-1. <a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/11-pulling_results_out_of_options">Pulling Results out of Options</a></p>
+<p>4-2. [Defining an error type]</p>
+<p>4-3. [Boxing errors]</p>
+<p>4-4. [Other uses of ?]</p>
+<p>4-5. [Wrapping errors]</p>
+</li>
+<li>
+<p><a href="https://github.com/kaka-lin/rust-by-example/tree/master/ch18-error_handling/16-iterating_over_results">Iterating over Results</a></p>
+</li>
+</ol>
+</li>
+</ol>
 
     </div>
     <div class="article-footer">
@@ -353,11 +445,6 @@ fn get_string() -&gt; io::Result&lt;String&gt; {
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
-            <li class="prev">
-                <a href="https://kaka-lin.github.io/1/01/readme/" title=""><i
-                        class="icon icon-angle-left"
-                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
             <li class="next">
                 <a href="https://kaka-lin.github.io/1/01/readme/"
                     title=""><span>Newer&nbsp;&nbsp;</span><i
