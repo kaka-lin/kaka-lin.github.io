@@ -20,7 +20,7 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection" />
+    <meta name="description" content="What is Array? 可以想像成櫃子，櫃子上有某些連續的編號 &amp;ndash;&amp;gt; 有編號的櫃子 Memory is (Generally Viewed as) Array 記憶體就是一個很大的Array address就是index Array as Memory Block in C/C&#43;&#43;" />
     <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title>[DSA] NTU CSIE DSA, 01: Array - Kaka&#39;s Blog</title>
     
@@ -32,23 +32,23 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="[DSA] NTU CSIE DSA, 01: Array" />
-<meta property="og:description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection" />
+<meta property="og:description" content="What is Array? 可以想像成櫃子，櫃子上有某些連續的編號 &ndash;&gt; 有編號的櫃子 Memory is (Generally Viewed as) Array 記憶體就是一個很大的Array address就是index Array as Memory Block in C/C&#43;&#43;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/2020/07/01_array/" />
 <meta property="article:published_time" content="2020-07-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-07-04T00:00:00+00:00" />
 <meta itemprop="name" content="[DSA] NTU CSIE DSA, 01: Array">
-<meta itemprop="description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection">
+<meta itemprop="description" content="What is Array? 可以想像成櫃子，櫃子上有某些連續的編號 &ndash;&gt; 有編號的櫃子 Memory is (Generally Viewed as) Array 記憶體就是一個很大的Array address就是index Array as Memory Block in C/C&#43;&#43;">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1093">
+<meta itemprop="wordCount" content="980">
 
 
 
-<meta itemprop="keywords" content="Data Structure,DSA," />
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[DSA] NTU CSIE DSA, 01: Array"/>
-<meta name="twitter:description" content="Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C&#43;&#43; Array as Abstract Data Structure C&#43;&#43; STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection"/>
+<meta name="twitter:description" content="What is Array? 可以想像成櫃子，櫃子上有某些連續的編號 &ndash;&gt; 有編號的櫃子 Memory is (Generally Viewed as) Array 記憶體就是一個很大的Array address就是index Array as Memory Block in C/C&#43;&#43;"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -114,22 +114,16 @@
                   <span class="menu-title">Home</span>
                 </a>
             </li>
-            <li class="menu-item menu-item-archives">
-                <a href="/posts/">
-                    <i class="icon icon-archives-fill"></i>
-                  <span class="menu-title">Archives</span>
-                </a>
-            </li>
             <li class="menu-item menu-item-categories">
                 <a href="/categories/">
                     <i class="icon icon-folder"></i>
                   <span class="menu-title">Categories</span>
                 </a>
             </li>
-            <li class="menu-item menu-item-tags">
-                <a href="/tags/">
-                    <i class="icon icon-tags"></i>
-                  <span class="menu-title">Tags</span>
+            <li class="menu-item menu-item-books">
+                <a href="/series/">
+                    <i class="icon icon-book-fill"></i>
+                  <span class="menu-title">Series</span>
                 </a>
             </li>
             <li class="menu-item menu-item-about">
@@ -150,93 +144,28 @@
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">5</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure/" class="category-list-link">data-structure</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/asynchronous-programming/" class="category-list-link">asynchronous-programming</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/ci/cd-tools/" class="category-list-link">ci/cd-tools</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/coroutine/" class="category-list-link">coroutine</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure-and-algorithm/" class="category-list-link">data-structure-and-algorithm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/generator/" class="category-list-link">generator</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/i/o-models/" class="category-list-link">i/o-models</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/jupyterhub/" class="category-list-link">jupyterhub</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">3</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">11</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/mysql/" class="category-list-link">mysql</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/qt/" class="category-list-link">qt</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/react/" class="category-list-link">react</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/sqlalchemy/" class="category-list-link">sqlalchemy</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/sqlite/" class="category-list-link">sqlite</a><span class="category-list-count">1</span></li>
         </ul>
-    </div>
-</div>
-      <div class="widget">
-    <h3 class="widget-title"> Tags</h3>
-    <div class="widget-body">
-        <ul class="tag-list">
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/asynchronous-programming/" class="tag-list-link">asynchronous-programming</a><span
-                    class="tag-list-count">2</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/ci/cd-tools/" class="tag-list-link">ci/cd-tools</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-science/" class="tag-list-link">data-science</a><span
-                    class="tag-list-count">5</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/data-structure/" class="tag-list-link">data-structure</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/database/" class="tag-list-link">database</a><span
-                    class="tag-list-count">4</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/devops/" class="tag-list-link">devops</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/dsa/" class="tag-list-link">dsa</a><span
-                    class="tag-list-count">52</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/go/" class="tag-list-link">go</a><span
-                    class="tag-list-count">6</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/google-trends/" class="tag-list-link">google-trends</a><span
-                    class="tag-list-count">2</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/i/o-models/" class="tag-list-link">i/o-models</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/leetcode/" class="tag-list-link">leetcode</a><span
-                    class="tag-list-count">51</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/matplotlib/" class="tag-list-link">matplotlib</a><span
-                    class="tag-list-count">3</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/mysql/" class="tag-list-link">mysql</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/os/" class="tag-list-link">os</a><span
-                    class="tag-list-count">4</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/python/" class="tag-list-link">python</a><span
-                    class="tag-list-count">16</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlalchemy/" class="tag-list-link">sqlalchemy</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://kaka-lin.github.io/tags/sqlite/" class="tag-list-link">sqlite</a><span
-                    class="tag-list-count">1</span></li>
-            
-        </ul>
-
     </div>
 </div>
       
@@ -247,50 +176,50 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/concurrency_parallelism/" class="title">[OS] Concurrency(並行) 與 Parallelism(平行)</a>
+                        <a href="https://kaka-lin.github.io/2020/10/01_paint_system/" class="title">[Qt] Qt&#39;s Paint System</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="2020-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-24</time>
+                        <time datetime="2020-10-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-10-01</time>
                     </p>
                 </div>
             </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/io_models/" class="title">[OS] I/O Models: 同步、非同步、阻塞、非阻塞</a>
+                        <a href="https://kaka-lin.github.io/2020/09/01_hello_react/" class="title">[React] 01 - Hello React</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="2020-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-22</time>
+                        <time datetime="2020-09-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-09-26</time>
                     </p>
                 </div>
             </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/02_multiprocessing/" class="title">[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</a>
+                        <a href="https://kaka-lin.github.io/2020/09/02_hello_jsx/" class="title">[React] 02 - JSX 介紹</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="2020-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-19</time>
+                        <time datetime="2020-09-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-09-26</time>
                     </p>
                 </div>
             </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/06_advanced_function/" class="title">[Go] Ch1: Go Basics - 06 Advanced Function</a>
+                        <a href="https://kaka-lin.github.io/2020/08/08_concurrency/" class="title">[Go] Ch1: Go Basics - 08 Concurrency</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                        <time datetime="2020-08-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-26</time>
                     </p>
                 </div>
             </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://kaka-lin.github.io/2020/07/01_multithread/" class="title">[Python] Ch2: Process Management - 01 Python 多執行緒(Multi-Thread)</a>
+                        <a href="https://kaka-lin.github.io/2020/08/readme/" class="title">[DS] Build JupyterHub with docker</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="2020-07-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-18</time>
+                        <time datetime="2020-08-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-14</time>
                     </p>
                 </div>
             </li>
@@ -332,67 +261,16 @@
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/data-structure/"> Data Structure </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/data-structure/"> Data Structure </a>
-    <a class="article-tag-link" href="/tags/dsa/"> DSA </a>
-  </span>
+  <a class="article-category-link" href="/categories/data-structure-and-algorithm/"> Data Structure and Algorithm </a>
+</span>
+
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/01_array/#comments"
             class="article-comment-link">Comments</a></span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="array">Array</h1>
-<ul>
-<li><a href="#array">Array</a>
-<ul>
-<li><a href="#what-is-array">What is Array?</a>
-<ul>
-<li><a href="#memory-is-generally-viewed-as-array">Memory is (Generally Viewed as) Array</a></li>
-<li><a href="#array-as-memory-block-in-cc">Array as Memory Block in C/C++</a></li>
-</ul>
-</li>
-<li><a href="#array-as-abstract-data-structure">Array as Abstract Data Structure</a></li>
-<li><a href="#c-stl-vector-a-growing-array">C++ STL Vector: a Growing Array</a></li>
-<li><a href="#two-dimensional-array">Two Dimensional Array</a>
-<ul>
-<li><a href="#one-block-implementation-of-2d-array">One Block Implementation of 2D Array</a></li>
-<li><a href="#array-of-array-implementation-of-2d-array">Array of Array Implementation of 2D Array</a></li>
-<li><a href="#comparison-of-two-implementations">Comparison of Two Implementations</a></li>
-<li><a href="#a-table-between-two-programs">A Table between Two Programs</a></li>
-</ul>
-</li>
-<li><a href="#ordered-array">Ordered Array</a>
-<ul>
-<li><a href="#definition-of-ordered-array">Definition of Ordered Array</a></li>
-<li><a href="#insert-of-ordered-array"><code>insert</code> of Ordered Array</a></li>
-<li><a href="#construct-of-ordered-array"><code>construct</code> of Ordered Array</a>
-<ul>
-<li><a href="#method-1-selection-sort">Method 1: <code>Selection sort</code></a></li>
-<li><a href="#method-2-insertion-sort">Method 2: <code>Insertion sort</code></a></li>
-</ul>
-</li>
-<li><a href="#update-and-remove-of-ordered-array"><code>update</code> and <code>remove</code> of Ordered Array</a></li>
-</ul>
-</li>
-<li><a href="#binary-search-with-ordered-array">Binary Search with Ordered Array</a>
-<ul>
-<li><a href="#application-book-search-within-digital-library">Application: Book Search within (Digital) Library</a>
-<ul>
-<li><a href="#method-1-sequential-search-algorithm">Method 1: <code>Sequential Search Algorithm</code></a></li>
-<li><a href="#method-2-sequential-search-algorithm-with-cut-ordered-array">Method 2: <code>Sequential Search Algorithm with Cut</code> (Ordered Array)</a></li>
-<li><a href="#method-3-binary-search-algorithm-ordered-array">Method 3: <code>Binary Search Algorithm</code> (Ordered Array)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="what-is-array">What is Array?</h2>
+      <h2 id="what-is-array">What is Array?</h2>
 <pre><code>可以想像成櫃子，櫃子上有某些連續的編號
 </code></pre>
 <p>&ndash;&gt; 有編號的櫃子</p>
@@ -532,7 +410,7 @@ eturn NOTFIND
 for i from 0 to tail
     if (arr[i].ID == toFind.ID)
         return FIND
-    if (arr[i].ID &gt; toFind.ID) 
+    if (arr[i].ID &gt; toFind.ID)
         return NOTFIND
 end for
 eturn NOTFIND

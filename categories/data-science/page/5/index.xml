@@ -5,10 +5,57 @@
     <link>https://kaka-lin.github.io/categories/data-science/</link>
     <description>Recent content in Data Science on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 03 List</title>
+      <link>https://kaka-lin.github.io/2020/06/03_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/03_list/</guid>
+      <description>List 串列 List 用來儲存一連串有順序的資料，如： countries = [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] print(countries) [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] 取得 List 裡有幾個元素: len() length = len(countries) length [Out]: 3 取得List 裡的元素 list_name[index] countries[0] [Out]: &#39;Taiwan&#39; 取得最後一個元素 list[-1] print(countries[-1])</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 04 Dictionary</title>
+      <link>https://kaka-lin.github.io/2020/06/04_dictionary/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/04_dictionary/</guid>
+      <description>Dictionary 字典 在字典裡，皆由key(鍵)和value(值)組成 dict = {key1 : value1, key2 : value2 } kaka = {&#39;firstname&#39;:&#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} print(kaka) {&#39;firstname&#39;: &#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} 取得 Dictionary 裡有幾個元素: len() print(len(kaka)) [Out]: 3 取得 Dictionay 裡的資</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 05 Function</title>
+      <link>https://kaka-lin.github.io/2020/06/05_function/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/05_function/</guid>
+      <description>Function 函式 def 函式名稱(參數): 程式碼 def printf(text): print(&amp;quot;[Out]: {}&amp;quot;.format(text)) printf(&#39;Hello world!&#39;) [Out]: Hello world! 閏年 根據維基百科，分辨平閏年的方法為： 公元年份除以4不可整除，為平年。 公元年份除以4可整除</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://kaka-lin.github.io/about/</link>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/about/</guid>
+      <description>Hi, I&amp;rsquo;m kaka, from Taiwan. 👋
+I&amp;rsquo;m a software engineer at Inventec focusing primarily on the development of Advanced Driver Assistance Systems and related application with Python &amp;amp; C/C++. I received M.S.(2015) in Bio-Industrial Mechatronics Engineering from National Taiwan University (NTU).</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch0: Install Python</title>
+      <link>https://kaka-lin.github.io/2020/05/readme/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/05/readme/</guid>
+      <description>Python Environment Setup Tutorials Medium: Install Python on Windows
+ Windows macOS Ubuntu  </description>
+    </item>
     
     <item>
       <title>[Python] Ch0: Install Python: Mac</title>
@@ -53,18 +100,6 @@ Download and Install it.
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Google Trends to Google Data Studion COVID-19 Search Trends in 2020 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>JupyterHub Use Docker to build a JupyterHub for multiple users
-Enable HTTPS (SSL encryption)   Generate a self-signed certificate with openssl, as below:
- create a self-signed certificate.  For example, the following command will create a certificate valid for 365 days with both the key and certificate data written to the same file:
-$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout jupyterhub.key -out jupyterhub.pem    Copy the certificate and key file to a director named secrets in the root directory.</description>
     </item>
     
     <item>
@@ -171,43 +206,6 @@ leetcode: Climbing Stairs
 Description You are climbing a stair case. It takes n steps to reach to the top.
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 Note: Given n will be a positive integer.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Dynamic Programming (DP) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/000_template/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/000_template/</guid>
-      <description>0. Template Discription Example:  Solution:  Runtime: ms (%) Memory Usage: MB (%)   Time complexity Space complexity </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>LeetCode    # Title Solution Topics Difficulty     1 Tow Sum Python Array, Hash Table Easy   2 Add Tow Numbers Python Linked List, Math Medium   7 Reverse Integer Python  Easy   9 Palindrome Number Python  Easy   13 Roman to Integer Python Math, String Easy   19 Remove Nth Node From End of List Python Linked List, Two Pointers Medium   21 Merge Two Sorted Lists Python Linked List Easy   24 Swap Nodes in Pairs Python Linked List Medium   27 Remove Element Python Array, Two Pointers Easy   28 Implement strStr() Python String, Two Pointers Easy   35 Search Insert Position Python Array, Binary Search Easy   53 Maximum Subarray Python Dynamic Programming Easy   70 Climbing Stairs Python Dynamic Programming Easy   83 Remove Duplicates from Sorted List Python Linked List Easy   94 Binary Tree Inorder Traversal Python Tree Medium   98 Validate Binary Search Tree Python Binary Search Tree Medium   100 Same Tree Python Tree Easy   102 Binary Tree Level Order Traversal Python Tree, Breadth-first Search Medium   118 Pascal&amp;rsquo;s Triangle Python Array, Recursion, Dynamic Programming Easy   119 Pascal&amp;rsquo;s Triangle II Python Array, Recursion, Dynamic Programming Easy   136 Single Number Python List, Hash Table, Bit Manipulation Easy   144 Binary Tree Preorder Traversal Python Stack, Tree Medium   145 Binary Tree Postorder Traversal Python Stack, Tree Hard   160 Intersection of Two Linked Lists Python Linked List Easy   167 Two Sum II - Input array is sorted Python Array, Two Pointers, Binary Search Easy   169 Majority Element Python Array, Divide and Conquer, Bit Manipulation Easy   191 Number of 1 Bits Python Bit Manipulation Easy   202 Happy Number Python Hash Table, Math Easy   203 Remove Linked List Elements Python Linked List Easy   206 Reverse Linked List Python Linked List Easy   217 Contains Duplicate Python Array, Hash Table Easy   226 Invert Binary Tree Python Tree Easy   234 Palindrome Linked List Python Linked List, Two Pointers Easy   236 Lowest Common Ancestor of a Binary Tree Python Tree, Stack, Recursion Medium   240 Search a 2D Matrix II Python Binary Search, Divide and Conquer Medium   242 Valid Anagram Python Hash Table Easy   297 Serialize and Deserialize Binary Tree Python Tree, Stack, Recursion Hard   344 344.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Data Structure and Algorithms (DSA) Courses Data Structures and Algorithms, NTU Hsuan-Tien Lin
-LeetCode  LeetCode  Algorithm  Recursion Dynamic Programming  </description>
     </item>
     
   </channel>

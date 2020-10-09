@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>I/O Models on Kaka&#39;s Blog</title>
+    <link>https://kaka-lin.github.io/categories/i/o-models/</link>
+    <description>Recent content in I/O Models on Kaka&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+        <atom:link href="https://kaka-lin.github.io/categories/i/o-models/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Dynamic Programming (DP) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/000_template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/000_template/</guid>
+      <description>0. Template Discription Example:  Solution:  Runtime: ms (%) Memory Usage: MB (%)   Time complexity Space complexity </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>LeetCode    # Title Solution Topics Difficulty     1 Tow Sum Python Array, Hash Table Easy   2 Add Tow Numbers Python Linked List, Math Medium   7 Reverse Integer Python  Easy   9 Palindrome Number Python  Easy   13 Roman to Integer Python Math, String Easy   19 Remove Nth Node From End of List Python Linked List, Two Pointers Medium   21 Merge Two Sorted Lists Python Linked List Easy   24 Swap Nodes in Pairs Python Linked List Medium   27 Remove Element Python Array, Two Pointers Easy   28 Implement strStr() Python String, Two Pointers Easy   35 Search Insert Position Python Array, Binary Search Easy   53 Maximum Subarray Python Dynamic Programming Easy   70 Climbing Stairs Python Dynamic Programming Easy   83 Remove Duplicates from Sorted List Python Linked List Easy   94 Binary Tree Inorder Traversal Python Tree Medium   98 Validate Binary Search Tree Python Binary Search Tree Medium   100 Same Tree Python Tree Easy   102 Binary Tree Level Order Traversal Python Tree, Breadth-first Search Medium   118 Pascal&amp;rsquo;s Triangle Python Array, Recursion, Dynamic Programming Easy   119 Pascal&amp;rsquo;s Triangle II Python Array, Recursion, Dynamic Programming Easy   136 Single Number Python List, Hash Table, Bit Manipulation Easy   144 Binary Tree Preorder Traversal Python Stack, Tree Medium   145 Binary Tree Postorder Traversal Python Stack, Tree Hard   160 Intersection of Two Linked Lists Python Linked List Easy   167 Two Sum II - Input array is sorted Python Array, Two Pointers, Binary Search Easy   169 Majority Element Python Array, Divide and Conquer, Bit Manipulation Easy   191 Number of 1 Bits Python Bit Manipulation Easy   202 Happy Number Python Hash Table, Math Easy   203 Remove Linked List Elements Python Linked List Easy   206 Reverse Linked List Python Linked List Easy   217 Contains Duplicate Python Array, Hash Table Easy   226 Invert Binary Tree Python Tree Easy   234 Palindrome Linked List Python Linked List, Two Pointers Easy   236 Lowest Common Ancestor of a Binary Tree Python Tree, Stack, Recursion Medium   240 Search a 2D Matrix II Python Binary Search, Divide and Conquer Medium   242 Valid Anagram Python Hash Table Easy   297 Serialize and Deserialize Binary Tree Python Tree, Stack, Recursion Hard   344 344.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Data Structure and Algorithms (DSA) Courses Data Structures and Algorithms, NTU Hsuan-Tien Lin
+LeetCode  LeetCode  Algorithm  Recursion Dynamic Programming  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Bitonic Champion Problem   Input: A bitonic sequence A[1], A[2], &amp;hellip;, A[n] for distinct positive integers.
+  Output: the index $i$ with $1 {\leq} i {\leq} n$ such that
+$$A[i] = \max_{1 {\leq} j {\leq} n} A[j]$$
+  Bitonic sequence The bitonic sequence means &amp;quot;increasing&amp;quot; before the champion and &amp;quot;decreasing&amp;quot; after the champion  Exmaple
+3 7 9 17 35 28 21 18 6 4  Bitonic Champion Problem Complexity   Upper bound: $O(logn)$</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Maximum Subarray Problem   Input: A sequence A[1], A[2], &amp;hellip;, A[n] of integers.
+  Output: Two indicex $i$ and $j$ with $1 {\leq} i {\leq} j {\leq} n$ that maximize
+$$A[i] + A[i+1] + \cdots + A[j]$$
+  Solution 1. Divide and Conquer  Base case (n = 1)  Return itself (maximum subarray)   Recursive case (n &amp;gt; 1)  Divide the array into two sub-arrays Find the maximum sub-array recuresively Merge the result    Bitonic Champion Problem Complexity   Upper bound: $O(n)$</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Merge Sort One of the classic examples of the divide-and-conquer algorithm is the merge sort algorithm. Merge sort is an efficient and general-purpose sorting algorithm. Intuition There are two apporaches to implement the merge sort algorithm: top-down or bottom-up. The merge sort algorithm can be divided into three steps, like all divide-and-conquer algorithms. 1. Divide the given unsorted list into several sublists. (Divide) 2. Sort each of the sublists recursively.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Quick Sort Quick sort is another classical divide-and-conquer algorithm for sorting. Intuition The quick sort algorithm can be implemented in three steps, namely dividing the problem, solving the subproblems and combing the results of subproblems. In detail, given a list of values to sort, the quick sort algorithm works in following steps: First, it selects a value from the list, which serves as a pivot value to divide the list</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Divide and Conquer Solve a problwm recursively
+Three steps   Divide
+Divide the problem into a number of subproblems that are smaller instances of the same problem.    Conquer
+Conquer the subproblems by solving them recursively.    Base case (Termination condition): Solve the subproblems if the subproblem sizes are small enough.
+  Recursive case: Recursively solve itself.
+    Combine
+Combine the solutions to the subproblems into the solution for the original problem.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Tower of Hanoi  Problem: move n disks from A to C Rules:  Move one disk at a time. Cannot place a large dosk onto a smaller disk.    Reference  ADA, NTU CSIE  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Recursion </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Go Learning Notes  01 Go Basics 02 Flow Control 03 Structs 04 Array &amp;amp; Slices 05 Maps 06 Advanced Function 07 Methods and interfaces  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞 Concurrency(並行) 與 Parallelism(平行) Corotuine(協程)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Papers All papers of my reading
+Top Conference CVPR    # Paper Links     1 Learning in the Frequency Domain slides   2 CARS: Contunuous Evolution for Efficient Neural Architecture Search slides   3 High Frequency Component Helps Explain the Generalization of Convolutional Neural Networks slides   4 YUVMultiNet: Real-time YUV multi-task CNN for autonomous driving slides    AAAI    # Paper Links     1 Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression slides   2 Pruning from Scratch slides    ICLR    # Paper Links     1 Once for All: Train One Network and Specialize it for Efficient Deployment slides    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/common_packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/common_packages/</guid>
+      <description>Install Common Packages After you installed python.
+$ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend # or $ pip install -r requirements.txt  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Python Learning Notes Table of Contents 00. Install Python Windows macOS Ubuntu 01. Python Basics 01. Python Basics 02. Flow Control 03. List 04. Dictionary 05. Function 02. Process Management 01. Multithread (多執行緒) 02. Multiprocessing (多程序) 03. Coroutine (協程) 03-1. Generator (生成器)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Painting in Qt5 Example of how to render image in Qt or PyQt5
+Knowledge  01 Paint System  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Qt/Qml Learning Notes Painting in Qt5</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>React React official website
+Learn Notes  01. Hello React 02. Hello JSX  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>My Learning Notes This repo is my study notes My blog: Kaka&amp;rsquo;s blog My Medium: AIoT Taipei Categories Papers Python Go Rust Data Structure and Algorithms (DSA) Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞 Concurrency(並行) 與 Paralleli</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        [DS] Matplotlib show Chinese - Kaka&#39;s Blog
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 Windows 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo" />
+    <meta name="generator" content="Hugo 0.75.1 with theme pure" />
+    <title>[DS] Matplotlib show Chinese - Kaka&#39;s Blog</title>
+    
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/style.min.b6f20e134784037e61fde00d4388896cc4e42d15cabc7c10c03c853238eeb2fc.css">
+    
+    <link rel="stylesheet" href="https://kaka-lin.github.io/css/custom.css" async>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="[DS] Matplotlib show Chinese" />
+<meta property="og:description" content="Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 Windows 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaka-lin.github.io/2020/06/readme/" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="name" content="[DS] Matplotlib show Chinese">
+<meta itemprop="description" content="Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 Windows 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo">
+<meta itemprop="datePublished" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="935">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[DS] Matplotlib show Chinese"/>
+<meta name="twitter:description" content="Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 Windows 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/kaka-lin" target="_blank">
+            <img class="img-circle img-rotate" src="https://kaka-lin.github.io/images/kaka_virtual.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Kaka Lin</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Engineer</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Taipei, Taiwan</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-books">
+                <a href="/series/">
+                    <i class="icon icon-book-fill"></i>
+                  <span class="menu-title">Series</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/asynchronous-programming/" class="category-list-link">asynchronous-programming</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/ci/cd-tools/" class="category-list-link">ci/cd-tools</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/coroutine/" class="category-list-link">coroutine</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-science/" class="category-list-link">data-science</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/data-structure-and-algorithm/" class="category-list-link">data-structure-and-algorithm</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/database/" class="category-list-link">database</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/devops/" class="category-list-link">devops</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/generator/" class="category-list-link">generator</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/go/" class="category-list-link">go</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/google-trends/" class="category-list-link">google-trends</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/i/o-models/" class="category-list-link">i/o-models</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/jupyterhub/" class="category-list-link">jupyterhub</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">51</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/matplotlib/" class="category-list-link">matplotlib</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/mysql/" class="category-list-link">mysql</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/os/" class="category-list-link">os</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/qt/" class="category-list-link">qt</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/react/" class="category-list-link">react</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/sqlalchemy/" class="category-list-link">sqlalchemy</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://kaka-lin.github.io/categories/sqlite/" class="category-list-link">sqlite</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/10/01_paint_system/" class="title">[Qt] Qt&#39;s Paint System</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-10-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-10-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/09/01_hello_react/" class="title">[React] 01 - Hello React</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-09-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-09-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/09/02_hello_jsx/" class="title">[React] 02 - JSX 介紹</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-09-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-09-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/08/08_concurrency/" class="title">[Go] Ch1: Go Basics - 08 Concurrency</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-08-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://kaka-lin.github.io/2020/08/readme/" class="title">[DS] Build JupyterHub with docker</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-08-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-14</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a class="article-title"
+     href="/2020/06/readme/">
+     [DS] Matplotlib show Chinese
+  </a>
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://kaka-lin.github.io/2020/06/readme/" class="article-date">
+  <time datetime="2020-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/data-science/"> Data Science </a>
+  <a class="article-category-link" href="/categories/matplotlib/"> Matplotlib </a>
+</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/readme/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="matplotlib-顯示中文">Matplotlib 顯示中文</h1>
+<p>Ref: <a href="https://matplotlib.org/3.1.0/tutorials/text/text_props.html#text-with-non-latin-glyphs">Text with non-latin glyphs</a></p>
+<p>下載思源體（下面兩種任選一種皆可）</p>
+<ol>
+<li><a href="https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip">思源黑體</a></li>
+<li><a href="https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKtc-hinted.zip">思源宋體</a></li>
+</ol>
+<h2 id="windows">Windows</h2>
+<h3 id="查看matplotlib套件安裝位置">查看matplotlib套件安裝位置</h3>
+<pre><code class="language-python">import matplotlib
+print(matplotlib.__file__)
+</code></pre>
+<p>Output:</p>
+<pre><code>C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py
+</code></pre>
+<p>可以得知，<code>matplotlib</code>的安裝位置在<code>C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib</code>。</p>
+<ul>
+<li>
+<p>Note:</p>
+<pre><code>每個人的安裝位置會因電腦配置而有所不同。
+</code></pre>
+</li>
+</ul>
+<h3 id="安裝步驟">安裝步驟</h3>
+<ol>
+<li>解開剛剛下載的壓縮檔</li>
+<li>任選一個<code>.otf</code>檔案，複製到<code>C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\mpl-data\fonts\ttf\</code>資料夾內</li>
+<li>刪除這個資料夾內的所有檔案：<code>C:\Users\USER\\.matplotlib\</code></li>
+<li>如果使用的是<code>思源黑體</code>，請將底下的<code>fontType =' '</code>變更為<code>fontType ='Noto Sans CJK TC'</code></li>
+<li>如果使用的是<code>思源宋體</code>，請將底下的<code>fontType =' '</code>變更為<code>fontType ='Noto Serif CJK TC'</code></li>
+</ol>
+<h3 id="configuration">Configuration</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+fontType = ''
+
+plt.rcParams['font.sans-serif'] = [fontType]
+plt.rcParams['axes.unicode_minus'] = False
+
+%matplotlib inline
+</code></pre>
+<h3 id="plot-the-result">Plot the result</h3>
+<pre><code class="language-python">plt.figure()
+plt.plot((1, 2, 3),(4, 3, -1))
+plt.title(&quot;聲量圖&quot;)
+plt.ylabel(&quot;文章數量&quot;)
+plt.xlabel(&quot;品牌名稱&quot;)
+plt.show()
+</code></pre>
+<p><img src="images/matplotlib_chinese_windows.png" alt="">
+<img src="/images/data_science/matplotlib/matplotlib_chinese_windows.png" alt=""></p>
+<h2 id="mac">Mac</h2>
+<h3 id="查看matplotlib安裝了哪些字型">查看matplotlib安裝了哪些字型</h3>
+<pre><code class="language-python"># 查看安裝了哪些字型
+# windows請忽略這段
+# unix系統可以使用下command確認是否安裝成功
+!fc-list :lang=zh family
+</code></pre>
+<h3 id="重新加載字體">重新加載字體</h3>
+<pre><code class="language-python"># 重新加載字體
+from matplotlib.font_manager import _rebuild
+_rebuild()
+</code></pre>
+<pre><code class="language-python">import matplotlib
+import matplotlib.pyplot as plt
+
+# 使用剛剛下載的思源體字型
+plt.rcParams['font.sans-serif'] = ['Noto Sans Mono CJK TC', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+
+%matplotlib inline
+</code></pre>
+<h3 id="plot-the-result-1">Plot the result</h3>
+<pre><code class="language-python">plt.figure()
+plt.plot((1, 2, 3),(4, 3, -1))
+plt.title(&quot;聲量圖&quot;)
+plt.ylabel(&quot;文章數量&quot;)
+plt.xlabel(&quot;品牌名稱&quot;)
+plt.show()
+</code></pre>
+<p><img src="images/matplotlib_chinese_mac.png" alt="">
+<img src="/images/data_science/matplotlib/matplotlib_chinese_mac.png" alt=""></p>
+<h2 id="ubuntu">Ubuntu</h2>
+<h3 id="查看matplotlib安裝了哪些字型-1">查看matplotlib安裝了哪些字型</h3>
+<pre><code class="language-python"># 查看安裝了哪些字型
+# windows請忽略這段
+# unix系統可以使用下command確認是否安裝成功
+!fc-list :lang=zh family
+</code></pre>
+<pre><code class="language-python">import matplotlib
+import matplotlib.pyplot as plt
+
+# 使用剛剛下載的思源體字型
+plt.rcParams['font.sans-serif'] = ['Noto Sans Mono CJK TC', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+
+%matplotlib inline
+</code></pre>
+<h3 id="plot-the-result-2">Plot the result</h3>
+<pre><code class="language-python">plt.figure()
+plt.plot((1, 2, 3),(4, 3, -1))
+plt.title(&quot;聲量圖&quot;)
+plt.ylabel(&quot;文章數量&quot;)
+plt.xlabel(&quot;品牌名稱&quot;)
+plt.show()
+</code></pre>
+<p><img src="images/matplotlib_chinese_ubuntu.png" alt="">
+<img src="/images/data_science/matplotlib/matplotlib_chinese_ubuntu.png" alt=""></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://kaka-lin.github.io/2020/06/readme/" title="[DS] Matplotlib show Chinese" target="_blank" rel="external">https://kaka-lin.github.io/2020/06/readme/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="external">CC BY 4.0</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kaka-lin" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://kaka-lin.github.io/images/kaka_virtual.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kaka-lin" target="_blank"><span class="text-dark">Kaka Lin</span><small class="ml-1x">Software Engineer</small></a></h3>
+        <div>AIoT</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://kaka-lin.github.io/2020/06/001_two_sum/" title="[LeetCode] 001 Two Sum"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/"
+                    title="[DS] Google Trends 02: Convert to Google Data Studio"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://www.facebook.com/profile.php?id=100001656484042" target="_blank" title="facebook" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-facebook"></i></a></li>
+    <li><a href="https://github.com/kaka-lin" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/%E5%AE%B6%E8%B1%AA-%E6%9E%97-014a02116/" target="_blank" title="linkedin" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-linkedin"></i></a></li>
+</ul>
+  <div class="copyright">
+    Copyright
+    &copy;2020  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/python.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://kaka-lin.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://kaka-lin.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/kaka-lin.github.io\/',
+            CONTENT_URL: 'https:\/\/kaka-lin.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://kaka-lin.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https:\/\/kaka-lin.github.io\/2020\/06\/readme\/';
+        this.page.identifier = 'kaka-blog';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//' + 'kaka-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+  </body>
+</html>

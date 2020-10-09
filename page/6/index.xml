@@ -5,10 +5,47 @@
     <link>https://kaka-lin.github.io/</link>
     <description>Recent content on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Dynamic Programming (DP) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/000_template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/000_template/</guid>
+      <description>0. Template Discription Example:  Solution:  Runtime: ms (%) Memory Usage: MB (%)   Time complexity Space complexity </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>LeetCode    # Title Solution Topics Difficulty     1 Tow Sum Python Array, Hash Table Easy   2 Add Tow Numbers Python Linked List, Math Medium   7 Reverse Integer Python  Easy   9 Palindrome Number Python  Easy   13 Roman to Integer Python Math, String Easy   19 Remove Nth Node From End of List Python Linked List, Two Pointers Medium   21 Merge Two Sorted Lists Python Linked List Easy   24 Swap Nodes in Pairs Python Linked List Medium   27 Remove Element Python Array, Two Pointers Easy   28 Implement strStr() Python String, Two Pointers Easy   35 Search Insert Position Python Array, Binary Search Easy   53 Maximum Subarray Python Dynamic Programming Easy   70 Climbing Stairs Python Dynamic Programming Easy   83 Remove Duplicates from Sorted List Python Linked List Easy   94 Binary Tree Inorder Traversal Python Tree Medium   98 Validate Binary Search Tree Python Binary Search Tree Medium   100 Same Tree Python Tree Easy   102 Binary Tree Level Order Traversal Python Tree, Breadth-first Search Medium   118 Pascal&amp;rsquo;s Triangle Python Array, Recursion, Dynamic Programming Easy   119 Pascal&amp;rsquo;s Triangle II Python Array, Recursion, Dynamic Programming Easy   136 Single Number Python List, Hash Table, Bit Manipulation Easy   144 Binary Tree Preorder Traversal Python Stack, Tree Medium   145 Binary Tree Postorder Traversal Python Stack, Tree Hard   160 Intersection of Two Linked Lists Python Linked List Easy   167 Two Sum II - Input array is sorted Python Array, Two Pointers, Binary Search Easy   169 Majority Element Python Array, Divide and Conquer, Bit Manipulation Easy   191 Number of 1 Bits Python Bit Manipulation Easy   202 Happy Number Python Hash Table, Math Easy   203 Remove Linked List Elements Python Linked List Easy   206 Reverse Linked List Python Linked List Easy   217 Contains Duplicate Python Array, Hash Table Easy   226 Invert Binary Tree Python Tree Easy   234 Palindrome Linked List Python Linked List, Two Pointers Easy   236 Lowest Common Ancestor of a Binary Tree Python Tree, Stack, Recursion Medium   240 Search a 2D Matrix II Python Binary Search, Divide and Conquer Medium   242 Valid Anagram Python Hash Table Easy   297 Serialize and Deserialize Binary Tree Python Tree, Stack, Recursion Hard   344 344.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Data Structure and Algorithms (DSA) Courses Data Structures and Algorithms, NTU Hsuan-Tien Lin
+LeetCode  LeetCode  Algorithm  Recursion Dynamic Programming  </description>
+    </item>
     
     <item>
       <title></title>
@@ -88,38 +125,11 @@ Combine the solutions to the subproblems into the solution for the original prob
     
     <item>
       <title></title>
-      <link>https://kaka-lin.github.io/1/01/07_methods_interfaces/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/07_methods_interfaces/</guid>
-      <description>Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods and Interfaces Methods (方法) Example Method on Non-struct type Pointer receivers Choosing a value or pointer receiver Interfaces (介面) Implement methods of an interface Interface values The empty interface Type assertions Type switches Example Methods (方法) Go does not classes.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/08_concurrency/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/08_concurrency/</guid>
-      <description>Concurrency Go provides concurrency features as part of the core language. This module goes over goroutines and channels, and how they are used to implement different concurrency patterns. 複習: Concurrency and Parallelism Goroutines A goroutine is a lightweight thread managed by Go runtime. goroutine是輕量級的執行緒(lightwe</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://kaka-lin.github.io/1/01/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Go Learning Notes  01 Go Basics 02 Flow Control 03 Structs 04 Array &amp;amp; Slices 05 Maps 06 Advanced Function 07 Methods and interfaces  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/coroutine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/coroutine/</guid>
-      <description>Coroutine (協程) 先來看一下Wiki上關於Coroutine的解釋: Coroutines are computer program components that generalize subroutines for non-preemptive multitasking (協同運作多工), by allowing execution to be suspended and resumed. 簡單來說，Corouti</description>
     </item>
     
     <item>
@@ -143,20 +153,21 @@ Top Conference CVPR    # Paper Links     1 Learning in the Frequency Domain slid
     
     <item>
       <title></title>
+      <link>https://kaka-lin.github.io/1/01/common_packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/common_packages/</guid>
+      <description>Install Common Packages After you installed python.
+$ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend # or $ pip install -r requirements.txt  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://kaka-lin.github.io/1/01/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Python Learning Notes Table of Contents 00. Install Python Windows macOS Ubuntu 01. Python Basics 01. Python Basics 02. Flow Control 03. List 04. Dictionary 05. Function 02. Process Management 01. Multithread (多執行緒) 02. Multiprocessing (多程序) 03. Coroutine (協程) 03-1. Generator (生成器)</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/01_paint_system/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/01_paint_system/</guid>
-      <description>Qt&amp;rsquo;s Paint System 初探Qt的繪圖系統 前言 最近因為再研究labeling tool的關係，於是又重新把Qt的繪圖系統重新研究了一下 Qt&amp;rsquo;s Paint System Qt&#39;s paint system enables painting on screen and print devices</description>
     </item>
     
     <item>
@@ -184,26 +195,17 @@ Knowledge  01 Paint System  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Hello React 最近因為專案需要用到，於是又打開了兩年前在Udemy上買的React課程複習， 驚喜的發現講師有Update了2020版本上去，於是打算邊</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>JSX 介紹 首先看看下面這個變數宣告 const element = &amp;lt;h1&amp;gt;你好，世界！&amp;lt;/h1&amp;gt;; 這個有趣的標籤語法不是一個字串也不是HTML。 這</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>React React official website
 Learn Notes  01. Hello React 02. Hello JSX  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>My Learning Notes This repo is my study notes My blog: Kaka&amp;rsquo;s blog My Medium: AIoT Taipei Categories Papers Python Go Rust Data Structure and Algorithms (DSA) Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞 Concurrency(並行) 與 Paralleli</description>
     </item>
     
   </channel>

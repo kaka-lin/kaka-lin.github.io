@@ -5,18 +5,72 @@
     <link>https://kaka-lin.github.io/</link>
     <description>Recent content on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>[DS] Matplotlib show Chinese: Windows</title>
-      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</link>
+      <title>[DB] Mysql Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/mysql-basics/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_windows/</guid>
-      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 # 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo</description>
+      <guid>https://kaka-lin.github.io/2020/06/mysql-basics/</guid>
+      <description>MySQL - Basics SQL Tutorial MySQL Documentation MySQL - Tutorial Quickstart for Cloud SQL for MySQL Load ipython-sql ipython-sql: 是jupyter notebook的extension，用來擴充jupyter對SQL的支援 其底層是使用</description>
+    </item>
+    
+    <item>
+      <title>[DB] Sqlalchemy Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</guid>
+      <description>SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql+mysqldb://root:&amp;lt;passwd&amp;gt;@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance(</description>
+    </item>
+    
+    <item>
+      <title>[DB] Sqlite Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/sqlite-basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/sqlite-basics/</guid>
+      <description>SQLite - Basics SQL - Tutorial SQL As Understood By SQLite(官網) SQLite - Tutorial Load ipython-sql ipython-sql: 是jupyter notebook的extension，用來擴充jupyter對SQL的支</description>
+    </item>
+    
+    <item>
+      <title>[DevOps] Gitlab CI/CD</title>
+      <link>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</guid>
+      <description>GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your</description>
+    </item>
+    
+    <item>
+      <title>[DS] Google Trends 01: Operate with Python</title>
+      <link>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</guid>
+      <description>Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google</description>
+    </item>
+    
+    <item>
+      <title>[DS] Google Trends 02: Convert to Google Data Studio</title>
+      <link>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</guid>
+      <description>Google Trends to Google Data Studio Get the result form Google Trends Using gspread transform the data of Google Trends to Google Sheets Import the file of Google Sheets into Google Data Studio Get the result from Goolge Trends import pandas as pd from pytrends.request import TrendReq # Create an instance(實例) of TrendReq pytrend = TrendReq() # Build a</description>
+    </item>
+    
+    <item>
+      <title>[DS] Matplotlib show Chinese</title>
+      <link>https://kaka-lin.github.io/2020/06/readme/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/readme/</guid>
+      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體（下面兩種任選一種皆可） 思源黑體 思源宋體 Windows 查看matplotlib套件安裝位置 import matplotlib print(matplotlib.__file__) Output: C:\Users\USER\Miniconda3\envs\tensorflow\lib\site-packages\matplotlib\__init__.py 可以得知，matplo</description>
     </item>
     
     <item>
@@ -160,72 +214,6 @@ Example: Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6 Explanation: [4,-1,2,1] has t
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 Note: Given n will be a positive integer.
 Example 1: Input: 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 083 Remove Duplicates From Sorted List</title>
-      <link>https://kaka-lin.github.io/2020/06/083_remove_duplicates_from_sorted_list/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/083_remove_duplicates_from_sorted_list/</guid>
-      <description>83. Remove Duplicates from Sorted List Discription Given a sorted linked list, delete all duplicates such that each element appear only once.
-Example: Input: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3 Output: 1-&amp;gt;2-&amp;gt;  Solution:  Runtime: 44 ms (93.15%) Memory Usage: 13.1 MB (67.00%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def deleteDuplicates(self, head: ListNode) -&amp;gt; ListNode: if head is None or head.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 094 Binary Tree Inorder Traversal</title>
-      <link>https://kaka-lin.github.io/2020/06/094_binary_tree_inorder_traversal/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/094_binary_tree_inorder_traversal/</guid>
-      <description>94. Binary Tree Inorder Traversal Discription Given a binary tree, return the inorder traversal of its nodes&#39; values.
-inorder:
-left tree -&amp;gt; root tree -&amp;gt; right tree  Example: Input: [1,null,2,3] 1 \ 2 / 3 Output: [1,3,2]  Solution 1: Recursive  Runtime: 32 ms (91.99%) Memory Usage: 13.2 MB (56.18%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.val = x # self.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 098 Validate Binary Search Tree</title>
-      <link>https://kaka-lin.github.io/2020/06/098_validate_binary_search_tree/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/098_validate_binary_search_tree/</guid>
-      <description>98. Validate Binary Search Tree Discription Given a binary tree, determine if it is a valid binary search tree (BST).
-Assume a BST is defined as follows:
- The left subtree of a node contains only nodes with keys less than the node&amp;rsquo;s key. The right subtree of a node contains only nodes with keys greater than the node&amp;rsquo;s key. Both the left and right subtrees must also be binary search trees.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 100 Same Tree</title>
-      <link>https://kaka-lin.github.io/2020/06/100_same_tree/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/100_same_tree/</guid>
-      <description>100. Same Tree Discription Given two binary trees, write a function to check if they are the same or not.
-Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
-Example 1: Input: 1 1 / \ / \ 2 3 2 3 [1,2,3], [1,2,3] Output: true  Example 2: Input: 1 1 / \ 2 2 [1,2], [1,null,2] Output: false  Example 3: Input: 1 1 / \ / \ 2 1 1 2 [1,2,1], [1,1,2] Output: false  Solution 1: Recursion  Runtime: 36ms (86.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 102 Binary Tree Level Order Traversal</title>
-      <link>https://kaka-lin.github.io/2020/06/102_binary_tree_level_order_traversal/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/102_binary_tree_level_order_traversal/</guid>
-      <description>102. Binary Tree Level Order Traversal Level-order Traversal - Introduction
-Discription Given a binary tree, return the level order traversal of its nodes&#39; values. (ie, from left to right, level by level).
-Example: Given binary tree [3,9,20,null,null,15,7],
- 3 / \ 9 20 / \ 15 7  return its level order traversal as:
-[ [3], [9,20], [15,7] ]  Solution:  Runtime: 32 ms (99.58%) Memory Usage: 13.5 MB (33.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 118 Pascals Triangle</title>
-      <link>https://kaka-lin.github.io/2020/06/118_pascals_triangle/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/118_pascals_triangle/</guid>
-      <description>118. Pascal&amp;rsquo;s Triangle Discription Given a non-negative integer numRows, generate the first numRows of Pascal&amp;rsquo;s triangle.
-In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it. Example: Input: 5 Output: [ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1] ]  Solution: Dynamic Programming  Runtime: 20 ms (98.97%) Memory Usage: 12.7 MB (100%)  class Solution: def generate(self, numRows: int) -&amp;gt; List[List[int]]: pascal_list = [] for row in range(numRows): pascal_list.</description>
     </item>
     
   </channel>

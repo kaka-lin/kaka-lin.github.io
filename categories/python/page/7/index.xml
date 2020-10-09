@@ -5,19 +5,10 @@
     <link>https://kaka-lin.github.io/categories/python/</link>
     <description>Recent content in Python on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>My Learning Notes This repo is my study notes My blog: Kaka&amp;rsquo;s blog My Medium: AIoT Taipei Categories Papers Python Go Rust Data Structure and Algorithms (DSA) Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞 Concurrency(並行) 與 Paralleli</description>
-    </item>
     
     <item>
       <title></title>
@@ -215,6 +206,18 @@ fn double_first(vec: Vec&amp;lt;&amp;amp;str&amp;gt;) -&amp;gt; i32 { let first 
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Pulling Results out of Options The most basic way of handling mixed error types is to just embed them in each other.
 Example use std::num::ParseIntError; fn double_first(vec: Vec&amp;lt;&amp;amp;str&amp;gt;) -&amp;gt; Option&amp;lt;Result&amp;lt;i32, ParseIntError&amp;gt;&amp;gt; { vec.first().map(|first| { first.parse::&amp;lt;i32&amp;gt;().map(|n| 2 * n) }) } fn main() { let numbers = vec![&amp;quot;42&amp;quot;, &amp;quot;93&amp;quot;, &amp;quot;18&amp;quot;]; let empty = vec![]; let strings = vec![&amp;quot;tofu&amp;quot;, &amp;quot;93&amp;quot;, &amp;quot;18&amp;quot;]; println!(&amp;quot;The first doubled is {:?}&amp;quot;, double_first(numbers)); println!(&amp;quot;The first doubled is {:?}&amp;quot;, double_first(empty)); // Error 1: the input vector is empty println!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Iterating over Results An Iter::map operation might fail, for example:
+fn main() { let strings = vec![&amp;quot;tofu&amp;quot;, &amp;quot;93&amp;quot;, &amp;quot;18&amp;quot;]; let possible_numbers: Vec&amp;lt;_&amp;gt; = strings .into_iter() .map(|s| s.parse::&amp;lt;i32&amp;gt;()) .collect(); println!(&amp;quot;Results: {:?}&amp;quot;, possible_numbers); }  Let&amp;rsquo;s step through strategies for handling this.
+Ignore the failed items with filter_map filter_map calls a function and filters out the resultes that are None.
+fn main() { let strings = vec![&amp;quot;tofu&amp;quot;, &amp;quot;93&amp;quot;, &amp;quot;18&amp;quot;]; let possible_numbers: Vec&amp;lt;_&amp;gt; = strings .</description>
     </item>
     
   </channel>

@@ -5,10 +5,85 @@
     <link>https://kaka-lin.github.io/tags/</link>
     <description>Recent content in Tags on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Qt] Qt&#39;s Paint System</title>
+      <link>https://kaka-lin.github.io/2020/10/01_paint_system/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/10/01_paint_system/</guid>
+      <description>Qt&amp;rsquo;s Paint System 初探Qt的繪圖系統 前言 最近因為再研究labeling tool的關係，於是又重新把Qt的繪圖系統重新研究了一下 Qt&amp;rsquo;s Paint System Qt&#39;s paint system enables painting on screen and print devices</description>
+    </item>
+    
+    <item>
+      <title>[React] 01 - Hello React</title>
+      <link>https://kaka-lin.github.io/2020/09/01_hello_react/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/09/01_hello_react/</guid>
+      <description>最近因為專案需要用到，於是又打開了兩年前在Udemy上買的React課程複習， 驚喜的發現講師有Update了2020版本上去，於是打算邊上課</description>
+    </item>
+    
+    <item>
+      <title>[React] 02 - JSX 介紹</title>
+      <link>https://kaka-lin.github.io/2020/09/02_hello_jsx/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/09/02_hello_jsx/</guid>
+      <description>JSX 介紹 首先看看下面這個變數宣告 const element = &amp;lt;h1&amp;gt;你好，世界！&amp;lt;/h1&amp;gt;; 這個有趣的標籤語法不是一個字串也不是HTML。 這</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 08 Concurrency</title>
+      <link>https://kaka-lin.github.io/2020/08/08_concurrency/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/08_concurrency/</guid>
+      <description>Concurrency Go provides concurrency features as part of the core language. This module goes over goroutines and channels, and how they are used to implement different concurrency patterns. 複習: Concurrency and Parallelism Goroutines A goroutine is a lightweight thread managed by Go runtime. goroutine是輕量級的執行緒(lightwe</description>
+    </item>
+    
+    <item>
+      <title>[DS] Build JupyterHub with docker</title>
+      <link>https://kaka-lin.github.io/2020/08/readme/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/readme/</guid>
+      <description>JupyterHub Use Docker to build a JupyterHub for multiple users
+Notices Before your start to build a JupyterHub with docker, please download the relative file at example.
+Enable HTTPS (SSL encryption)   Generate a self-signed certificate with openssl, as below:
+ create a self-signed certificate.  For example, the following command will create a certificate valid for 365 days with both the key and certificate data written to the same file:</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch3: Coroutine - 01 Generator</title>
+      <link>https://kaka-lin.github.io/2020/08/01_generator/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/01_generator/</guid>
+      <description>Generator functions allow you to declare a function that behaves like an iterator. 在開始介紹Generator前，先讓我們來看看Iterator。 Iterator vs Iterable Iteration: 當我們用一個循環(ex: for loop)遍歷一</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 07 Methods and Interfaces</title>
+      <link>https://kaka-lin.github.io/2020/08/07_methods_interfaces/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/07_methods_interfaces/</guid>
+      <description>Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods (方法) Go does not classes. However, you can define methods on types. A method is a function with a special receiver argument. The receiver appears in its own argument list between the func keword and the method name. Example The Abs() method has a receiver of</description>
+    </item>
+    
+    <item>
+      <title>[OS] Coroutine (協程)</title>
+      <link>https://kaka-lin.github.io/2020/08/coroutine/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/coroutine/</guid>
+      <description>先來看一下Wiki上關於Coroutine的解釋: Coroutines are computer program components that generalize subroutines for non-preemptive multitasking (協同運作多工), by allowing execution to be suspended and resumed. 簡單來說，Coroutine就是一</description>
+    </item>
     
     <item>
       <title>[OS] Concurrency(並行) 與 Parallelism(平行)</title>
@@ -106,7 +181,7 @@
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/2020/07/01_array/</guid>
-      <description>Array Array What is Array? Memory is (Generally Viewed as) Array Array as Memory Block in C/C++ Array as Abstract Data Structure C++ STL Vector: a Growing Array Two Dimensional Array One Block Implementation of 2D Array Array of Array Implementation of 2D Array Comparison of Two Implementations A Table between Two Programs Ordered Array Definition of Ordered Array insert of Ordered Array construct of Ordered Array Method 1: Selection</description>
+      <description>What is Array? 可以想像成櫃子，櫃子上有某些連續的編號 &amp;ndash;&amp;gt; 有編號的櫃子 Memory is (Generally Viewed as) Array 記憶體就是一個很大的Array address就是index Array as Memory Block in C/C++</description>
     </item>
     
     <item>
@@ -116,78 +191,6 @@
       
       <guid>https://kaka-lin.github.io/2020/06/db_basics/</guid>
       <description>Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語</description>
-    </item>
-    
-    <item>
-      <title>[DB] Mysql Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/mysql-basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/mysql-basics/</guid>
-      <description>MySQL - Basics SQL Tutorial MySQL Documentation MySQL - Tutorial Quickstart for Cloud SQL for MySQL Load ipython-sql ipython-sql: 是jupyter notebook的extension，用來擴充jupyter對SQL的支援 其底層是使用</description>
-    </item>
-    
-    <item>
-      <title>[DB] Sqlalchemy Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/sqlalchemy-basics/</guid>
-      <description>SQLAlchemy - basics SQLAlchemy - Tutorial import sqlalchemy from sqlalchemy import create_engine, Table from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, ForeignKey, Integer, String, Numeric from sqlalchemy.orm import sessionmaker sqlalchemy.__version__ Connect Database # SQLite #connect_db = &#39;sqlite:///test.db&#39; # MySQL connect_db = &#39;mysql+mysqldb://root:&amp;lt;passwd&amp;gt;@35.201.196.222/kaka_test&#39; &#39;&#39;&#39; create_engine 此時只有建立SQLAlchemy Engine instance(</description>
-    </item>
-    
-    <item>
-      <title>[DB] Sqlite Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/sqlite-basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/sqlite-basics/</guid>
-      <description>SQLite - Basics SQL - Tutorial SQL As Understood By SQLite(官網) SQLite - Tutorial Load ipython-sql ipython-sql: 是jupyter notebook的extension，用來擴充jupyter對SQL的支</description>
-    </item>
-    
-    <item>
-      <title>[DevOps] Gitlab CI/CD</title>
-      <link>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/gitlab_ci_cd/</guid>
-      <description>GitLab CI/CD GitLab CI/CD How GitLab CI/CD works Getting started with GitLab CI/CD 1. Build a Project 2. Configuring GitLab Runners 2-1. Use Shared Runners 2-2. Set up a Specific Runners Exmaple with Docker 2-3. Introduction to Shared, Specific and Group Runners [Optional] 3. Creating a .gitlab-ci.yml file 4. Results GitLab CI/CD is a powerful tool built into GitLab that allows you to apply all the continuous methods to your</description>
-    </item>
-    
-    <item>
-      <title>[DS] Google Trends 01: Operate with Python</title>
-      <link>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/01_google_trends_and_python/</guid>
-      <description>Get and Analysis the result of Google Trends with Python Google Trends (Google搜尋趨勢) 是由Google 提供的線上搜尋趨勢服務，可以簡單的看出最近哪些關鍵字是熱門的。 但大規模分析 Google</description>
-    </item>
-    
-    <item>
-      <title>[DS] Google Trends 02: Convert to Google Data Studio</title>
-      <link>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/02_google_trends_to_google_data_studio/</guid>
-      <description>Google Trends to Google Data Studio Get the result form Google Trends Using gspread transform the data of Google Trends to Google Sheets Import the file of Google Sheets into Google Data Studio Get the result from Goolge Trends import pandas as pd from pytrends.request import TrendReq # Create an instance(實例) of TrendReq pytrend = TrendReq() # Build a</description>
-    </item>
-    
-    <item>
-      <title>[DS] Matplotlib show Chinese: Mac</title>
-      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_mac/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_mac/</guid>
-      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體 - source-han-sans 思源黑體 本教學使用此字型 思源宋體 # 查看安裝了哪些字型 # windows請忽略這段 # unix系統可以使用下co</description>
-    </item>
-    
-    <item>
-      <title>[DS] Matplotlib show Chinese: Ubuntu</title>
-      <link>https://kaka-lin.github.io/2020/06/matplotlib_chinese_ubuntu/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/matplotlib_chinese_ubuntu/</guid>
-      <description>Matplotlib 顯示中文 Ref: Text with non-latin glyphs 下載思源體 - source-han-sans 思源黑體 本教學使用此字型 思源宋體 # 查看安裝了哪些字型 # windows請忽略這段 # unix系統可以使用下co</description>
     </item>
     
   </channel>
