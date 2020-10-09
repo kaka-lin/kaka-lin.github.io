@@ -20,10 +20,7 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
-Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
-  Packages
-It are a Cargo feature that let you build, test, and share crates." />
+    <meta name="description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&amp;gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct" />
     <meta name="generator" content="Hugo 0.75.1 with theme pure" />
     <title> - Kaka&#39;s Blog</title>
     
@@ -35,30 +32,21 @@ It are a Cargo feature that let you build, test, and share crates." />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="" />
-<meta property="og:description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
-Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
-  Packages
-It are a Cargo feature that let you build, test, and share crates." />
+<meta property="og:description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kaka-lin.github.io/1/01/readme/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
-Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
-  Packages
-It are a Cargo feature that let you build, test, and share crates.">
+<meta itemprop="description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct">
 
-<meta itemprop="wordCount" content="516">
+<meta itemprop="wordCount" content="295">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
-Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
-  Packages
-It are a Cargo feature that let you build, test, and share crates."/>
+<meta name="twitter:description" content="aliases for Result How about when we want ot reuse a specific Result type many times? -&gt; aliases. Aliasing The type statement can be used to give a new name to an existing type. Exmaple At a module level, creating aliases can be particularly helpful. Errors found in a specific module often have the same Err type, so a single alias can succinct"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -270,117 +258,57 @@ It are a Cargo feature that let you build, test, and share crates."/>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="module-system">Module System</h1>
-<p>A key question when writing program is <code>scope</code>: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?</p>
-<p>Rust has a number of features related to <code>scopes</code>. This is sometimes called <code>the module system</code>, but it encompasses more than just modules:</p>
-<ul>
-<li>
-<p><a href="#packages_and_crates">Packages</a></p>
-<p>It are a <code>Cargo feature</code> that let you build, test, and share crates.</p>
-</li>
-<li>
-<p><a href="#packages_and_crates">Crates</a></p>
-<p>It are a tree of modules that produce a library or executable.</p>
-</li>
-<li>
-<p><a href="#modules">Modules</a></p>
-<p><code>Modules</code> and the <code>use</code> keyword let you control the scope and privacy of paths.</p>
-</li>
-</ul>
+      <h1 id="aliases-for-result">aliases for <code>Result</code></h1>
+<p>How about when we want ot reuse a specific <code>Result</code> type many times? -&gt; <a href="#jump">aliases</a>.</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h2 id="packages-and-crates">Packages and Crates</h2>
-<ul>
-<li>A <code>crate</code> is a binary or library.</li>
-<li>The <code>crate root</code> is a source file that is used to know how to build a crate.</li>
-<li>A <code>package</code> has a <code>Cargo.toml</code> that describes how to build one or more crates. At most one crate in a package can be a library.</li>
-</ul>
-<h3 id="exapmle">Exapmle</h3>
-<p>So when we type <code>cargo new</code>, we&rsquo;re creating a package:</p>
-<pre><code class="language-bash">$ cargo new my-project
-     Created binary (application) `my-project` package
-$ ls my-project
-Cargo.toml
-src
-$ ls my-project/src
-main.rs
+<h2 id="aliasing">Aliasing</h2>
+<p>The <code>type</code> statement can be used to give a new name to an existing type.</p>
+<h2 id="exmaple">Exmaple</h2>
+<p>At a module level, creating <code>aliases</code> can be particularly helpful. Errors found in a specific module often have the same <code>Err</code> type, so a single alias can succinctly(簡潔的) define all associated <code>Results</code>. This is so useful that the <code>std</code> library even supplies one: <a href="#jump2">io:Result</a>!</p>
+<pre><code class="language-rust">use std::num::ParseIntError;
+
+// Define a generic alias for a `Result` with the error type `ParseIntError`.
+type AliasedResult&lt;T&gt; = Result&lt;T, ParseIntError&gt;;
+
+// Use the above alias to refer to our specific `Result` type.
+fn multiply(first_number_str: &amp;str, second_number_str: &amp;str) -&gt; AliasedResult&lt;i32&gt; {
+    first_number_str.parse::&lt;i32&gt;().and_then(|first_number| {
+        second_number_str.parse::&lt;i32&gt;().map(|second_number| first_number * second_number)
+    })
+}
+
+// Here, the alias again allows us to save some space.
+fn print(result: AliasedResult&lt;i32&gt;) {
+    match result {
+        Ok(n)  =&gt; println!(&quot;n is {}&quot;, n),
+        Err(e) =&gt; println!(&quot;Error: {}&quot;, e),
+    }
+}
+
+fn main() {
+    print(multiply(&quot;10&quot;, &quot;2&quot;));
+    print(multiply(&quot;t&quot;, &quot;2&quot;));
+}
 </code></pre>
-<h3 id="conventions">Conventions</h3>
-<ol>
-<li>
-<p>If you have a <code>src</code> directory containing <code>main.rs</code> in the same directory as a package&rsquo;s <code>Cargo.toml</code></p>
-<p>=&gt; Cargo knows this package contains a <code>binary crate</code> with the same name as the package, and <code>src/main.rs</code> is its <code>crate root</code>.</p>
-</li>
-<li>
-<p>If the package directory contains <code>src/lib.rs</code></p>
-<p>=&gt; Cargo knows this package contains a <code>library crate</code> with the same name as the package, and <code>src/lib.rs</code> is its <code>crate root</code>.</p>
-</li>
-</ol>
-<pre><code>Note: The crate root files are passed by Cargo to rustc to actually build the library or binary.
-</code></pre>
-<ol start="3">
-<li>A package can contain <code>zero or one library crates</code> and as <code>many binary crates</code> as you’d like. There must be <code>at least one crate</code> (either a library or a binary) in a package.</li>
-</ol>
-<pre><code>Note: A package can have multiple binary crates by placing files in the src/bin directory: each file will be a separate binary crate.
-</code></pre>
+<hr>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h2 id="modules">Modules</h2>
-<p>Modules let us organize code into groups.</p>
+<h2 id="stdioresult">std::io::Result</h2>
+<p>A specialized <code>Result</code> type for I/O operations.</p>
+<p>This type is broadly used across <code>std::io</code> for any operation which may produce an error.</p>
+<p>This typedef is generally used to avoid writing out <code>io::Error</code> directly and is otherwise a direct mapping to <code>Result</code>.</p>
+<p>While usual Rust style is to import types directly, aliases of <code>Result</code> often are not, to make it easier to distinguish between them. <code>Resul</code>t is generally assumed to be <code>std::result::Result</code>, and so users of this alias will generally use <code>io::Result</code> instead of shadowing the prelude&rsquo;s import of <code>std::result::Result</code>.</p>
+<pre><code class="language-rust">type Result&lt;T&gt; = Result&lt;T, Error&gt;
+</code></pre>
+<p>where Error: <code>std::io::Error</code></p>
 <h3 id="example">Example</h3>
-<p>Filename: src/main.rs</p>
-<pre><code class="language-rust">mod sound {
-    pub mod instrument {
-        pub fn clarinet() {
-            println!(&quot;Hello sound::instrument::clarinet()&quot;);
-        }
-    }
+<pre><code class="language-rust">use std::io;
 
-    mod voice {
+fn get_string() -&gt; io::Result&lt;String&gt; {
+    let mut buffer = String::new();
 
-    }
-}
+    io::stdin().read_line(&amp;mut buffer)?;
 
-fn main() {
-    // Absolute path
-    crate:🔉:instrument::clarinet();
-
-    // Relative path
-    sound::instrument::clarinet();
-}
-</code></pre>
-<p>Like we mentioned in the <a href="#packages_and_cratess">Packages and Crates</a> section that <code>src/main.rs</code> and <code>src/lib.rs</code> are called <code>crate roots</code>. So we have a module tree that looks like:</p>
-<pre><code>crate
-└── sound
-    ├── instrument
-    │   
-    └── voice
-</code></pre>
-<h3 id="modules-as-the-privacy-boundray">Modules as the Privacy Boundray</h3>
-<p>If you want to make an item like a function or struct private, you put it in a module. Here aer the privacy rules:</p>
-<ul>
-<li>All items are private bu default.</li>
-<li>You can use the <code>pub</code> keyword to make an item public.</li>
-<li>You aren&rsquo;t allowed to use private code defined in modules that are children oof current module.</li>
-<li>You are allowed to use any code defined in ancestor modules or current module.</li>
-</ul>
-<h4 id="example-1">Example</h4>
-<pre><code class="language-rust">mod sound {
-    mod instrument {
-        fn clarinet() {
-            println!(&quot;Hello sound::instrument::clarinet()&quot;);
-        }
-    }
-
-    pub mod instrument2 {
-        fn clarinet(){}
-    }
-}
-
-fn main() {
-    // error[E0603]: module `instrument` is private
-    crate:🔉:instrument::clarinet(); 
-    
-    // error[E0603]: function `clarinet` is private
-    crate:🔉:instrument2::clarinet();
+    Ok(buffer)
 }
 </code></pre>
 
