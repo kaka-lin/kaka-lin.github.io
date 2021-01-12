@@ -5,10 +5,28 @@
     <link>https://kaka-lin.github.io/categories/</link>
     <description>Recent content in Categories on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 01 Python Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/01_python_basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/01_python_basics/</guid>
+      <description>Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C++ Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 02 Flow Control</title>
+      <link>https://kaka-lin.github.io/2020/06/02_flow_control/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/02_flow_control/</guid>
+      <description>Flow Control Python if ... else The general syntax for Python&amp;rsquo;s if statement is this: if condition1: # statement1 for True condition1 elif condition2 : # statement2 for True condition2 elif condition3 : # statement3 for True condition3 else: # statements for each condition False score = int(input(&amp;quot;請輸入成績&amp;q</description>
+    </item>
     
     <item>
       <title>[Python] Ch1: Python Basics - 03 List</title>
@@ -99,6 +117,15 @@ Download and Install it.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>C++ Learning Notes  i++ and ++i Multiple inheritance  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>Google Trends to Google Data Studion COVID-19 Search Trends in 2020 </description>
     </item>
     
@@ -118,6 +145,15 @@ Download and Install it.
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
       <description>MySQL 1. Install database Ubuntu $ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade # install MySQL $ sudo apt install mysql-server $ sudo apt install mysql-client $ sudo apt install libmysqlclient-dev  Mac # install MySQL $ brew install openssl $ brew install mysql $ brew install mysql-connector-c  2. Install requirement packages  mysql mysqlclient  $ pip3 install mysql  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Using Docker Compose for PostgreSQL Use $ docker-compose up  </description>
     </item>
     
     <item>
@@ -164,48 +200,6 @@ Download and Install it.
       
       <guid>https://kaka-lin.github.io/1/01/docker_compose/</guid>
       <description>Docker Compose </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Docker Compose Example Build a simple Python web application running on Docker Compose. This application uses the Flask framework and maintains a hit counter in Redis Flask + Redis 網頁人數統計的範例 Build and Run $ docker-cpmpose up # run services in background # -d: datached mode $ docker-compose up -d Stop &amp;amp;&amp;amp; Remove Container $ docker-compose down # --volumes: remove the data volume</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>DevOps Learning Notes DevOps = Development + Operations
-Table of Contents  CI/CD  GitLab CI/CD   Docker  Docker Compose    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Data Structures and Algorithms, NTU Hsuan-Tien Lin This is my study notes
- Array  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Climbing Stairs (Fibonacci sequence) Wiki: Fibonacci_number
-leetcode: Climbing Stairs
-Description You are climbing a stair case. It takes n steps to reach to the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Note: Given n will be a positive integer.</description>
     </item>
     
   </channel>

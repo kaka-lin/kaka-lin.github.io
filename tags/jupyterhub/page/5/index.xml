@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JupyterHub on Kaka&#39;s Blog</title>
+    <link>https://kaka-lin.github.io/tags/jupyterhub/</link>
+    <description>Recent content in JupyterHub on Kaka&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://kaka-lin.github.io/tags/jupyterhub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 01 Python Basics</title>
+      <link>https://kaka-lin.github.io/2020/06/01_python_basics/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/01_python_basics/</guid>
+      <description>Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C++ Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 02 Flow Control</title>
+      <link>https://kaka-lin.github.io/2020/06/02_flow_control/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/02_flow_control/</guid>
+      <description>Flow Control Python if ... else The general syntax for Python&amp;rsquo;s if statement is this: if condition1: # statement1 for True condition1 elif condition2 : # statement2 for True condition2 elif condition3 : # statement3 for True condition3 else: # statements for each condition False score = int(input(&amp;quot;請輸入成績&amp;q</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 03 List</title>
+      <link>https://kaka-lin.github.io/2020/06/03_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/03_list/</guid>
+      <description>List 串列 List 用來儲存一連串有順序的資料，如： countries = [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] print(countries) [&#39;Taiwan&#39;, &#39;Janpan&#39;, &#39;America&#39;] 取得 List 裡有幾個元素: len() length = len(countries) length [Out]: 3 取得List 裡的元素 list_name[index] countries[0] [Out]: &#39;Taiwan&#39; 取得最後一個元素 list[-1] print(countries[-1])</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 04 Dictionary</title>
+      <link>https://kaka-lin.github.io/2020/06/04_dictionary/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/04_dictionary/</guid>
+      <description>Dictionary 字典 在字典裡，皆由key(鍵)和value(值)組成 dict = {key1 : value1, key2 : value2 } kaka = {&#39;firstname&#39;:&#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} print(kaka) {&#39;firstname&#39;: &#39;lin&#39;, &#39;age&#39;: 28, &#39;height&#39;: 175} 取得 Dictionary 裡有幾個元素: len() print(len(kaka)) [Out]: 3 取得 Dictionay 裡的資</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch1: Python Basics - 05 Function</title>
+      <link>https://kaka-lin.github.io/2020/06/05_function/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/05_function/</guid>
+      <description>Function 函式 def 函式名稱(參數): 程式碼 def printf(text): print(&amp;quot;[Out]: {}&amp;quot;.format(text)) printf(&#39;Hello world!&#39;) [Out]: Hello world! 閏年 根據維基百科，分辨平閏年的方法為： 公元年份除以4不可整除，為平年。 公元年份除以4可整除</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://kaka-lin.github.io/about/</link>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/about/</guid>
+      <description>Hi, I&amp;rsquo;m kaka, from Taiwan. 👋
+I&amp;rsquo;m a software engineer at Inventec focusing primarily on the development of Advanced Driver Assistance Systems and related application with Python &amp;amp; C/C++. I received M.S.(2015) in Bio-Industrial Mechatronics Engineering from National Taiwan University (NTU).</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch0: Install Python</title>
+      <link>https://kaka-lin.github.io/2020/05/readme/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/05/readme/</guid>
+      <description>Python Environment Setup Tutorials Medium: Install Python on Windows
+ Windows macOS Ubuntu  </description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch0: Install Python: Mac</title>
+      <link>https://kaka-lin.github.io/2020/05/mac/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/05/mac/</guid>
+      <description>1. Install Package Manager   Homebrew
+It is the package manager for macOS. Following the install step on the website to install it.
+  2. Install Python3 2-1. Homebrew $ brew install python  2-2. Miniconda 1. Download installer $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh  2. Install # install miniconda in ~/opt $ mkdir -p ~/opt $ chmod +x Miniconda3-latest-MacOSX-x86_64.sh $ bash Miniconda3-latest-MacOSX-x86_64.sh  3. Activate conda 1. bash  Copy conda initialize in ~/.</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch0: Install Python: Ubuntu</title>
+      <link>https://kaka-lin.github.io/2020/05/ubuntu/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/05/ubuntu/</guid>
+      <description>1. Install request package $ sudo apt-get update &amp;amp;&amp;amp; apt-get upgrade $ sudo apt-get install wget vim  2. Install Python3 Miniconda
+2-1. Download installer $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh  2-2. Change the access permissions of files $ chmod +x Miniconda3-latest-Linux-x86_64.sh  2-3. Install # install miniconda in ~/opt $ mkdir -p ~/opt $ bash Miniconda3-latest-Linux-x86_64.sh  2-4. Activate conda 1. bash  Copy conda initialize in ~/.bash_profile to ~/.bashrc, as below:   Activate  $ source ~/.</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch0: Install Python: Windows</title>
+      <link>https://kaka-lin.github.io/2020/05/windows/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/05/windows/</guid>
+      <description>1. Install Package Manager   Chocolate
+It is the package manager for windows. Following the install step on the website to install it.
+  2. Install More Handy Terminal   ConEmu
+Using choco to install it.
+&amp;gt; choco install conemu    3. Install Git Bash   Git for Window
+Download and Install it.
+  4. Open ConEmu Opening ConEmu and choose git bash, then you can use Unix-commands.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>C++ Learning Notes  i++ and ++i Multiple inheritance  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Google Trends to Google Data Studion COVID-19 Search Trends in 2020 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Data Science Visualization Matplotlib Matplotlib 顯示中文 Windows macOS Ubuntu Google Trends Get and Analysis the result of Google Trends with Python Google Trends to Google Data Studio Juputer Notebook JupyterHub</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>MySQL 1. Install database Ubuntu $ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade # install MySQL $ sudo apt install mysql-server $ sudo apt install mysql-client $ sudo apt install libmysqlclient-dev  Mac # install MySQL $ brew install openssl $ brew install mysql $ brew install mysql-connector-c  2. Install requirement packages  mysql mysqlclient  $ pip3 install mysql  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Using Docker Compose for PostgreSQL Use $ docker-compose up  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Database Learning Notes Database Basics SQL Style Guide Relational database (關聯式資料庫) SQLite MySQL ORM (物件關聯對映) SQLAlchemy Install requirement packages jupyter SQLAlchemy ipython-sql $ pip3 install -r requirements.txt</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>SQLAlchemy SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+ SQLAlchemy - Tutorial  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>SQLite Install database Ubuntu $ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade # install SQlite $ sudo apt install sqlite3 # install MySQL $ sudo apt install mysql-server $ sudo apt install mysql-client $ sudo apt install libmysqlclient-dev  Mac # install SQLite $ brew install sqlite # install MySQL $ brew install openssl $ brew install mysql $ brew install mysql-connector-c  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>CI/CD </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/docker_compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/docker_compose/</guid>
+      <description>Docker Compose </description>
+    </item>
+    
+  </channel>
+</rss>

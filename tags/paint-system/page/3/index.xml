@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paint System on Kaka&#39;s Blog</title>
+    <link>https://kaka-lin.github.io/tags/paint-system/</link>
+    <description>Recent content in Paint System on Kaka&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://kaka-lin.github.io/tags/paint-system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[LeetCode] 053 Maximum Subarray</title>
+      <link>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</guid>
+      <description>53. Maximum Subarray Discription Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Example: Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6.  Solution 1: Divide and Conquer Ref: divide and conquer - maximum subarray
+ Runtime: 124 ms (7.29%) Memory Usage: 13.6 MB (65.85%)  class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: if len(nums) == 1: return nums[0] k = len(nums) // 2 left_sum = self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 070 Climbing Stairs</title>
+      <link>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</guid>
+      <description>70. Climbing Stairs Discription You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Note: Given n will be a positive integer.
+Example 1: Input: 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 083 Remove Duplicates From Sorted List</title>
+      <link>https://kaka-lin.github.io/2020/06/083_remove_duplicates_from_sorted_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/083_remove_duplicates_from_sorted_list/</guid>
+      <description>83. Remove Duplicates from Sorted List Discription Given a sorted linked list, delete all duplicates such that each element appear only once.
+Example: Input: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3 Output: 1-&amp;gt;2-&amp;gt;  Solution:  Runtime: 44 ms (93.15%) Memory Usage: 13.1 MB (67.00%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def deleteDuplicates(self, head: ListNode) -&amp;gt; ListNode: if head is None or head.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 094 Binary Tree Inorder Traversal</title>
+      <link>https://kaka-lin.github.io/2020/06/094_binary_tree_inorder_traversal/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/094_binary_tree_inorder_traversal/</guid>
+      <description>94. Binary Tree Inorder Traversal Discription Given a binary tree, return the inorder traversal of its nodes&#39; values.
+inorder:
+left tree -&amp;gt; root tree -&amp;gt; right tree  Example: Input: [1,null,2,3] 1 \ 2 / 3 Output: [1,3,2]  Solution 1: Recursive  Runtime: 32 ms (91.99%) Memory Usage: 13.2 MB (56.18%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.val = x # self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 098 Validate Binary Search Tree</title>
+      <link>https://kaka-lin.github.io/2020/06/098_validate_binary_search_tree/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/098_validate_binary_search_tree/</guid>
+      <description>98. Validate Binary Search Tree Discription Given a binary tree, determine if it is a valid binary search tree (BST).
+Assume a BST is defined as follows:
+ The left subtree of a node contains only nodes with keys less than the node&amp;rsquo;s key. The right subtree of a node contains only nodes with keys greater than the node&amp;rsquo;s key. Both the left and right subtrees must also be binary search trees.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 100 Same Tree</title>
+      <link>https://kaka-lin.github.io/2020/06/100_same_tree/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/100_same_tree/</guid>
+      <description>100. Same Tree Discription Given two binary trees, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
+Example 1: Input: 1 1 / \ / \ 2 3 2 3 [1,2,3], [1,2,3] Output: true  Example 2: Input: 1 1 / \ 2 2 [1,2], [1,null,2] Output: false  Example 3: Input: 1 1 / \ / \ 2 1 1 2 [1,2,1], [1,1,2] Output: false  Solution 1: Recursion  Runtime: 36ms (86.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 102 Binary Tree Level Order Traversal</title>
+      <link>https://kaka-lin.github.io/2020/06/102_binary_tree_level_order_traversal/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/102_binary_tree_level_order_traversal/</guid>
+      <description>102. Binary Tree Level Order Traversal Level-order Traversal - Introduction
+Discription Given a binary tree, return the level order traversal of its nodes&#39; values. (ie, from left to right, level by level).
+Example: Given binary tree [3,9,20,null,null,15,7],
+ 3 / \ 9 20 / \ 15 7  return its level order traversal as:
+[ [3], [9,20], [15,7] ]  Solution:  Runtime: 32 ms (99.58%) Memory Usage: 13.5 MB (33.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 118 Pascals Triangle</title>
+      <link>https://kaka-lin.github.io/2020/06/118_pascals_triangle/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/118_pascals_triangle/</guid>
+      <description>118. Pascal&amp;rsquo;s Triangle Discription Given a non-negative integer numRows, generate the first numRows of Pascal&amp;rsquo;s triangle.
+In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it. Example: Input: 5 Output: [ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1] ]  Solution: Dynamic Programming  Runtime: 20 ms (98.97%) Memory Usage: 12.7 MB (100%)  class Solution: def generate(self, numRows: int) -&amp;gt; List[List[int]]: pascal_list = [] for row in range(numRows): pascal_list.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 119 Pascals Triangle Ii</title>
+      <link>https://kaka-lin.github.io/2020/06/119_pascals_triangle_ii/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/119_pascals_triangle_ii/</guid>
+      <description>119. Pascal&amp;rsquo;s Triangle II Discription Given a non-negative index k where k ≤ 33, return the $k^{th}$ index row of the Pascal&amp;rsquo;s triangle.
+Note that the row index starts from 0.
+In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it. Example: Input: 3 Output: [1,3,3,1]  Solution: Dynamic Programming  Runtime: 24 ms (96.54%) Memory Usage: 12.7 MB (100%)  class Solution: def getRow(self, rowIndex: int) -&amp;gt; List[int]: pascal_list = [1] for row in range(1, rowIndex + 1): # Previous row prev_pascal_list = pascal_list # Start th new row pascal_list = [1] for col in range(1, row): pascal_list.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 136 Single Number</title>
+      <link>https://kaka-lin.github.io/2020/06/136_single_number/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/136_single_number/</guid>
+      <description>136. Single Number Discription Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+Example: Input: [2,2,1] Output: 1 Input: [4,1,2,1,2] Output: 4  Solution 1: Lsit operation  Runtime: 1160 ms (8.54%) Memory Usage: 14.9 MB (36.99%)  class Solution: def singleNumber(self, nums: List[int]) -&amp;gt; int: if len(nums) &amp;lt;= 1: return nums[0] record_list = [] for i in range(len(nums)): if nums[i] not in record_list: record_list.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 144 Binary Tree Preorder Traversal</title>
+      <link>https://kaka-lin.github.io/2020/06/144_binary_tree_preorder_traversal/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/144_binary_tree_preorder_traversal/</guid>
+      <description>144. Binary Tree Preorder Traversal Discription Given a binary tree, return the preorder traversal of its nodes&#39; values.
+inorder:
+root tree -&amp;gt; left tree -&amp;gt; right tree  Example: Input: [1,null,2,3] 1 \ 2 / 3 Output: [1,2,3]  Solution 1: Recursive  Runtime: 32 ms (92.42%) Memory Usage: 13.2 MB (52.73%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.val = x # self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 145 Binary Tree Postorder Traversal</title>
+      <link>https://kaka-lin.github.io/2020/06/145_binary_tree_postorder_traversal/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/145_binary_tree_postorder_traversal/</guid>
+      <description>145. Binary Tree Postorder Traversal Discription Given a binary tree, return the postorder traversal of its nodes&#39; values.
+inorder:
+left tree -&amp;gt; rigth tree -&amp;gt; root tree  Example: Input: [1,null,2,3] 1 \ 2 / 3 Output: [3,2,1]  Solution 1: Recursive  Runtime: 32 ms (91.82%) Memory Usage: 13 MB (95.36%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.val = x # self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 160 Intersection Of Two Linked List</title>
+      <link>https://kaka-lin.github.io/2020/06/160_intersection_of_two_linked_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/160_intersection_of_two_linked_list/</guid>
+      <description>160. Intersection of Two Linked Lists Discription Write a program to find the node at which the intersection of two singly linked lists begins.
+Example: Solution 1: Two Pointers  Runtime: 192ms (91.82%) Memory Usage: 41.8 MB (67.17%)  # Definition for singly-linked list. # class ListNode(object): # def __init__(self, x): # self.val = x # self.next = None class Solution(object): def getIntersectionNode(self, headA, headB): &amp;quot;&amp;quot;&amp;quot; :type head1, head1: ListNode :rtype: ListNode &amp;quot;&amp;quot;&amp;quot; if headA is None or headB is None: return None ptr_a = headA ptr_b = headB while ptr_a is not ptr_b: ptr_a = headB if ptr_a is None else ptr_a.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 167 Two Sum II Input Array Is Sorted</title>
+      <link>https://kaka-lin.github.io/2020/06/167_two_sum_ii_input_array_is_sorted/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/167_two_sum_ii_input_array_is_sorted/</guid>
+      <description>167. Two Sum II - Input array is sorted Discription Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.
+Note:  Your returned answers (both index1 and index2) are not zero-based.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 169 Majority Element</title>
+      <link>https://kaka-lin.github.io/2020/06/169_majority_element/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/169_majority_element/</guid>
+      <description>169. Majority Element Discription Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the majority element always exist in the array.
+Example: Input: [3,2,3] Output: 3 Input: [2,2,1,1,1,2,2] Output: 2  Solution 1: HashMap  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def majorityElement(self, nums: List[int]) -&amp;gt; int: record = {} for num in nums: if num not in record: record[num] = 1 else: record[num] += 1 return max(record.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 191 Number Of 1 Bits</title>
+      <link>https://kaka-lin.github.io/2020/06/191_number_of_1_bits/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/191_number_of_1_bits/</guid>
+      <description>191. Number of 1 Bits Discription Write a function that takes an unsigned integer and return the number of &amp;lsquo;1&amp;rsquo; bits it has (also known as the Hamming weight).
+Example: Input: 00000000000000000000000000001011 Output: 3 Explanation: The input binary string 00000000000000000000000000001011 has a total of three &#39;1&#39; bits. Input: 11111111111111111111111111111101 Output: 31 Explanation: The input binary string 11111111111111111111111111111101 has a total of thirty one &#39;1&#39; bits.  Solution 1: Loop and Flip The solution is straight-forward.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 202 Happy Number</title>
+      <link>https://kaka-lin.github.io/2020/06/202_happy_number/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/202_happy_number/</guid>
+      <description>202. Happy Number Discription Write an algorithm to determine if a number is &amp;ldquo;happy&amp;rdquo;.
+A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 203 Remove Linked List Elements</title>
+      <link>https://kaka-lin.github.io/2020/06/203_remove_linked_list_elements/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/203_remove_linked_list_elements/</guid>
+      <description>203. Remove Linked List Elements Discription Remove all elements from a linked list of integers that have value val.
+Example: Input: 1-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;6, val = 6 Output: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5  Solution: Using dummy node can convenience to treat the special case, like the val appear at head of list and immediately after it.
+For example:
+Input: 1 -&amp;gt; 1 -&amp;gt; 1 Output: []   Runtime: 72ms (90.70%) Memory Usage: 16.1MB (99.7%)  # Definition for singly-linked list.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 206 Reverse Linked List</title>
+      <link>https://kaka-lin.github.io/2020/06/206_reverse_linked_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/206_reverse_linked_list/</guid>
+      <description>206. Reverse Linked List Discription Reverse a singly linked list.
+Example: Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL  Solution: ref: https://www.youtube.com/watch?v=MRe3UsRadKw&amp;amp;t=4s
+ Runtime: 32 ms (99.15%) Memory Usage: 18.7 MB (21.78%)  # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def reverseList(self, head: ListNode) -&amp;gt; ListNode: if head is None or head.next is None: return head ptr = self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 217 Contains Duplicate</title>
+      <link>https://kaka-lin.github.io/2020/06/217_contains_duplicate/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/217_contains_duplicate/</guid>
+      <description>217. Contains Duplicate Discription Given an array of integers, find if the array contains any duplicates.
+Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+Example: Input: [1,2,3,1] Output: true Input: [1,2,3,4] Output: false Input: [1,1,1,3,3,4,3,2,4,2] Output: true  Solution 1: Hash Table  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def containsDuplicate(self, nums: List[int]) -&amp;gt; bool: array = set() for num in nums: if num in array: return True array.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Trends on Kaka&#39;s Blog</title>
+    <link>https://kaka-lin.github.io/tags/google-trends/</link>
+    <description>Recent content in Google Trends on Kaka&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://kaka-lin.github.io/tags/google-trends/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[C&#43;&#43;] 多重繼承 (Multiple Inheritance)</title>
+      <link>https://kaka-lin.github.io/2021/01/multiple_inheritance/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2021/01/multiple_inheritance/</guid>
+      <description>最近面試被問到多重繼承相關的問題，簡單做個紀錄～ Multiple Inheritance (多重繼承) An object or class can inherit characteristics and features from more than one parent object or parent class. Virtual base classes Virtual base classes are used in virtual inheritance, is a way of preventing multiple &amp;quot;instance&amp;quot; of a</description>
+    </item>
+    
+    <item>
+      <title>[C&#43;&#43;] i&#43;&#43; 與 &#43;&#43;i 的差別</title>
+      <link>https://kaka-lin.github.io/2021/01/i-_and_-i/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2021/01/i-_and_-i/</guid>
+      <description>發現自己很容易搞混這兩個，於是簡單做個筆記記錄～ i++ 與 ++i i++: post-increment 在這一行程式完成之後，再進行+1的動作 ++i: pre-increment 先進行+1，再進行後面的動作 Example int x; int y; //</description>
+    </item>
+    
+    <item>
+      <title>[Qt] Qt&#39;s Paint System</title>
+      <link>https://kaka-lin.github.io/2020/10/01_paint_system/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/10/01_paint_system/</guid>
+      <description>前言 最近因為再研究labeling tool的關係，於是又重新把Qt的繪圖系統重新研究了一下 Qt&amp;rsquo;s Paint System Qt&#39;s paint system enables painting on screen and print devices using the same API, and is primarily based on the QPainter, QPaintDevice,</description>
+    </item>
+    
+    <item>
+      <title>[React] 01 - Hello React</title>
+      <link>https://kaka-lin.github.io/2020/09/01_hello_react/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/09/01_hello_react/</guid>
+      <description>最近因為專案需要用到，於是又打開了兩年前在Udemy上買的React課程複習， 驚喜的發現講師有Update了2020版本上去，於是打算邊上課</description>
+    </item>
+    
+    <item>
+      <title>[React] 02 - JSX 介紹</title>
+      <link>https://kaka-lin.github.io/2020/09/02_hello_jsx/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/09/02_hello_jsx/</guid>
+      <description>JSX 介紹 首先看看下面這個變數宣告 const element = &amp;lt;h1&amp;gt;你好，世界！&amp;lt;/h1&amp;gt;; 這個有趣的標籤語法不是一個字串也不是HTML。 這</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 08 Concurrency</title>
+      <link>https://kaka-lin.github.io/2020/08/08_concurrency/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/08_concurrency/</guid>
+      <description>Concurrency Go provides concurrency features as part of the core language. This module goes over goroutines and channels, and how they are used to implement different concurrency patterns. 複習: Concurrency and Parallelism Goroutines A goroutine is a lightweight thread managed by Go runtime. goroutine是輕量級的執行緒(lightwe</description>
+    </item>
+    
+    <item>
+      <title>[DS] Build JupyterHub with docker</title>
+      <link>https://kaka-lin.github.io/2020/08/readme/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/readme/</guid>
+      <description>JupyterHub Use Docker to build a JupyterHub for multiple users
+Notices Before your start to build a JupyterHub with docker, please download the relative file at example.
+Enable HTTPS (SSL encryption)   Generate a self-signed certificate with openssl, as below:
+ create a self-signed certificate.  For example, the following command will create a certificate valid for 365 days with both the key and certificate data written to the same file:</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch3: Coroutine - 01 Generator</title>
+      <link>https://kaka-lin.github.io/2020/08/01_generator/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/01_generator/</guid>
+      <description>Generator functions allow you to declare a function that behaves like an iterator. 在開始介紹Generator前，先讓我們來看看Iterator。 Iterator vs Iterable Iteration: 當我們用一個循環(ex: for loop)遍歷一</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 07 Methods and Interfaces</title>
+      <link>https://kaka-lin.github.io/2020/08/07_methods_interfaces/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/07_methods_interfaces/</guid>
+      <description>Methods and Interfaces Learn how to define methods on types, how to declare interfaces, and how to put everything together. Methods (方法) Go does not classes. However, you can define methods on types. A method is a function with a special receiver argument. The receiver appears in its own argument list between the func keword and the method name. Example The Abs() method has a receiver of</description>
+    </item>
+    
+    <item>
+      <title>[OS] Coroutine (協程)</title>
+      <link>https://kaka-lin.github.io/2020/08/coroutine/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/08/coroutine/</guid>
+      <description>先來看一下Wiki上關於Coroutine的解釋: Coroutines are computer program components that generalize subroutines for non-preemptive multitasking (協同運作多工), by allowing execution to be suspended and resumed. 簡單來說，Coroutine就是一</description>
+    </item>
+    
+    <item>
+      <title>[OS] Concurrency(並行) 與 Parallelism(平行)</title>
+      <link>https://kaka-lin.github.io/2020/07/concurrency_parallelism/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/concurrency_parallelism/</guid>
+      <description>前言 最近在研究Asynchronous Model，上一篇介紹了同步、非同步、Blocking、Non-Blocking的觀念及Linux的I</description>
+    </item>
+    
+    <item>
+      <title>[OS] I/O Models: 同步、非同步、阻塞、非阻塞</title>
+      <link>https://kaka-lin.github.io/2020/07/io_models/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/io_models/</guid>
+      <description>在開發I/O相關程式時常常會遇到以下這四種名詞: 同步(Synchronous) 非同步(Asynchronous) 阻塞(Blocking) 非阻</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch2: Process Management - 02 Python 多行程/多處理程序(Multi-Processing)</title>
+      <link>https://kaka-lin.github.io/2020/07/02_multiprocessing/</link>
+      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/02_multiprocessing/</guid>
+      <description>行程/處理程序(Process) 複習作業系統(Operating System)中的對於行程(Process)的解釋： 行程(Process)是</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 06 Advanced Function</title>
+      <link>https://kaka-lin.github.io/2020/07/06_advanced_function/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/06_advanced_function/</guid>
+      <description>Function as Arguments In Go, function is also a type. So we can pass function as another function&amp;rsquo;s parameters. 當我們將function當成參數使用時，必須在參數列表列出funtion本身的參數type與及其所需的</description>
+    </item>
+    
+    <item>
+      <title>[Python] Ch2: Process Management - 01 Python 多執行緒(Multi-Thread)</title>
+      <link>https://kaka-lin.github.io/2020/07/01_multithread/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/01_multithread/</guid>
+      <description>執行緒(Thread) 複習作業系統(Operating System)中的對於執行緒(thread)的解釋： 執行緒(thread)是OS能夠進</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 01 Go Basics</title>
+      <link>https://kaka-lin.github.io/2020/07/01_go_basics/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/01_go_basics/</guid>
+      <description>Packages (套件) 每個 Go Program 都是由套件(packages)組成的 程式運行的入口是: package main package main func main() {} Import import ( &amp;quot;fmt&amp;quot; &amp;quot;math&amp;quot; ) Exported names In Go, a name is exported if it begins with a capital letter. For example, Pi is an exported</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 02 Flow Control</title>
+      <link>https://kaka-lin.github.io/2020/07/02_flow_control/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/02_flow_control/</guid>
+      <description>For Go has only one looping construct, the foor loop for &amp;lt;init state&amp;gt;; &amp;lt;condition&amp;gt;; &amp;lt;post state&amp;gt; sum := 0 for i := 0; i &amp;lt; 10; i++ { sum += i } Go的for看起來跟C或Java中的依樣，但是沒有 ()，但{}是必要的，如上</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 03 Go Data Structure: `Structs`</title>
+      <link>https://kaka-lin.github.io/2020/07/03_structs/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/03_structs/</guid>
+      <description>Structs (Structures) A struct or structure is a collection of fields. 1. Defining a struct Using struct keyword to create a new structure type. type StructName struct { field1 fieldType1 field2 fieldType2 ... } Example: type Vertex struct { X int Y int } 2. Accessing Struct Fields (Members) Struct fields are accessed using a dot. v := Vertrx{1, 2} v.X = 4 fmt.Println(v.X) // 4 Pointers to Structs 1.</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 04 Go Data Structure: `Array` &amp; `Slice`</title>
+      <link>https://kaka-lin.github.io/2020/07/04_array_slice/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/04_array_slice/</guid>
+      <description>Array 1. Creating an Array The type [n]T is an array of n values of type T. The expression var a [10]int An array&amp;rsquo;s length is part of its type, so arrays cannot be resized. But Go provides a convenient way of working with array. 2. Array initialize a := [6]int{2, 3, 5, 7, 11, 13} // or a := []int{2, 3, 5, 7, 11, 13} Slices A slice is</description>
+    </item>
+    
+    <item>
+      <title>[Go] Ch1: Go Basics - 05 Go Data Structure: `Maps`</title>
+      <link>https://kaka-lin.github.io/2020/07/05_maps/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/07/05_maps/</guid>
+      <description>Maps A map maps key to value. Golang provides map data structure which implements hashtable. 1. Creating a Maps The zero value of a map is nil. A nil map has no keys, nor can keys be added. Method 1: like array // nil map var m map[keyTpye]valueType Note: 如果使用此方法來create map，還需要</description>
+    </item>
+    
+  </channel>
+</rss>

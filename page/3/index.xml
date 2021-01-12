@@ -5,10 +5,33 @@
     <link>https://kaka-lin.github.io/</link>
     <description>Recent content on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[LeetCode] 053 Maximum Subarray</title>
+      <link>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/053_maximum_subarray/</guid>
+      <description>53. Maximum Subarray Discription Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Example: Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6.  Solution 1: Divide and Conquer Ref: divide and conquer - maximum subarray
+ Runtime: 124 ms (7.29%) Memory Usage: 13.6 MB (65.85%)  class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: if len(nums) == 1: return nums[0] k = len(nums) // 2 left_sum = self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 070 Climbing Stairs</title>
+      <link>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/070_climbing_stairs/</guid>
+      <description>70. Climbing Stairs Discription You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Note: Given n will be a positive integer.
+Example 1: Input: 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2.</description>
+    </item>
     
     <item>
       <title>[LeetCode] 083 Remove Duplicates From Sorted List</title>
@@ -204,29 +227,6 @@ Example: Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5
       <description>217. Contains Duplicate Discription Given an array of integers, find if the array contains any duplicates.
 Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
 Example: Input: [1,2,3,1] Output: true Input: [1,2,3,4] Output: false Input: [1,1,1,3,3,4,3,2,4,2] Output: true  Solution 1: Hash Table  Runtime: ms (%) Memory Usage: MB (%)  class Solution: def containsDuplicate(self, nums: List[int]) -&amp;gt; bool: array = set() for num in nums: if num in array: return True array.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 226 Invert Binary Tree</title>
-      <link>https://kaka-lin.github.io/2020/06/226_invert_binary_tree/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/226_invert_binary_tree/</guid>
-      <description>226. Invert Binary Tree Discription Invert a binary tree.
-Example: Input:
- 4 / \ 2 7 / \ / \ 1 3 6 9  Output:
- 4 / \ 7 2 / \ / \ 9 6 3 1  Solution 1: Recursion  Runtime: 24 ms (87.55%) Memory Usage: 12.7 MB (100%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.</description>
-    </item>
-    
-    <item>
-      <title>[LeetCode] 234 Palindrome Linked List</title>
-      <link>https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/</guid>
-      <description>234. Palindrome Linked List Discription Given a singly linked list, determine if it is a palindrome.
-Example: Input: 1-&amp;gt;2 Output: false Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1 Output: true  Follow up: Could you do it in O(n) time and O(1) space?
-Solution:  Find the middle of the linked list. Reverse the second half of the linked list. Compare.   Runtime: 76 ms (84.86%) Memory Usage: 23.6 MB (92.34%)  # Definition for singly-linked list.</description>
     </item>
     
   </channel>

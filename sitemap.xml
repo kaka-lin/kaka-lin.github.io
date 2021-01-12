@@ -3,6 +3,69 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kaka-lin.github.io/2021/01/multiple_inheritance/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/categories/c&#43;&#43;/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/categories/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/oop/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/posts/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/</loc>
+    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/2021/01/i-_and_-i/</loc>
+    <lastmod>2021-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/2020/10/01_paint_system/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -10,21 +73,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/</loc>
-    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/</loc>
-    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/posts/</loc>
+    <loc>https://kaka-lin.github.io/tags/paint-system/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -52,6 +101,13 @@
   </url>
   
   <url>
+    <loc>https://kaka-lin.github.io/series/react/</loc>
+    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/categories/react/</loc>
     <lastmod>2020-09-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -59,7 +115,21 @@
   </url>
   
   <url>
+    <loc>https://kaka-lin.github.io/series/</loc>
+    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/2020/08/08_concurrency/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/series/go/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -87,7 +157,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/jupyterhub/</loc>
+    <loc>https://kaka-lin.github.io/tags/jupyterhub/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -101,14 +171,28 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/coroutine/</loc>
+    <loc>https://kaka-lin.github.io/categories/asynchronous-programming/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/generator/</loc>
+    <loc>https://kaka-lin.github.io/tags/coroutine/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/generator/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/series/python/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -136,13 +220,6 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/asynchronous-programming/</loc>
-    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kaka-lin.github.io/categories/os/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -151,6 +228,13 @@
   
   <url>
     <loc>https://kaka-lin.github.io/2020/07/concurrency_parallelism/</loc>
+    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/concurrency/</loc>
     <lastmod>2020-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -171,6 +255,13 @@
   </url>
   
   <url>
+    <loc>https://kaka-lin.github.io/tags/multi-processing/</loc>
+    <lastmod>2020-07-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/2020/07/06_advanced_function/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -179,6 +270,13 @@
   
   <url>
     <loc>https://kaka-lin.github.io/2020/07/01_multithread/</loc>
+    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/multi-thread/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -221,6 +319,13 @@
   
   <url>
     <loc>https://kaka-lin.github.io/2020/07/01_array/</loc>
+    <lastmod>2020-07-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/tags/array/</loc>
     <lastmod>2020-07-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -703,7 +808,7 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/google-trends/</loc>
+    <loc>https://kaka-lin.github.io/tags/google-trends/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -724,35 +829,28 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/matplotlib/</loc>
+    <loc>https://kaka-lin.github.io/tags/matplotlib/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/mysql/</loc>
+    <loc>https://kaka-lin.github.io/tags/mysql/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/sqlalchemy/</loc>
+    <loc>https://kaka-lin.github.io/tags/sqlalchemy/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/sqlite/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/tags/</loc>
+    <loc>https://kaka-lin.github.io/tags/sqlite/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -843,7 +941,31 @@
   </url>
   
   <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kaka-lin.github.io/1/01/docker_compose/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -940,6 +1062,36 @@
   
   <url>
     <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/readme/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaka-lin.github.io/1/01/00_install/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1179,19 +1331,13 @@
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/ci/cd-tools/</loc>
+    <loc>https://kaka-lin.github.io/tags/ci/cd-tools/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://kaka-lin.github.io/categories/i/o-models/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaka-lin.github.io/series/</loc>
+    <loc>https://kaka-lin.github.io/tags/i/o-models/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

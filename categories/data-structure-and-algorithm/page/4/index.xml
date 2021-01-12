@@ -11,6 +11,29 @@
     
     
     <item>
+      <title>[LeetCode] 226 Invert Binary Tree</title>
+      <link>https://kaka-lin.github.io/2020/06/226_invert_binary_tree/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/226_invert_binary_tree/</guid>
+      <description>226. Invert Binary Tree Discription Invert a binary tree.
+Example: Input:
+ 4 / \ 2 7 / \ / \ 1 3 6 9  Output:
+ 4 / \ 7 2 / \ / \ 9 6 3 1  Solution 1: Recursion  Runtime: 24 ms (87.55%) Memory Usage: 12.7 MB (100%)  # Definition for a binary tree node. # class TreeNode: # def __init__(self, x): # self.</description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 234 Palindrome Linked List</title>
+      <link>https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2020/06/234_palindrome_linked_list/</guid>
+      <description>234. Palindrome Linked List Discription Given a singly linked list, determine if it is a palindrome.
+Example: Input: 1-&amp;gt;2 Output: false Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1 Output: true  Follow up: Could you do it in O(n) time and O(1) space?
+Solution:  Find the middle of the linked list. Reverse the second half of the linked list. Compare.   Runtime: 76 ms (84.86%) Memory Usage: 23.6 MB (92.34%)  # Definition for singly-linked list.</description>
+    </item>
+    
+    <item>
       <title>[LeetCode] 236 Lowest Common Ancestor Of A Binary Tree</title>
       <link>https://kaka-lin.github.io/2020/06/236_lowest_common_ancestor_of_a_binary_tree/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
@@ -197,24 +220,6 @@ Example: Input: nums = [5,2,3,1] Output: [1,2,3,5] Input: nums = [5,1,1,2,0,0] O
       <description>938. Range Sum of BST Discription Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive).
 The binary search tree is guaranteed to have unique values.
 Example: Input: root = [10,5,15,3,7,null,18], L = 7, R = 15 Output: 32 Input: root = [10,5,15,3,7,13,18,1,null,6], L = 6, R = 10 Output: 23  Solution: Depth First Search  Runtime: 212 ms (93.</description>
-    </item>
-    
-    <item>
-      <title>[Python] Ch1: Python Basics - 01 Python Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/01_python_basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/01_python_basics/</guid>
-      <description>Python Basics Interactive Shell Compiled language v.s. Interpreted language Compiled language (編譯語言) Through compiler convert source code into machine code and execute it. C/C++ Go Rust Interpreted language (直譯語言) Execute the code step-by-step. Python JavaScript Ruby PHP Python Interactive Shell Python is a Interpreted language. It means it excutes the code line by line. Python provides a Python Shell (Python</description>
-    </item>
-    
-    <item>
-      <title>[Python] Ch1: Python Basics - 02 Flow Control</title>
-      <link>https://kaka-lin.github.io/2020/06/02_flow_control/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/02_flow_control/</guid>
-      <description>Flow Control Python if ... else The general syntax for Python&amp;rsquo;s if statement is this: if condition1: # statement1 for True condition1 elif condition2 : # statement2 for True condition2 elif condition3 : # statement3 for True condition3 else: # statements for each condition False score = int(input(&amp;quot;請輸入成績&amp;q</description>
     </item>
     
   </channel>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrency on Kaka&#39;s Blog</title>
+    <link>https://kaka-lin.github.io/tags/concurrency/</link>
+    <description>Recent content in Concurrency on Kaka&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://kaka-lin.github.io/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Module System A key question when writing program is scope: what names does the compiler know about at this location in the code? What functions am I allowed to call? What does this variable refer to?
+Rust has a number of features related to scopes. This is sometimes called the module system, but it encompasses more than just modules:
+  Packages
+It are a Cargo feature that let you build, test, and share crates.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Rust by Example This repo is the record that I exercise the Rust by Example!
+Rust version: 1.31.0 or later
+Chapter Before you to read chapter 10, 11, and 12, you can read module system first.
+ Modules
+  Visibility
+  Struct visibility
+  The use declaration
+  super and self
+  File hierarchy
+  pub use(re-exporting)
+    Crates
+  Library</description>
+    </item>
+    
+  </channel>
+</rss>

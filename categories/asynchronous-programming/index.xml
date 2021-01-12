@@ -5,10 +5,28 @@
     <link>https://kaka-lin.github.io/categories/asynchronous-programming/</link>
     <description>Recent content in Asynchronous Programming on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/categories/asynchronous-programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C&#43;&#43;] 多重繼承 (Multiple Inheritance)</title>
+      <link>https://kaka-lin.github.io/2021/01/multiple_inheritance/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2021/01/multiple_inheritance/</guid>
+      <description>最近面試被問到多重繼承相關的問題，簡單做個紀錄～ Multiple Inheritance (多重繼承) An object or class can inherit characteristics and features from more than one parent object or parent class. Virtual base classes Virtual base classes are used in virtual inheritance, is a way of preventing multiple &amp;quot;instance&amp;quot; of a</description>
+    </item>
+    
+    <item>
+      <title>[C&#43;&#43;] i&#43;&#43; 與 &#43;&#43;i 的差別</title>
+      <link>https://kaka-lin.github.io/2021/01/i-_and_-i/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/2021/01/i-_and_-i/</guid>
+      <description>發現自己很容易搞混這兩個，於是簡單做個筆記記錄～ i++ 與 ++i i++: post-increment 在這一行程式完成之後，再進行+1的動作 ++i: pre-increment 先進行+1，再進行後面的動作 Example int x; int y; //</description>
+    </item>
     
     <item>
       <title>[Qt] Qt&#39;s Paint System</title>
@@ -16,7 +34,7 @@
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/2020/10/01_paint_system/</guid>
-      <description>Qt&amp;rsquo;s Paint System 初探Qt的繪圖系統 前言 最近因為再研究labeling tool的關係，於是又重新把Qt的繪圖系統重新研究了一下 Qt&amp;rsquo;s Paint System Qt&#39;s paint system enables painting on screen and print devices</description>
+      <description>前言 最近因為再研究labeling tool的關係，於是又重新把Qt的繪圖系統重新研究了一下 Qt&amp;rsquo;s Paint System Qt&#39;s paint system enables painting on screen and print devices using the same API, and is primarily based on the QPainter, QPaintDevice,</description>
     </item>
     
     <item>
@@ -173,24 +191,6 @@ Enable HTTPS (SSL encryption)   Generate a self-signed certificate with openssl,
       
       <guid>https://kaka-lin.github.io/2020/07/05_maps/</guid>
       <description>Maps A map maps key to value. Golang provides map data structure which implements hashtable. 1. Creating a Maps The zero value of a map is nil. A nil map has no keys, nor can keys be added. Method 1: like array // nil map var m map[keyTpye]valueType Note: 如果使用此方法來create map，還需要</description>
-    </item>
-    
-    <item>
-      <title>[DSA] NTU CSIE DSA, 01: Array</title>
-      <link>https://kaka-lin.github.io/2020/07/01_array/</link>
-      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/07/01_array/</guid>
-      <description>What is Array? 可以想像成櫃子，櫃子上有某些連續的編號 &amp;ndash;&amp;gt; 有編號的櫃子 Memory is (Generally Viewed as) Array 記憶體就是一個很大的Array address就是index Array as Memory Block in C/C++</description>
-    </item>
-    
-    <item>
-      <title>[DB] Database Basics</title>
-      <link>https://kaka-lin.github.io/2020/06/db_basics/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/2020/06/db_basics/</guid>
-      <description>Database Basics Database Basics What is a Database The basic functions for manipulating a database: CRUD Database Management System (DBMS) 資料庫的類型 關聯式資料庫 非關聯式資料庫(NoSQL) SQL與NoSQL差異 Database Transaction SQL SQL語法 SQL - 四種語</description>
     </item>
     
   </channel>

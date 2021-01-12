@@ -5,10 +5,75 @@
     <link>https://kaka-lin.github.io/posts/</link>
     <description>Recent content in Posts on Kaka&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://kaka-lin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Docker Compose Example Build a simple Python web application running on Docker Compose. This application uses the Flask framework and maintains a hit counter in Redis Flask + Redis 網頁人數統計的範例 Build and Run $ docker-cpmpose up # run services in background # -d: datached mode $ docker-compose up -d Stop &amp;amp;&amp;amp; Remove Container $ docker-compose down # --volumes: remove the data volume</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>A Monitor and Warning System with Prometheus and Grafana Reference: https://blog.techbridge.cc/2019/08/26/how-to-use-prometheus-grafana-in-flask-app/
+Usage $ docker-compose up  Load Testing $ locust -f locustfile.py -H http://localhost:5000  Result   Grafana
+  Prometheus
+  Prometheus: AlertManager
+  Slack
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Monitoring Tools  Prometheus Grafana  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>DevOps Learning Notes DevOps = Development + Operations
+Table of Contents  CI/CD  GitLab CI/CD   Docker  Docker Compose    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Data Structures and Algorithms, NTU Hsuan-Tien Lin This is my study notes
+ Array  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kaka-lin.github.io/1/01/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
+      <description>Climbing Stairs (Fibonacci sequence) Wiki: Fibonacci_number
+leetcode: Climbing Stairs
+Description You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Note: Given n will be a positive integer.</description>
+    </item>
     
     <item>
       <title></title>
@@ -138,7 +203,7 @@ Combine the solutions to the subproblems into the solution for the original prob
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞 Concurrency(並行) 與 Parallelism(平行) Corotuine(協程)</description>
+      <description>Clustering Algorithms  Centroid-based Clustering Density-based Clustering Distribution-based Clustering Hierarchical Clustering  Centroid-based Clustering  k-means algorithm  Density-based Clustering  Density-based spatial clustering of applications with noise (DBSCAN)  </description>
     </item>
     
     <item>
@@ -147,65 +212,7 @@ Combine the solutions to the subproblems into the solution for the original prob
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Papers All papers of my reading
-Top Conference CVPR    # Paper Links     1 Learning in the Frequency Domain slides   2 CARS: Contunuous Evolution for Efficient Neural Architecture Search slides   3 High Frequency Component Helps Explain the Generalization of Convolutional Neural Networks slides   4 YUVMultiNet: Real-time YUV multi-task CNN for autonomous driving slides    AAAI    # Paper Links     1 Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression slides   2 Pruning from Scratch slides    ICLR    # Paper Links     1 Once for All: Train One Network and Specialize it for Efficient Deployment slides    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/common_packages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/common_packages/</guid>
-      <description>Install Common Packages After you installed python.
-$ pip install numpy scipy pandas matplotlib seaborn pillow scikit-learn mlxtend # or $ pip install -r requirements.txt  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Python Learning Notes Table of Contents 00. Install Python Windows macOS Ubuntu 01. Python Basics 01. Python Basics 02. Flow Control 03. List 04. Dictionary 05. Function 02. Process Management 01. Multithread (多執行緒) 02. Multiprocessing (多程序) 03. Coroutine (協程) 03-1. Generator (生成器)</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Painting in Qt5 Example of how to render image in Qt or PyQt5
-Knowledge  01 Paint System  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>Qt/Qml Learning Notes Painting in Qt5</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>React React official website
-Learn Notes  01. Hello React 02. Hello JSX  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kaka-lin.github.io/1/01/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kaka-lin.github.io/1/01/readme/</guid>
-      <description>My Learning Notes This repo is my study notes My blog: Kaka&amp;rsquo;s blog My Medium: AIoT Taipei Categories Papers Python Go Rust Data Structure and Algorithms (DSA) Operate System (OS) I/O Models: 同步、非同步、阻塞、非阻塞 Concurrency(並行) 與 Paralleli</description>
+      <description>Machine Learning  Clustering  </description>
     </item>
     
   </channel>
